@@ -5,15 +5,22 @@ import { SgInnerHero } from './SgInnerHero';
 import { SgCTABanner } from './SgCTABanner';
 import './SgShared.css';
 
-export function SgAboutPage({ onAction }) {
+export function SgAboutPage({ onAction, data }) {
+  const cName = data?.college?.name || 'Our College';
+  const cShortName = data?.college?.shortName || 'Our College';
+  const location = data?.college?.location || 'Anantapur, Andhra Pradesh';
+  const pageData = data?.pages?.about?.sections || [];
+  const heroData = pageData.find(s => s.type === 'about-hero') || {};
+  const introData = pageData.find(s => s.type === 'about-content') || {};
+
   return (
     <div className="sg-page">
       <SgInnerHero
-        eyebrow="ABOUT SRI GITAM"
+        eyebrow={heroData.eyebrow || `ABOUT ${cShortName.toUpperCase()}`}
         breadcrumb="About"
-        title="About Sri GITAM Junior College"
-        subtitle="Building academic foundations and helping students move confidently towards higher education."
-        image="/sri-gitam/gallery/campus_kamalanagar_1789976860423.jpg"
+        title={heroData.title || `About ${cName}`}
+        subtitle={heroData.subtitle || "Building academic foundations and helping students move confidently towards higher education."}
+        image={data?.gallery?.images?.[0]?.src || "/sri-gitam/gallery/campus_kamalanagar_1789976860423.jpg"}
       />
 
       {/* Introduction */}
@@ -22,16 +29,16 @@ export function SgAboutPage({ onAction }) {
           <div className="sg-split">
             <div className="sg-split-left">
               <div className="sg-split-img">
-                <img src="/sri-gitam/gallery/campus_kamalanagar_1789976860423.jpg" alt="Sri GITAM Campus" />
+                <img src={data?.gallery?.images?.[0]?.src || "/sri-gitam/gallery/campus_kamalanagar_1789976860423.jpg"} alt={`${cName} Campus`} />
               </div>
             </div>
             <div className="sg-split-right">
-              <span className="sg-eyebrow">ABOUT SRI GITAM</span>
-              <h2 className="sg-section-title">A Foundation for the Future</h2>
-              <p style={{ fontSize: '16px', color: '#657080', lineHeight: '1.7', marginBottom: '20px' }}>
-                Sri GITAM Junior College is an Intermediate college located in Anantapur, Andhra Pradesh. The institution focuses on providing students with a structured academic environment where they can strengthen their subject knowledge, develop academic discipline and prepare for their next stage of education.
+              <span className="sg-eyebrow">ABOUT {cShortName.toUpperCase()}</span>
+              <h2 className="sg-section-title">{introData.title || "A Foundation for the Future"}</h2>
+              <p style={{ fontSize: '16px', color: 'var(--color-muted, #657080)', lineHeight: '1.7', marginBottom: '20px', whiteSpace: 'pre-line' }}>
+                {introData.content || `${cName} is an Intermediate college located in ${location}. The institution focuses on providing students with a structured academic environment where they can strengthen their subject knowledge, develop academic discipline and prepare for their next stage of education.`}
               </p>
-              <p style={{ fontSize: '16px', color: '#657080', lineHeight: '1.7', marginBottom: '40px' }}>
+              <p style={{ fontSize: '16px', color: 'var(--color-muted, #657080)', lineHeight: '1.7', marginBottom: '40px' }}>
                 Students can choose from different Intermediate streams according to their interests and future aspirations.
               </p>
               <ul className="sg-feature-list">
@@ -136,7 +143,7 @@ export function SgAboutPage({ onAction }) {
 
       <SgCTABanner
         title="Build the Foundation for What Comes Next"
-        desc="Explore the academic pathways available at Sri GITAM Junior College."
+        desc={`Explore the academic pathways available at ${cName}.`}
         primaryLabel="Explore Programmes"
         primaryTarget="programmes"
         onAction={onAction}

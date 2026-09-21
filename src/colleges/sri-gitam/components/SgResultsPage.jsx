@@ -14,17 +14,19 @@ const STAT_BLOCKS = [
 
 const YEARS = ['2025–26', '2024–25', '2023–24'];
 
-export function SgResultsPage({ onAction }) {
+export function SgResultsPage({ onAction, data }) {
   const [activeYear, setActiveYear] = useState('2025–26');
+  const pageData = data?.pages?.results?.sections || [];
+  const heroData = pageData.find(s => s.type === 'about-hero') || {};
 
   return (
     <div className="sg-page">
       <SgInnerHero
-        eyebrow="RESULTS"
-        breadcrumb="Results"
-        title="Student Achievements"
-        subtitle="Recognising the academic effort, progress and achievements of our students."
-        image="/sri-gitam/gallery/smart_classrooms_1789976999081.jpg"
+        eyebrow={heroData.title || "RESULTS"}
+        breadcrumb={heroData.title || "Results"}
+        title={heroData.title || "Student Achievements"}
+        subtitle={heroData.subtitle || "Recognising the academic effort, progress and achievements of our students."}
+        image={data?.gallery?.images?.[1]?.src || "/sri-gitam/gallery/smart_classrooms_1789976999081.jpg"}
       />
 
       {/* Celebrating Progress */}
@@ -37,7 +39,7 @@ export function SgResultsPage({ onAction }) {
               <p className="sg-section-desc">
                 Academic achievements reflect the effort of students, teachers and families working together towards a common goal.
               </p>
-              <p style={{ fontSize: '14px', color: '#B6533E', fontStyle: 'italic', marginTop: '24px' }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-secondary, #B6533E)', fontStyle: 'italic', marginTop: '24px' }}>
                 Results will be updated with verified academic data.
               </p>
             </div>
@@ -47,7 +49,7 @@ export function SgResultsPage({ onAction }) {
                   <div key={i} className="sg-result-block">
                     <div className="sg-result-block-icon"><s.icon size={36} /></div>
                     <h3>—</h3>
-                    <p style={{ fontWeight: '600', color: '#172A43', marginBottom: '4px' }}>{s.label}</p>
+                    <p style={{ fontWeight: '600', color: 'var(--color-primary, #172A43)', marginBottom: '4px' }}>{s.label}</p>
                     <p style={{ fontSize: '13px' }}>{s.sublabel}</p>
                   </div>
                 ))}
@@ -89,7 +91,7 @@ export function SgResultsPage({ onAction }) {
             </p>
           </div>
           <div className="sg-empty-state">
-            <Award size={48} color="#E8E1D9" style={{ margin: '0 auto 16px', display: 'block' }} />
+            <Award size={48} color="var(--color-border, #E8E1D9)" style={{ margin: '0 auto 16px', display: 'block' }} />
             <h3>Student Achievements</h3>
             <p>Verified student achievement stories will be added here. This section will be updated as information becomes available.</p>
           </div>
@@ -98,7 +100,7 @@ export function SgResultsPage({ onAction }) {
 
       <SgCTABanner
         title="Every Achievement Begins With a Strong Foundation"
-        desc="Start your Intermediate journey at Sri GITAM Junior College."
+        desc={`Start your Intermediate journey at ${data?.college?.name}.`}
         primaryLabel="Explore Academics"
         primaryTarget="academics"
         onAction={onAction}

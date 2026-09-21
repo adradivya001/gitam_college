@@ -1,18 +1,18 @@
 import React from 'react';
 import { Container } from '../../../components/common/Container';
-import { BookOpen, Heart, Map, TrendingUp } from 'lucide-react';
+import { BookOpen, Heart, Map, TrendingUp, Target, Compass, BarChart, Users, Award, ShieldCheck, Dna, Atom, BarChart2 } from 'lucide-react';
 import './SgAbout.css';
 
-const ICONS = { BookOpen, Heart, Map, TrendingUp };
+const ICONS = { BookOpen, Heart, Map, TrendingUp, Target, Compass, BarChart, Users, Award, ShieldCheck, Dna, Atom, BarChart2 };
 
-export function SgAbout({ sectionConfig, onAction }) {
+export function SgAbout({ sectionConfig, onAction, data }) {
   return (
     <section className="sg-about-section">
       <Container maxWidth="1280px">
         <div className="sg-about-wrapper">
           <div className="sg-about-image-side">
             <div className="sg-about-image-container">
-              <img src={sectionConfig.image} alt="About Sri GITAM" className="sg-about-img" />
+              <img src={sectionConfig.image} alt={`About ${data?.college?.name || ''}`} className="sg-about-img" />
 
             </div>
           </div>

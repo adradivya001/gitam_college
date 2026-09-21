@@ -1,7 +1,7 @@
 .sg-footer {
-  background-color: #FAF7F2;
+  background-color: var(--color-bg, #FAF7F2);
   padding: 40px 0 0 0;
-  border-top: 1px solid #E8E1D9;
+  border-top: 1px solid var(--color-border, #E8E1D9);
 }
 .sg-footer-grid {
   display: grid;
@@ -53,7 +53,7 @@
   transition: color 0.2s;
 }
 .sg-footer-link-btn:hover {
-  color: var(--color-secondary);
+  color: var(--color-accent);
 }
 .sg-footer-contact {
   display: flex;
@@ -70,13 +70,13 @@
 }
 .sg-contact-item svg {
   flex-shrink: 0;
-  color: var(--color-secondary);
+  color: var(--color-accent);
   margin-top: 2px;
   width: 14px;
   height: 14px;
 }
 .sg-footer-bottom {
-  border-top: 1px solid #E8E1D9;
+  border-top: 1px solid var(--color-border, #E8E1D9);
   padding: 16px 0;
   display: flex;
   justify-content: space-between;
@@ -98,7 +98,7 @@
   gap: 16px;
 }
 .sg-footer-socials a {
-  color: #B6533E;
+  color: var(--color-accent, #B6533E);
   display: flex;
   align-items: center;
   justify-content: center;

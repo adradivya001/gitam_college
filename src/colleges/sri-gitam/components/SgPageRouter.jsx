@@ -1,4 +1,5 @@
 import React from 'react';
+import { useCollege } from '../../../context/CollegeContext';
 import { SgAboutPage } from './SgAboutPage';
 import { SgAcademicsPage } from './SgAcademicsPage';
 import { SgProgrammesPage } from './SgProgrammesPage';
@@ -16,6 +17,7 @@ const PAGE_MAP = {
   'why-us': SgWhyUsPage,
   'why-sri-gitam': SgWhyUsPage,
   'why-gitam': SgWhyUsPage,
+  'why-teja': SgWhyUsPage,
   facilities: SgCampusPage,
   campus: SgCampusPage,
   'student-life': SgStudentLifePage,
@@ -25,7 +27,8 @@ const PAGE_MAP = {
 };
 
 export function SgPageRouter({ activePage, onAction }) {
+  const { collegeData } = useCollege();
   const PageComponent = PAGE_MAP[activePage];
   if (!PageComponent) return null;
-  return <PageComponent onAction={onAction} />;
+  return <PageComponent onAction={onAction} data={collegeData} />;
 }

@@ -58,7 +58,7 @@ export function SgNavbar() {
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginRight: 6, flexShrink: 0 }}>
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
             </svg>
-            Intell College Building, Old Kalyandurgam Road, Akkampalli Cross, Anantapur – 515004
+            {collegeData?.college?.contact?.address || 'Anantapur, Andhra Pradesh'}
           </span>
           <div className="sg-topbar-links">
             <span>Call Us</span>
@@ -75,7 +75,7 @@ export function SgNavbar() {
           <button
             className="sg-navbar-logo-btn"
             onClick={() => navigateToPage('home')}
-            aria-label="Sri GITAM Junior College - Home"
+            aria-label={`${collegeName} - Home`}
           >
             {logo ? (
               <img src={logo} alt={collegeName} className="sg-navbar-logo-img" />

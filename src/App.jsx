@@ -78,7 +78,7 @@ export default function App() {
       <Router>
         <Routes>
           <Route path="/:collegeId/*" element={<CollegeRouteHandler />} />
-          <Route path="/" element={<Navigate to="/sri-gitam" replace />} />
+          <Route path="/" element={<Navigate to="/teja" replace />} />
         </Routes>
       </Router>
     </ErrorBoundary>

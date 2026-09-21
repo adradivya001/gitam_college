@@ -56,17 +56,17 @@ export function JuniorCollegeTemplate({ college }) {
     }
   };
 
-  // For Sri GITAM inner pages, use the dedicated page router
-  const isSriGitam = college.id === 'sri-gitam';
-  const isSriGitamInnerPage = isSriGitam && activePage !== 'home';
+  // For premium template inner pages, use the dedicated page router
+  const isPremiumTemplate = college.id === 'sri-gitam' || college.id === 'teja';
+  const isPremiumInnerPage = isPremiumTemplate && activePage !== 'home';
 
   return (
     <div className={`${college.id}-app-root`} style={{ width: '100%', minHeight: '100vh', overflowX: 'hidden' }}>
-      {isSriGitam ? <SgNavbar /> : <Navbar />}
+      {isPremiumTemplate ? <SgNavbar /> : <Navbar />}
       
       <main className="college-page-content" key={activePage}>
-        {isSriGitamInnerPage ? (
-          // Render the dedicated Sri GITAM page component
+        {isPremiumInnerPage ? (
+          // Render the dedicated Premium page component
           <SgPageRouter activePage={activePage} onAction={handleAction} />
         ) : (
           // Render sections from the content registry (home page & all other colleges)

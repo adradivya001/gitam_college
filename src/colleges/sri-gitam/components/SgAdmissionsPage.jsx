@@ -12,20 +12,25 @@ const DOCS = [
 ];
 
 const PROG_CARDS_ADM = [
-  { name: 'MPC', subjects: 'Mathematics • Physics • Chemistry', bg: '#F8E9E3', icon: Atom },
-  { name: 'BiPC', subjects: 'Biology • Physics • Chemistry', bg: '#EAF2EE', icon: Dna },
-  { name: 'MEC', subjects: 'Mathematics • Economics • Commerce', bg: '#F5EFE3', icon: BarChart2 },
-  { name: 'CEC', subjects: 'Civics • Economics • Commerce', bg: '#F0ECF6', icon: Users },
+  { name: 'MPC', subjects: 'Mathematics • Physics • Chemistry', bg: 'var(--color-sg-peach, #F8E9E3)', icon: Atom },
+  { name: 'BiPC', subjects: 'Biology • Physics • Chemistry', bg: 'var(--color-sg-sage, #EAF2EE)', icon: Dna },
+  { name: 'MEC', subjects: 'Mathematics • Economics • Commerce', bg: 'var(--color-sg-sand, #F5EFE3)', icon: BarChart2 },
+  { name: 'CEC', subjects: 'Civics • Economics • Commerce', bg: 'var(--color-sg-lavender, #F0ECF6)', icon: Users },
 ];
 
-export function SgAdmissionsPage({ onAction }) {
+export function SgAdmissionsPage({ onAction, data }) {
+  const cName = data?.college?.name || 'Our College';
+  const cShortName = data?.college?.shortName || 'Our College';
+  const pageData = data?.pages?.admissions?.sections || [];
+  const heroData = pageData.find(s => s.type === 'about-hero') || {};
+
   return (
     <div className="sg-page">
       <SgInnerHero
-        eyebrow="ADMISSIONS"
+        eyebrow={heroData.eyebrow || "ADMISSIONS"}
         breadcrumb="Admissions"
-        title="Start Your Journey With Sri GITAM"
-        subtitle="Explore our Intermediate programmes and take the first step towards your higher-education goals."
+        title={heroData.title || `Start Your Journey With ${cShortName}`}
+        subtitle={heroData.subtitle || "Explore our Intermediate programmes and take the first step towards your higher-education goals."}
       />
 
       {/* Process */}
@@ -36,7 +41,7 @@ export function SgAdmissionsPage({ onAction }) {
               <span className="sg-eyebrow">ADMISSION PROCESS</span>
               <h2 className="sg-section-title">How to Apply</h2>
               <p className="sg-section-desc" style={{ marginBottom: '32px' }}>
-                Follow these steps to begin your Intermediate education journey at Sri GITAM Junior College.
+                Follow these steps to begin your Intermediate education journey at {cName}.
               </p>
               <button className="sg-btn-primary" onClick={() => onAction('open_admissions_modal')}>Apply Now</button>
             </div>
@@ -52,8 +57,8 @@ export function SgAdmissionsPage({ onAction }) {
                   <div key={i} className="sg-timeline-item" style={{ alignItems: 'flex-start' }}>
                     <div className="sg-timeline-num" style={{ marginTop: '8px', boxShadow: '0 0 0 8px white' }}>{s.n}</div>
                     <div className="sg-timeline-body sg-card" style={{ flex: 1, padding: '28px', marginTop: '0', cursor: 'default' }}>
-                      <h3 style={{ fontFamily: 'var(--font-heading, Playfair Display, serif)', fontSize: '22px', fontWeight: '700', color: '#172A43', margin: '0 0 12px 0' }}>{s.h}</h3>
-                      <p style={{ fontSize: '15px', color: '#657080', lineHeight: '1.6', margin: 0 }}>{s.p}</p>
+                      <h3 style={{ fontFamily: 'var(--font-heading, Playfair Display, serif)', fontSize: '22px', fontWeight: '700', color: 'var(--color-primary, #172A43)', margin: '0 0 12px 0' }}>{s.h}</h3>
+                      <p style={{ fontSize: '15px', color: 'var(--color-muted, #657080)', lineHeight: '1.6', margin: 0 }}>{s.p}</p>
                     </div>
                   </div>
                 ))}
@@ -70,11 +75,11 @@ export function SgAdmissionsPage({ onAction }) {
             <div>
               <span className="sg-eyebrow">ELIGIBILITY</span>
               <h2 className="sg-section-title">Admission Eligibility</h2>
-              <p style={{ fontSize: '16px', color: '#657080', lineHeight: '1.7' }}>
+              <p style={{ fontSize: '16px', color: 'var(--color-muted, #657080)', lineHeight: '1.7' }}>
                 Admission is subject to the applicable Intermediate admission requirements and the eligibility criteria prescribed by the college and relevant educational authorities.
               </p>
-              <p style={{ fontSize: '16px', color: '#657080', lineHeight: '1.7', marginTop: '16px' }}>
-                For specific eligibility details, please contact the Sri GITAM admissions office directly.
+              <p style={{ fontSize: '16px', color: 'var(--color-muted, #657080)', lineHeight: '1.7', marginTop: '16px' }}>
+                For specific eligibility details, please contact the {cShortName} admissions office directly.
               </p>
             </div>
             <div>
@@ -82,8 +87,8 @@ export function SgAdmissionsPage({ onAction }) {
               <h2 className="sg-section-title">Documents You May Need</h2>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {DOCS.map((doc, i) => (
-                  <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: '#657080' }}>
-                    <CheckCircle size={18} color="#B6533E" style={{ flexShrink: 0 }} />
+                  <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '15px', color: 'var(--color-muted, #657080)' }}>
+                    <CheckCircle size={18} color="var(--color-secondary, #B6533E)" style={{ flexShrink: 0 }} />
                     {doc}
                   </li>
                 ))}
@@ -104,10 +109,10 @@ export function SgAdmissionsPage({ onAction }) {
             {PROG_CARDS_ADM.map((p, i) => (
               <div key={i} style={{ background: p.bg, padding: '32px', borderRadius: '16px', border: '1px solid rgba(0,0,0,0.04)' }}>
                 <div style={{ width: '52px', height: '52px', borderRadius: '50%', background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px', boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }}>
-                  <p.icon size={24} color="#172A43" />
+                  <p.icon size={24} color="var(--color-primary, #172A43)" />
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-heading, Playfair Display, serif)', fontSize: '22px', fontWeight: '700', marginBottom: '8px', color: '#172A43' }}>{p.name}</h3>
-                <p style={{ fontSize: '13px', color: '#657080', marginBottom: '24px' }}>{p.subjects}</p>
+                <h3 style={{ fontFamily: 'var(--font-heading, Playfair Display, serif)', fontSize: '22px', fontWeight: '700', marginBottom: '8px', color: 'var(--color-primary, #172A43)' }}>{p.name}</h3>
+                <p style={{ fontSize: '13px', color: 'var(--color-muted, #657080)', marginBottom: '24px' }}>{p.subjects}</p>
                 <button className="sg-text-link" onClick={() => onAction('navigate_to', 'programmes')}>Explore Programme →</button>
               </div>
             ))}
@@ -126,7 +131,7 @@ export function SgAdmissionsPage({ onAction }) {
                 Fill in the form and our admissions team will get back to you with the information you need.
               </p>
             </div>
-            <div style={{ flex: 1, background: 'white', borderRadius: '20px', padding: '48px', border: '1px solid #E8E1D9' }}>
+            <div style={{ flex: 1, background: 'white', borderRadius: '20px', padding: '48px', border: '1px solid var(--color-border, #E8E1D9)' }}>
               <SgEnquiryForm onAction={onAction} />
             </div>
           </div>
@@ -136,13 +141,13 @@ export function SgAdmissionsPage({ onAction }) {
       {/* Fees */}
       <section className="sg-section-sm sg-section-white">
         <Container maxWidth="1280px">
-          <div style={{ background: '#FAF7F2', borderRadius: '20px', padding: '48px', display: 'flex', gap: '48px', alignItems: 'center' }}>
-            <div style={{ flex: '0 0 48px', height: '48px', background: '#F8E9E3', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-              <FileText size={24} color="#B6533E" />
+          <div style={{ background: 'var(--color-bg, #FAF7F2)', borderRadius: '20px', padding: '48px', display: 'flex', gap: '48px', alignItems: 'center' }}>
+            <div style={{ flex: '0 0 48px', height: '48px', background: 'var(--color-sg-peach, #F8E9E3)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+              <FileText size={24} color="var(--color-secondary, #B6533E)" />
             </div>
             <div>
-              <h3 style={{ fontSize: '20px', fontWeight: '700', color: '#172A43', marginBottom: '8px' }}>Fee Information</h3>
-              <p style={{ fontSize: '15px', color: '#657080', margin: 0 }}>Contact the admissions office for the latest fee structure, payment schedule and admission-related information.</p>
+              <h3 style={{ fontSize: '20px', fontWeight: '700', color: 'var(--color-primary, #172A43)', marginBottom: '8px' }}>Fee Information</h3>
+              <p style={{ fontSize: '15px', color: 'var(--color-muted, #657080)', margin: 0 }}>Contact the admissions office for the latest fee structure, payment schedule and admission-related information.</p>
             </div>
             <button className="sg-btn-outline-navy" onClick={() => onAction('navigate_to', 'contact')} style={{ flexShrink: 0 }}>Contact Us</button>
           </div>
@@ -152,7 +157,7 @@ export function SgAdmissionsPage({ onAction }) {
       {/* Final CTA */}
       <SgCTABanner
         title="Ready to Take the Next Step?"
-        desc="Connect with the Sri GITAM admissions team today."
+        desc={`Connect with the ${cShortName} admissions team today.`}
         primaryLabel="Talk to Admissions"
         primaryTarget="contact"
         secondaryLabel="Explore Programmes"

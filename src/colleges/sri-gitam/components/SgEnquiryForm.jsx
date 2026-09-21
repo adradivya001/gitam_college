@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export function SgEnquiryForm({ onAction }) {
+export function SgEnquiryForm({ onAction, collegeName = 'our' }) {
   const [form, setForm] = useState({
     studentName: '', parentName: '', phone: '', email: '', programme: '', qualification: '', message: ''
   });
@@ -15,10 +15,10 @@ export function SgEnquiryForm({ onAction }) {
 
   if (submitted) {
     return (
-      <div style={{ textAlign: 'center', padding: '48px', background: '#EAF2EE', borderRadius: '16px' }}>
+      <div style={{ textAlign: 'center', padding: '48px', background: 'var(--color-sg-sage, #EAF2EE)', borderRadius: '16px' }}>
         <div style={{ fontSize: '48px', marginBottom: '16px' }}>✓</div>
-        <h3 style={{ fontSize: '20px', fontWeight: '700', marginBottom: '12px', color: '#172A43' }}>Enquiry Submitted</h3>
-        <p style={{ color: '#657080', fontSize: '15px' }}>Thank you for reaching out. The Sri GITAM admissions team will get back to you shortly.</p>
+        <h3 style={{ fontSize: '20px', fontWeight: '700', marginBottom: '12px', color: 'var(--color-primary, #172A43)' }}>Enquiry Submitted</h3>
+        <p style={{ color: 'var(--color-muted, #657080)', fontSize: '15px' }}>Thank you for reaching out. The {collegeName} admissions team will get back to you shortly.</p>
       </div>
     );
   }

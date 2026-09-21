@@ -1,11 +1,11 @@
 import React from 'react';
 import { Container } from '../../../components/common/Container';
-import { BookOpen, Compass, Target, Users } from 'lucide-react';
+import { BookOpen, Compass, Target, Users, Award, Map, ShieldCheck, Heart, Dna, Atom, BarChart2 } from 'lucide-react';
 import './SgHero.css';
 
-const ICONS = { BookOpen, Compass, Target, Users };
+const ICONS = { BookOpen, Compass, Target, Users, Award, Map, ShieldCheck, Heart, Dna, Atom, BarChart2 };
 
-export function SgHero({ sectionConfig, onAction }) {
+export function SgHero({ sectionConfig, onAction, data }) {
   return (
     <section className="sg-hero-section">
       <Container maxWidth="1280px">
@@ -34,7 +34,7 @@ export function SgHero({ sectionConfig, onAction }) {
             </div>
           </div>
           <div className="sg-hero-image-wrapper">
-            <img src={sectionConfig.heroImage} alt="Sri GITAM Junior College" className="sg-hero-img" />
+            <img src={sectionConfig.heroImage} alt={data?.college?.name || "Junior College"} className="sg-hero-img" />
           </div>
         </div>
 

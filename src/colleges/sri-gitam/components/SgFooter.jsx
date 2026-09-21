@@ -13,7 +13,7 @@ export function SgFooter({ data, onAction }) {
         <div className="sg-footer-grid">
           
           <div className="sg-footer-col sg-brand-col">
-            <img src={data?.college?.logo || "/sri_gitam.png"} alt="Sri GITAM Junior College" className="sg-footer-logo" />
+            <img src={data?.college?.logo} alt={data?.college?.name} className="sg-footer-logo" />
             <p className="sg-footer-desc">{footerData.brand?.description}</p>
           </div>
 
@@ -65,7 +65,7 @@ export function SgFooter({ data, onAction }) {
         
         <div className="sg-footer-bottom">
           <div className="sg-footer-copyright">
-            {footerData.bottom?.copyright || "© 2026 Sri GITAM Junior College. All Rights Reserved."}
+            {footerData.bottom?.copyright || `© ${new Date().getFullYear()} ${data?.college?.name}. All Rights Reserved.`}
           </div>
           <div className="sg-footer-bottom-links">
             <span style={{ marginRight: '16px' }}>Designed for a Better Tomorrow.</span>

@@ -1,1782 +1,348 @@
+import './theme.css';
+
 const tejaContent = {
-  "about": {
-    "eyebrow": "ABOUT TEJA JUNIOR COLLEGE",
-    "title": "About Teja Junior College",
-    "subtitle": "Building strong foundations for a brighter future through focused learning, guidance and student development.",
-    "paragraphs": [
-      "Teja Junior College is committed to creating an environment where students are encouraged to learn with purpose, develop confidence and prepare for the next stage of their education.",
-      "Through structured academics, faculty guidance, regular evaluation and student-focused learning, Teja aims to help young learners discover their potential and work towards their aspirations."
-    ],
-    "vision": "To become a trusted centre for quality intermediate education, empowering students with knowledge, confidence and values to build successful futures.",
-    "mission": "Our mission is to provide a disciplined and supportive learning environment that promotes academic excellence, individual attention, continuous improvement and holistic student development.",
-    "chairmanMessage": {
-      "eyebrow": "CHAIRMAN'S MESSAGE",
-      "title": "Preparing Students for Tomorrow",
-      "name": "[Chairman's Name]",
-      "role": "Chairman, Teja Junior College",
-      "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80",
-      "paragraphs": [
-        "Education is not simply about achieving marks; it is about developing the confidence, discipline and knowledge required to face the future.",
-        "At Teja Junior College, we strive to provide every student with the guidance and environment they need to discover their potential, pursue their aspirations and prepare themselves for the opportunities ahead."
-      ],
-      "closing": "Wishing you every success,"
-    },
-    "educationalPhilosophy": [
-      {
-        "index": "01",
-        "title": "LEARN",
-        "description": "Build strong conceptual foundations and develop a deeper understanding of subjects.",
-        "icon": "BookOpen"
-      },
-      {
-        "index": "02",
-        "title": "PRACTICE",
-        "description": "Strengthen knowledge through consistent practice and application.",
-        "icon": "Edit"
-      },
-      {
-        "index": "03",
-        "title": "EVALUATE",
-        "description": "Understand progress through regular assessment and meaningful feedback.",
-        "icon": "BarChart"
-      },
-      {
-        "index": "04",
-        "title": "GROW",
-        "description": "Develop confidence, discipline, responsibility and a positive approach towards learning.",
-        "icon": "TrendingUp"
-      }
-    ],
-    "coreValues": [
-      {
-        "index": "01",
-        "title": "Academic Excellence",
-        "description": "Encouraging students to pursue consistent learning and strive for their best.",
-        "icon": "Award"
-      },
-      {
-        "index": "02",
-        "title": "Integrity",
-        "description": "Building honesty, responsibility and ethical thinking into everyday learning.",
-        "icon": "ShieldCheck"
-      },
-      {
-        "index": "03",
-        "title": "Discipline",
-        "description": "Developing focus, consistency and respect for commitments.",
-        "icon": "Target"
-      },
-      {
-        "index": "04",
-        "title": "Respect",
-        "description": "Creating an environment where students, faculty and the wider community are treated with respect.",
-        "icon": "Users"
-      },
-      {
-        "index": "05",
-        "title": "Responsibility",
-        "description": "Encouraging students to take ownership of their learning and decisions.",
-        "icon": "CheckCircle"
-      },
-      {
-        "index": "06",
-        "title": "Continuous Improvement",
-        "description": "Promoting reflection, learning from experience and the desire to improve.",
-        "icon": "TrendingUp"
-      }
-    ]
+  id: "teja",
+  seo: {
+    title: "Teja Junior College",
+    metaDescription: "Teja Junior College provides a focused Intermediate education environment designed to strengthen academic fundamentals."
   },
-  "admissions": {
-    "heading": "Begin Your Journey With Teja",
-    "subheading": "Take the first step towards achieving your academic aspirations.",
-    "whyJoin": [
-      "Focused Academic Environment",
-      "Experienced Guidance",
-      "Regular Evaluation",
-      "Student Mentoring",
-      "Campus Facilities"
-    ],
-    "process": [
-      {
-        "step": "01",
-        "title": "Submit Enquiry",
-        "sub": "Online Form",
-        "details": [
-          "Fill in student details",
-          "Select preferred campus",
-          "Submit application"
-        ]
-      },
-      {
-        "step": "02",
-        "title": "Choose Program & Campus",
-        "sub": "Selection",
-        "details": [
-          "Choose Kamalanagar, Ramnagar or Girls Campus",
-          "Select group preference"
-        ]
-      },
-      {
-        "step": "03",
-        "title": "Counselling & Guidance",
-        "sub": "Academic Counseling",
-        "details": [
-          "Meet campus mentors",
-          "Discuss curriculum & routine"
-        ]
-      },
-      {
-        "step": "04",
-        "title": "Complete Formalities",
-        "sub": "Enrollment",
-        "details": [
-          "Document verification",
-          "Complete admission process"
-        ]
-      }
-    ],
-    "faqs": [
-      {
-        "question": "What courses are available?",
-        "answer": "Course availability varies by campus and academic year. Contact the college for current program details."
-      },
-      {
-        "question": "How can I enquire about admission?",
-        "answer": "Submit the enquiry form or contact the respective campus."
-      },
-      {
-        "question": "Can I choose a preferred campus?",
-        "answer": "Yes. Students can indicate their preferred campus during the enquiry process."
-      },
-      {
-        "question": "When does admission begin?",
-        "answer": "Admission dates will be announced by the college for each academic year."
-      }
-    ]
-  },
-  "college": {
-    "id": "teja",
-    "name": "Teja Junior College",
-    "shortName": "Teja",
-    "type": "Junior College",
-    "logo": "/teja-logo.png",
-    "tagline": "Empowering Students. Shaping Futures.",
-    "founded": "2012",
-    "location": {
-      "city": "Anantapur",
-      "state": "Andhra Pradesh",
-      "country": "India",
-      "address": "Raghuveera Towers, 4th Floor, Subhash Road, Kamalanagar, Anantapur - 515001",
-      "mapUrl": "https://maps.google.com/?q=Kamalanagar+Subhash+Road+Anantapur"
-    },
-    "contact": {
-      "phone": "08197179023",
-      "phone2": "",
-      "whatsapp": "08197179023",
-      "hours": "Mon - Sat: 8:00 AM - 6:00 PM",
-      "deskInfo": "Admissions Desk Open Daily at Kamalanagar, Ramnagar & Girls Campuses"
-    },
-    "campuses": [
-      {
-        "id": "kamalanagar",
-        "name": "Teja Junior College",
-        "displayName": "Kamalanagar Campus",
-        "city": "Anantapur",
-        "state": "Andhra Pradesh",
-        "address": "Raghuveera Towers, 4th Floor, Subhash Road, Kamalanagar, Anantapur - 515001",
-        "phone": "08197179023",
-        "image": "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80",
-        "description": "A centrally located Teja campus providing a focused academic environment for intermediate students.",
-        "facilities": [
-          "Smart Classrooms",
-          "Academic Evaluation",
-          "Faculty Support",
-          "Student Mentoring",
-          "Campus Safety"
-        ]
-      },
-      {
-        "id": "ramnagar",
-        "name": "Teja Junior College",
-        "displayName": "Ramnagar Campus",
-        "city": "Anantapur",
-        "state": "Andhra Pradesh",
-        "address": "Beside CRIT Engineering College, Bellary–Uravakonda–Anantapur Road, Ramnagar, Anantapur - 515004",
-        "phone": "",
-        "image": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80",
-        "description": "A Teja campus designed to provide students with an accessible and supportive academic environment.",
-        "facilities": [
-          "Academic Classrooms",
-          "Faculty Support",
-          "Regular Evaluation",
-          "Student Guidance"
-        ]
-      },
-      {
-        "id": "girls-campus",
-        "name": "Teja Junior College Girls Campus",
-        "displayName": "Girls Campus",
-        "city": "Anantapur",
-        "state": "Andhra Pradesh",
-        "address": "Kodimi / Rachanapalle, Anantapur, Andhra Pradesh - 515001",
-        "phone": "",
-        "image": "https://images.unsplash.com/photo-1595846519845-68e298c2edd8?auto=format&fit=crop&w=800&q=80",
-        "description": "A dedicated learning environment focused on supporting the academic growth and development of young women.",
-        "facilities": [
-          "Classrooms",
-          "Student Mentoring",
-          "Regular Evaluation",
-          "Sports Activities",
-          "Campus Safety"
-        ]
-      }
-    ],
-    "disclaimer": "Teja Junior College in Anantapur — a focused academic environment supporting student learning, guidance and development."
-  },
-  "contact": {
-    "heading": "Connect With Teja",
-    "subheading": "We're here to help you take the next step.",
-    "campuses": [
-      {
-        "id": "kamalanagar",
-        "name": "Kamalanagar Campus",
-        "address": "Raghuveera Towers, 4th Floor, Subhash Road, Kamalanagar, Anantapur - 515001",
-        "phone": "08197179023",
-        "mapUrl": "https://maps.google.com/?q=Kamalanagar+Subhash+Road+Anantapur",
-        "hours": "Mon - Sat: 8:00 AM - 6:00 PM"
-      },
-      {
-        "id": "ramnagar",
-        "name": "Ramnagar Campus",
-        "address": "Beside CRIT Engineering College, Bellary–Uravakonda–Anantapur Road, Ramnagar, Anantapur - 515004",
-        "phone": "",
-        "mapUrl": "https://maps.google.com/?q=Ramnagar+Anantapur",
-        "hours": "Mon - Sat: 8:00 AM - 6:00 PM"
-      },
-      {
-        "id": "girls-campus",
-        "name": "Girls Campus",
-        "address": "Kodimi / Rachanapalle, Anantapur, Andhra Pradesh - 515001",
-        "phone": "",
-        "mapUrl": "https://maps.google.com/?q=Kodimi+Rachanapalle+Anantapur",
-        "hours": "Mon - Sat: 8:00 AM - 6:00 PM"
-      }
-    ],
-    "quickContactOptions": [
-      "Admissions Enquiry",
-      "Campus Information",
-      "Course Information",
-      "General Enquiry"
-    ]
-  },
-  "courses": {
-    "heading": "Academic Excellence",
-    "subheading": "Building strong foundations today for the opportunities of tomorrow.",
-    "description": "At Teja Junior College, learning is approached as a continuous journey. Students are encouraged to understand concepts, practise consistently, evaluate their progress and seek guidance whenever required.",
-    "demoNotice": "Demo Program Structure — Official groups to be confirmed by Teja Junior College",
-    "programs": [
-      {
-        "id": "mpc",
-        "code": "MPC",
-        "name": "Mathematics, Physics & Chemistry",
-        "stream": "Science Stream",
-        "description": "Mathematics, Physics and Chemistry with a strong foundation for engineering, technology and other quantitative fields.",
-        "focus": [
-          "Mathematics",
-          "Physics",
-          "Chemistry"
-        ],
-        "ctaText": "Enquire Program"
-      },
-      {
-        "id": "bipc",
-        "code": "BiPC",
-        "name": "Biology, Physics & Chemistry",
-        "stream": "Science Stream",
-        "description": "Biology, Physics and Chemistry designed for students aspiring towards medicine, life sciences and related fields.",
-        "focus": [
-          "Biology",
-          "Physics",
-          "Chemistry"
-        ],
-        "ctaText": "Enquire Program"
-      },
-      {
-        "id": "mec",
-        "code": "MEC",
-        "name": "Mathematics, Economics & Commerce",
-        "stream": "Commerce / Humanities",
-        "description": "Mathematics, Economics and Commerce for students interested in commerce, business and related fields.",
-        "focus": [
-          "Mathematics",
-          "Economics",
-          "Commerce"
-        ],
-        "ctaText": "Enquire Program"
-      },
-      {
-        "id": "cec",
-        "code": "CEC",
-        "name": "Civics, Economics & Commerce",
-        "stream": "Commerce / Humanities",
-        "description": "Civics, Economics and Commerce providing a foundation for business, social sciences and related pathways.",
-        "focus": [
-          "Civics",
-          "Economics",
-          "Commerce"
-        ],
-        "ctaText": "Enquire Program"
-      }
-    ],
-    "learningMethodology": [
-      {
-        "step": "01",
-        "title": "Concept Learning",
-        "desc": "Understanding core fundamentals"
-      },
-      {
-        "step": "02",
-        "title": "Classroom Practice",
-        "desc": "Solving guided problems & assignments"
-      },
-      {
-        "step": "03",
-        "title": "Regular Assessment",
-        "desc": "Periodic evaluations & mock tests"
-      },
-      {
-        "step": "04",
-        "title": "Performance Analysis",
-        "desc": "Identifying strength & improvement areas"
-      },
-      {
-        "step": "05",
-        "title": "Revision & Improvement",
-        "desc": "Targeted feedback and doubt clearance"
-      }
-    ],
-    "studentSupport": [
-      "Faculty Mentoring",
-      "Doubt Clarification",
-      "Academic Counselling",
-      "Progress Tracking",
-      "Exam Preparation"
-    ],
-    "achievementsPlaceholders": [
-      {
-        "title": "Academic Results",
-        "note": "[Official data to be added]"
-      },
-      {
-        "title": "Student Achievements",
-        "note": "[Official data to be added]"
-      },
-      {
-        "title": "Competitive Examination Success",
-        "note": "[Official data to be added]"
-      }
-    ]
-  },
-  "facilities": {
-    "heading": "Designed for Learning",
-    "subheading": "Creating an environment where students can learn, focus and grow.",
-    "facilities": [
-      {
-        "id": "smart-classrooms",
-        "title": "Smart Classrooms",
-        "description": "Technology-supported classrooms designed to make learning more interactive and engaging.",
-        "image": "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=800&q=80"
-      },
-      {
-        "id": "library",
-        "title": "Library",
-        "description": "A dedicated learning resource environment supporting reading, preparation and independent learning.",
-        "image": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80"
-      },
-      {
-        "id": "computer-lab",
-        "title": "Computer Lab",
-        "description": "Technology facilities that help students develop digital familiarity and support academic activities.",
-        "image": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80"
-      },
-      {
-        "id": "sports",
-        "title": "Sports",
-        "description": "Opportunities for students to participate in physical activities and develop teamwork, discipline and confidence.",
-        "image": "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=800&q=80"
-      },
-      {
-        "id": "study-spaces",
-        "title": "Study & Learning Spaces",
-        "description": "Spaces designed to help students maintain focus and continue their academic preparation.",
-        "image": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=800&q=80"
-      },
-      {
-        "id": "campus-safety",
-        "title": "Campus Safety",
-        "description": "A secure and disciplined environment designed to support students throughout their campus experience.",
-        "image": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80"
-      }
-    ]
-  },
-  "gallery": {
-    "heading": "Life at Teja",
-    "subheading": "Explore the campus environment, activities and experiences that make student life memorable.",
-    "filters": [
-      "All",
-      "Campus",
-      "Classrooms",
-      "Events",
-      "Sports",
-      "Student Activities"
-    ],
-    "categories": [
-      "Campus Life",
-      "Academic Environment",
-      "Student Activities",
-      "Sports",
-      "Events",
-      "Celebrations"
-    ],
-    "images": [
-      {
-        "id": "g1",
-        "title": "Kamalanagar Campus Grounds",
-        "category": "Campus",
-        "src": "/assets/images/gallery/campus_kamalanagar.jpg"
-      },
-      {
-        "id": "g2",
-        "title": "Smart Classrooms",
-        "category": "Classrooms",
-        "src": "/assets/images/gallery/smart_classrooms.jpg"
-      },
-      {
-        "id": "g3",
-        "title": "Ramnagar Campus",
-        "category": "Campus",
-        "src": "/assets/images/gallery/campus_ramnagar.jpg"
-      },
-      {
-        "id": "g4",
-        "title": "Girls Campus Environment",
-        "category": "Campus",
-        "src": "/assets/images/gallery/girls_campus.jpg"
-      },
-      {
-        "id": "g5",
-        "title": "Sports & Athletic Field",
-        "category": "Sports",
-        "src": "/assets/images/gallery/sports_field.jpg"
-      },
-      {
-        "id": "g6",
-        "title": "Student Activities & Celebrations",
-        "category": "Student Activities",
-        "src": "/assets/images/gallery/student_activities.jpg"
-      }
-    ]
-  },
-  "navigation": {
-    "brand": {
-      "name": "TEJA",
-      "subtext": "JUNIOR COLLEGE • ANANTAPUR"
-    },
-    "links": [
-      {
-        "id": "home",
-        "label": "Home",
-        "target": "home",
-        "type": "page",
-        "enabled": true
-      },
-      {
-        "id": "about",
-        "label": "About Teja",
-        "target": "about",
-        "type": "page",
-        "enabled": true
-      },
-      {
-        "id": "why-teja",
-        "label": "Why Teja",
-        "target": "why-teja",
-        "type": "page",
-        "enabled": true
-      },
-      {
-        "id": "academics",
-        "label": "Academics",
-        "target": "academics",
-        "type": "page",
-        "enabled": true
-      },
-      {
-        "id": "campuses",
-        "label": "Campuses",
-        "target": "campuses",
-        "type": "page",
-        "enabled": true
-      },
-      {
-        "id": "facilities",
-        "label": "Facilities",
-        "target": "facilities",
-        "type": "page",
-        "enabled": true
-      },
-      {
-        "id": "student-life",
-        "label": "Student Life",
-        "target": "student-life",
-        "type": "page",
-        "enabled": true
-      },
-      {
-        "id": "admissions",
-        "label": "Admissions",
-        "target": "admissions",
-        "type": "page",
-        "enabled": true
-      },
-      {
-        "id": "gallery",
-        "label": "Gallery",
-        "target": "gallery",
-        "type": "page",
-        "enabled": true
-      },
-      {
-        "id": "contact",
-        "label": "Contact",
-        "target": "contact",
-        "type": "page",
-        "enabled": true
-      }
-    ],
-    "cta": {
-      "label": "Admissions Open →",
-      "phone": "08197179023"
+  college: {
+    name: "Teja Junior College",
+    shortName: "Teja",
+    tagline: "Build Strong Concepts. Shape Your Future.",
+    logo: "/teja-logo.png", // Ensure this exists or fallback
+    location: "Anantapur, Andhra Pradesh",
+    contact: {
+      phone: "9948567527, 9490859421",
+      email: "info@tejajuniorcollege.edu.in", // Configurable fallback
+      address: "Raghuveera Towers, ANANTAPURAMU.",
+      mapUrl: ""
     }
   },
-  "pages": {
-    "home": {
-      "sections": [
+  navigation: {
+    brand: {
+      name: "TEJA JUNIOR COLLEGE",
+      subtext: "",
+      hideText: false,
+      fullLogo: false
+    },
+    links: [
+      { label: "Home", target: "", action: "navigate_to_route" },
+      { label: "About", target: "about", action: "navigate_to_route" },
+      { label: "Academics", target: "academics", action: "navigate_to_route" },
+      { label: "Programmes", target: "programmes", action: "navigate_to_route" },
+      { label: "Why Teja", target: "why-teja", action: "navigate_to_route" },
+      { label: "Campus", target: "campus", action: "navigate_to_route" },
+      { label: "Student Life", target: "student-life", action: "navigate_to_route" },
+      { label: "Results", target: "results", action: "navigate_to_route" },
+      { label: "Admissions", target: "admissions", action: "navigate_to_route" },
+      { label: "Contact", target: "contact", action: "navigate_to_route" }
+    ],
+    cta: {
+      label: "Apply Now",
+      action: "open_admissions_modal"
+    }
+  },
+  pages: {
+    home: {
+      sections: [
         {
-          "id": "hero",
-          "type": "hero",
-          "enabled": true,
-          "eyebrow": "TEJA JUNIOR COLLEGE",
-          "brandSub": "BUILDING STRONG FOUNDATIONS",
-          "title": "Empowering Students.\nShaping Futures.",
-          "subtitle": "A focused learning environment where academic excellence, personal growth and future aspirations come together.",
-          "primaryCta": {
-            "label": "Explore Our Campuses →",
-            "action": "navigate_to",
-            "target": "campuses"
-          },
-          "secondaryCta": {
-            "label": "Admissions Enquiry",
-            "action": "open_admissions_modal"
-          },
-          "phoneContact": "08197179023",
-          "heroImage": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1920&q=80"
-        },
-        {
-          "id": "pillars",
-          "type": "pillars",
-          "enabled": true,
-          "eyebrow": "WHY CHOOSE TEJA",
-          "title": "Why Choose Teja?",
-          "subtitle": "A focused environment designed to support academic learning, guidance and student development.",
-          "sectionCta": {
-            "label": "Explore Why Teja →",
-            "action": "navigate_to",
-            "target": "why-teja"
-          },
-          "pillars": [
-            {
-              "index": "01",
-              "title": "Experienced Faculty",
-              "description": "Supportive faculty guidance throughout the academic journey.",
-              "icon": "Users",
-              "accent": "pink"
-            },
-            {
-              "index": "02",
-              "title": "Regular Evaluation",
-              "description": "Regular assessment and feedback to help students understand their progress.",
-              "icon": "BarChart",
-              "accent": "blue"
-            },
-            {
-              "index": "03",
-              "title": "Student Mentoring",
-              "description": "Academic guidance and mentoring to help students stay focused and confident.",
-              "icon": "Shield",
-              "accent": "green"
-            },
-            {
-              "index": "04",
-              "title": "Modern Learning Environment",
-              "description": "A focused environment designed to support consistent learning and student development.",
-              "icon": "BookOpen",
-              "accent": "gold"
-            }
+          id: "teja-hero",
+          type: "sg-hero",
+          enabled: true,
+          eyebrow: "TEJA JUNIOR COLLEGE",
+          title: "Build Strong Concepts.\nShape Your Future.",
+          subtitle: "Teja Junior College provides a focused Intermediate education environment designed to strengthen academic fundamentals, encourage disciplined learning and prepare students for their next stage of education.",
+          heroImage: "/teja/gallery/smart_classrooms_1789976999081.jpg", // Using placeholder image
+          primaryCta: { label: "Explore Programmes", action: "navigate_to", target: "programmes" },
+          secondaryCta: { label: "Apply Now", action: "open_admissions_modal" },
+          highlights: [
+            { icon: "BookOpen", label: "Intermediate Education" },
+            { icon: "Target", label: "Concept-Based Learning" },
+            { icon: "Compass", label: "Academic Guidance" },
+            { icon: "Users", label: "Student Development" }
           ]
         },
         {
-          "id": "programs",
-          "type": "programs",
-          "enabled": true,
-          "eyebrow": "ACADEMIC HIGHLIGHTS",
-          "title": "Structured Learning & Progression",
-          "subtitle": "Concept-based learning, regular assessment, personal mentoring and exam preparation.",
-          "sectionCta": {
-            "label": "Explore Academics →",
-            "action": "navigate_to",
-            "target": "academics"
-          }
+          id: "teja-about",
+          type: "sg-about",
+          enabled: true,
+          title: "Building Strong Academic Foundations",
+          headline: "A Foundation for the Next Step",
+          content: "Teja Junior College focuses on creating a strong academic foundation through structured learning, subject understanding and consistent preparation for higher education.\n\n• Strong subject fundamentals\n• Structured classroom learning\n• Regular academic practice\n• Student guidance\n• Examination preparation\n• Future academic awareness",
+          features: [],
+          image: "/teja/gallery/smart_classrooms_1789976999081.jpg",
+          cta: { label: "Learn More About Teja", action: "navigate_to", target: "about" }
         },
         {
-          "id": "campuses",
-          "type": "campuses",
-          "enabled": true,
-          "eyebrow": "OUR CAMPUSES",
-          "title": "Our Campuses",
-          "subtitle": "One institution. Multiple campuses. One connected experience.",
-          "sectionCta": {
-            "label": "View All Campuses →",
-            "action": "navigate_to",
-            "target": "campuses"
-          }
-        },
-        {
-          "id": "facilities-preview",
-          "type": "campus-preview",
-          "enabled": true,
-          "microLabel": "FACILITIES",
-          "title": "An Environment Designed for Focused Learning",
-          "subtitle": "Spaces designed to support learning, collaboration and student development.",
-          "caption": "Acoustically Balanced Lecture Halls",
-          "categories": [
-            "Smart Classrooms",
-            "Library",
-            "Computer Lab",
-            "Sports & Activities"
+          id: "teja-programmes",
+          type: "sg-programmes",
+          enabled: true,
+          title: "Choose the Right Academic Path",
+          subtitle: "Explore our configurable intermediate programmes.",
+          programs: [
+            { id: "mpc", name: "MPC", subjects: "Mathematics • Physics • Chemistry", description: "Mathematics, Physics and Chemistry based Intermediate pathway designed for students interested in engineering, technology and other science-oriented higher education options.\n\nPossible Pathways: Engineering, Technology, Physical Sciences, Architecture.", bgColor: "var(--color-sg-peach)", icon: "Atom" },
+            { id: "bipc", name: "BiPC", subjects: "Biology • Physics • Chemistry", description: "Biology, Physics and Chemistry based pathway for students interested in medicine, life sciences and related fields.\n\nPossible Pathways: Medicine, Pharmacy, Biotechnology, Life Sciences.", bgColor: "var(--color-sg-sage)", icon: "Dna" },
+            { id: "mec", name: "MEC", subjects: "Mathematics • Economics • Commerce", description: "Mathematics, Economics and Commerce oriented pathway supporting higher education in commerce, management, economics and related fields.\n\nPossible Pathways: Commerce, Finance, Economics, Business, Management.", bgColor: "var(--color-sg-sand)", icon: "BarChart2" },
+            { id: "cec", name: "CEC", subjects: "Civics • Economics • Commerce", description: "Commerce, Economics and Civics oriented pathway supporting students interested in commerce, business, management and related areas.\n\nPossible Pathways: Commerce, Management, Law, Economics, Social Sciences.", bgColor: "var(--color-sg-lavender)", icon: "Users" }
           ],
-          "tabs": [
-            {
-              "id": "classrooms",
-              "label": "CLASSROOMS",
-              "title": "Acoustically Balanced Lecture Halls",
-              "desc": "Spacious spaces equipped with modern visual learning aids.",
-              "image": "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80"
-            },
-            {
-              "id": "labs",
-              "label": "LABS",
-              "title": "Dedicated Science & Technology Labs",
-              "desc": "Computer labs and science inquiry stations.",
-              "image": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=80"
-            },
-            {
-              "id": "library",
-              "label": "LIBRARY",
-              "title": "Curated Knowledge & Reference Archives",
-              "desc": "Quiet reference zones and reading carrels.",
-              "image": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=80"
-            }
+          cta: { label: "Explore Programmes →", action: "navigate_to", target: "programmes" }
+        },
+        {
+          id: "teja-why",
+          type: "sg-why",
+          enabled: true,
+          eyebrow: "WHY TEJA",
+          title: "More Than Just Classroom Learning",
+          subtitle: "Our core pillars for student development and academic success.",
+          pillars: [
+            { title: "01 Strong Fundamentals", desc: "Building a solid base of core concepts." },
+            { title: "02 Focused Learning", desc: "A structured approach to academics." },
+            { title: "03 Regular Evaluation", desc: "Continuous assessment to track progress." },
+            { title: "04 Academic Guidance", desc: "Mentorship and direction for every student." },
+            { title: "05 Personal Attention", desc: "Individual focus to ensure understanding." },
+            { title: "06 Future Preparation", desc: "Readiness for higher education and beyond." }
           ],
-          "cta": {
-            "label": "View All Facilities →",
-            "action": "navigate_to",
-            "target": "facilities"
-          }
+          cta: { label: "Learn More", action: "navigate_to", target: "why-teja" }
         },
         {
-          "id": "student-life-preview",
-          "type": "student-experience",
-          "enabled": true,
-          "eyebrow": "STUDENT LIFE",
-          "title": "Life Beyond the Classroom",
-          "subtitle": "Experiences that encourage confidence, curiosity and collaboration.",
-          "description": "Education extends beyond academics through activities that encourage participation, teamwork, confidence and personal growth.",
-          "microTags": [
-            "SPORTS",
-            "EVENTS",
-            "COMPETITIONS",
-            "CULTURE"
+          id: "teja-results",
+          type: "sg-stats",
+          enabled: true,
+          title: "Student Progress & Achievements",
+          subtitle: "Academic Performance and Student Achievements will be updated as verified data becomes available.",
+          stats: [
+            { label: "Academic Performance", value: "—", suffix: "" },
+            { label: "Student Achievements", value: "—", suffix: "" },
+            { label: "Year-wise Results", value: "—", suffix: "" },
+            { label: "Notable Progress", value: "—", suffix: "" }
           ],
-          "dominantImage": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80",
-          "cta": {
-            "label": "Explore Student Life →",
-            "action": "navigate_to",
-            "target": "student-life"
-          }
+          cta: { label: "View All Results →", action: "navigate_to", target: "results" }
         },
         {
-          "id": "admissions-cta",
-          "type": "admissions-cta",
-          "enabled": true,
-          "title": "Your Next Chapter Starts Here.",
-          "subtitle": "Take the first step towards a focused and rewarding academic journey with Teja Junior College.",
-          "primaryBtn": "Admissions Enquiry →",
-          "primaryAction": "open_admissions_modal",
-          "secondaryBtn": "Visit Campus",
-          "secondaryAction": "navigate_to",
-          "secondaryTarget": "campuses"
+          id: "teja-process",
+          type: "sg-process",
+          enabled: true,
+          eyebrow: "ACADEMIC APPROACH",
+          title: "Learning With Purpose",
+          steps: [
+            { title: "Understand", desc: "Build conceptual understanding." },
+            { title: "Learn", desc: "Structured classroom learning." },
+            { title: "Practice", desc: "Regular academic practice." },
+            { title: "Evaluate", desc: "Periodic evaluation." },
+            { title: "Improve", desc: "Focus on academic progress." },
+            { title: "Prepare", desc: "Examination and future preparation." }
+          ]
         },
         {
-          "id": "contact-preview",
-          "type": "contact-preview",
-          "enabled": false,
-          "eyebrow": "CONNECT WITH TEJA",
-          "title": "Connect With Teja Junior College",
-          "subtitle": "Have questions about admissions, campuses or programs? Get in touch with us.",
-          "cta": {
-            "label": "Contact Us →",
-            "action": "navigate_to",
-            "target": "contact"
-          }
+          id: "teja-admissions-cta",
+          type: "sg-admissions-cta",
+          enabled: true,
+          eyebrow: "YOUR NEXT STEP",
+          title: "Begin Your Journey With Teja",
+          subtitle: "Take the first step towards a focused Intermediate education.",
+          primaryCta: { label: "Apply Now", action: "open_admissions_modal" },
+          secondaryCta: { label: "Contact Us", action: "navigate_to", target: "contact" },
+          image: "/teja/gallery/smart_classrooms_1789976999081.jpg"
         }
       ]
     },
-    "about": {
-      "sections": [
+    about: {
+      sections: [
+        { id: "about-hero", type: "about-hero", title: "Building Strong Academic Foundations", subtitle: "Teja Junior College focuses on creating a strong academic foundation through structured learning, subject understanding and consistent preparation for higher education." },
+        { id: "about-intro", type: "about-content", title: "A Foundation for the Next Step", content: "• Strong subject fundamentals\n• Structured classroom learning\n• Regular academic practice\n• Student guidance\n• Examination preparation\n• Future academic awareness" }
+      ]
+    },
+    academics: {
+      sections: [
         {
-          "id": "about-hero",
-          "type": "about-hero",
-          "enabled": true,
-          "eyebrow": "ABOUT TEJA JUNIOR COLLEGE",
-          "title": "About Teja Junior College",
-          "subtitle": "Building strong foundations for a brighter future through focused learning, guidance and student development."
+          id: "academics-hero",
+          type: "about-hero",
+          eyebrow: "ACADEMICS",
+          title: "Strong Foundations. Focused Learning.",
+          subtitle: "Build strong subject fundamentals through structured learning, regular practice and consistent academic preparation."
         },
         {
-          "id": "story-layout",
-          "type": "story-layout",
-          "enabled": true,
-          "eyebrow": "ABOUT TEJA",
-          "title": "Building Strong Foundations for a Brighter Future",
-          "text": "Teja Junior College is committed to creating an environment where students are encouraged to learn with purpose, develop confidence and prepare for the next stage of their education.\n\nThrough structured academics, faculty guidance, regular evaluation and student-focused learning, Teja aims to help young learners discover their potential and work towards their aspirations."
+          id: "academics-intro",
+          type: "academic-intro",
+          eyebrow: "OUR APPROACH",
+          title: "Building Strong Academic Foundations",
+          content: "Teja Junior College focuses on developing strong academic fundamentals through structured learning, subject understanding, regular practice and consistent preparation."
         },
         {
-          "id": "mission-vision-layout",
-          "type": "mission-vision-layout",
-          "enabled": true,
-          "eyebrow": "OUR DIRECTION",
-          "title": "Our Direction",
-          "subtitle": "A clear purpose guiding the academic and personal development of our students.",
-          "vision": {
-            "title": "VISION",
-            "officialStatement": "To become a trusted centre for quality intermediate education, empowering students with knowledge, confidence and values to build successful futures."
-          },
-          "mission": {
-            "title": "MISSION",
-            "officialStatement": "Our mission is to provide a disciplined and supportive learning environment that promotes academic excellence, individual attention, continuous improvement and holistic student development."
-          }
-        },
-        {
-          "id": "founder-message-layout",
-          "type": "founder-message-layout",
-          "enabled": true,
-          "eyebrow": "CHAIRMAN'S MESSAGE",
-          "title": "Preparing Students for Tomorrow",
-          "name": "[Chairman's Name]",
-          "role": "Chairman, Teja Junior College",
-          "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80",
-          "paragraphs": [
-            "Education is not simply about achieving marks; it is about developing the confidence, discipline and knowledge required to face the future.",
-            "At Teja Junior College, we strive to provide every student with the guidance and environment they need to discover their potential, pursue their aspirations and prepare themselves for the opportunities ahead."
-          ],
-          "closing": "Wishing you every success,"
-        },
-        {
-          "id": "philosophy-layout",
-          "type": "philosophy-layout",
-          "enabled": true,
-          "eyebrow": "PHILOSOPHY",
-          "title": "Our Educational Philosophy",
-          "subtitle": "Four principles that guide the way we approach student learning and development.",
-          "items": [
-            {
-              "index": "01",
-              "title": "LEARN",
-              "description": "Build strong conceptual foundations and develop a deeper understanding of subjects."
-            },
-            {
-              "index": "02",
-              "title": "PRACTICE",
-              "description": "Strengthen knowledge through consistent practice and application."
-            },
-            {
-              "index": "03",
-              "title": "EVALUATE",
-              "description": "Understand progress through regular assessment and meaningful feedback."
-            },
-            {
-              "index": "04",
-              "title": "GROW",
-              "description": "Develop confidence, discipline, responsibility and a positive approach towards learning."
-            }
+          id: "academics-journey",
+          type: "winning-process",
+          eyebrow: "THE LEARNING JOURNEY",
+          title: "A Structured Approach to Academic Progress",
+          description: "Guide students from understanding fundamental concepts to consistent practice, evaluation and preparation for their next academic stage.",
+          steps: [
+            { n: "01", h: "Understand", label: "Concept Clarity", p: "Concept Clarity" },
+            { n: "02", h: "Learn", label: "Knowledge Building", p: "Knowledge Building" },
+            { n: "03", h: "Practice", label: "Skill Development", p: "Skill Development" },
+            { n: "04", h: "Evaluate", label: "Academic Progress", p: "Academic Progress" },
+            { n: "05", h: "Prepare", label: "Future Readiness", p: "Future Readiness" }
           ]
         },
         {
-          "id": "core-values",
-          "type": "pillars",
-          "enabled": true,
-          "eyebrow": "CORE VALUES",
-          "title": "Core Institutional Values",
-          "subtitle": "The principles that shape our academic environment and student experience.",
-          "pillars": [
-            {
-              "index": "01",
-              "title": "Academic Excellence",
-              "description": "Encouraging students to pursue consistent learning and strive for their best.",
-              "icon": "BookOpen"
-            },
-            {
-              "index": "02",
-              "title": "Integrity",
-              "description": "Building honesty, responsibility and ethical thinking into everyday learning.",
-              "icon": "Shield"
-            },
-            {
-              "index": "03",
-              "title": "Discipline",
-              "description": "Developing focus, consistency and respect for commitments.",
-              "icon": "Target"
-            },
-            {
-              "index": "04",
-              "title": "Respect",
-              "description": "Creating an environment where students, faculty and the wider community are treated with respect.",
-              "icon": "Users"
-            },
-            {
-              "index": "05",
-              "title": "Responsibility",
-              "description": "Encouraging students to take ownership of their learning and decisions.",
-              "icon": "Compass"
-            },
-            {
-              "index": "06",
-              "title": "Continuous Improvement",
-              "description": "Promoting reflection, learning from experience and the desire to improve.",
-              "icon": "Sparkles"
-            }
+          id: "academics-pathways",
+          type: "programs",
+          eyebrow: "OUR PROGRAMMES",
+          title: "Choose Your Academic Path",
+          description: "Explore Intermediate pathways aligned with students' academic interests and future goals.",
+          programs: [
+            { id: "mpc", name: "MPC", subjects: "Mathematics • Physics • Chemistry", bgColor: "var(--color-sg-peach)", icon: "Atom" },
+            { id: "bipc", name: "BiPC", subjects: "Biology • Physics • Chemistry", bgColor: "var(--color-sg-sage)", icon: "Dna" },
+            { id: "mec", name: "MEC", subjects: "Mathematics • Economics • Commerce", bgColor: "var(--color-sg-sand)", icon: "BarChart2" },
+            { id: "cec", name: "CEC", subjects: "Civics • Economics • Commerce", bgColor: "var(--color-sg-lavender)", icon: "Users" }
           ]
         },
         {
-          "id": "admissions-cta",
-          "type": "admissions-cta",
-          "enabled": true,
-          "eyebrow": "THE TEJA JOURNEY",
-          "title": "Discover the Teja Difference",
-          "subtitle": "Explore the academic environment, campuses and opportunities designed to support every student's journey.",
-          "primaryBtn": "Explore Academics →",
-          "primaryAction": "navigate_to",
-          "primaryTarget": "academics",
-          "secondaryBtn": "Admissions Enquiry →",
-          "secondaryAction": "open_admissions_modal"
+          id: "academics-focus",
+          type: "academic-focus",
+          eyebrow: "ACADEMIC FOCUS",
+          title: "What Drives Academic Growth",
+          features: [
+            { icon: "Brain", h: "Conceptual Understanding", p: "Build a clear understanding of important subject concepts." },
+            { icon: "Target", h: "Regular Practice", p: "Strengthen knowledge through consistent academic practice." },
+            { icon: "TrendingUp", h: "Academic Progress", p: "Identify areas for improvement and work towards steady progress." },
+            { icon: "Compass", h: "Future Preparation", p: "Build the academic foundation required for higher education." }
+          ]
+        },
+        {
+          id: "academics-cta",
+          type: "cta-banner",
+          title: "Build Your Academic Foundation With Teja",
+          desc: "Explore the Intermediate pathways available at Teja Junior College.",
+          primaryLabel: "Explore Programmes",
+          primaryTarget: "programmes"
         }
       ]
     },
-    "why-teja": {
-      "sections": [
-        {
-          "id": "about-hero",
-          "type": "about-hero",
-          "enabled": true,
-          "eyebrow": "WHY CHOOSE TEJA",
-          "title": "Why Choose Teja Junior College?",
-          "subtitle": "An environment designed to help students learn with purpose, receive meaningful guidance and grow with confidence."
-        },
-        {
-          "id": "story-layout",
-          "type": "story-layout",
-          "enabled": true,
-          "eyebrow": "WHY TEJA",
-          "title": "Focused Academic Environment & Personal Support",
-          "text": "Teja Junior College aims to provide students with a structured and supportive environment where academic learning is combined with guidance, regular evaluation and opportunities for personal development.\n\nThe approach is designed to help students remain focused on their learning while gradually developing the confidence and responsibility needed for their next stage of education."
-        },
-        {
-          "id": "why-teja-pillars",
-          "type": "pillars",
-          "enabled": true,
-          "eyebrow": "KEY PILLARS",
-          "title": "Key Pillars of Teja Junior College",
-          "subtitle": "Six areas that shape the academic and student experience.",
-          "pillars": [
-            {
-              "index": "01",
-              "title": "Academic Excellence",
-              "description": "Structured learning focused on building strong academic foundations, understanding concepts and maintaining consistent progress.",
-              "icon": "BookOpen"
-            },
-            {
-              "index": "02",
-              "title": "Faculty Guidance",
-              "description": "Supportive faculty guidance that helps students clarify concepts, stay focused and seek help throughout their academic journey.",
-              "icon": "Users"
-            },
-            {
-              "index": "03",
-              "title": "Continuous Evaluation",
-              "description": "Regular assessment and feedback that help students understand their progress and identify areas for improvement.",
-              "icon": "BarChart"
-            },
-            {
-              "index": "04",
-              "title": "Student Mentoring",
-              "description": "Mentoring support that encourages students to remain focused, develop good learning habits and make informed academic decisions.",
-              "icon": "Shield"
-            },
-            {
-              "index": "05",
-              "title": "Student Development",
-              "description": "An approach that extends beyond academics by encouraging confidence, discipline, communication and responsibility.",
-              "icon": "Sparkles"
-            },
-            {
-              "index": "06",
-              "title": "Learning Environment",
-              "description": "A focused and supportive environment designed to encourage consistent learning, participation and personal growth.",
-              "icon": "Compass"
-            }
-          ]
-        },
-        {
-          "id": "student-experience",
-          "type": "pillars",
-          "enabled": true,
-          "eyebrow": "STUDENT EXPERIENCE",
-          "title": "Student Experience at Teja",
-          "subtitle": "An approach that combines focused academics with guidance, consistency and personal development.",
-          "pillars": [
-            {
-              "index": "01",
-              "title": "Focused Learning",
-              "description": "A structured environment that encourages students to stay engaged with their academic goals.",
-              "icon": "Target"
-            },
-            {
-              "index": "02",
-              "title": "Personal Guidance",
-              "description": "Faculty and mentoring support to help students navigate their learning journey.",
-              "icon": "Users"
-            },
-            {
-              "index": "03",
-              "title": "Continuous Improvement",
-              "description": "Regular evaluation and feedback encourage students to understand their progress and work on areas that need attention.",
-              "icon": "TrendingUp"
-            },
-            {
-              "index": "04",
-              "title": "Confidence for the Future",
-              "description": "Learning experiences that encourage responsibility, communication, confidence and a positive approach to future opportunities.",
-              "icon": "Sparkles"
-            }
-          ]
-        },
-        {
-          "id": "admissions-cta",
-          "type": "admissions-cta",
-          "enabled": true,
-          "eyebrow": "TEJA JUNIOR COLLEGE",
-          "title": "Experience the Teja Advantage",
-          "subtitle": "Take the next step towards discovering a focused academic environment designed to support student learning and development.",
-          "primaryBtn": "Explore Academics →",
-          "primaryAction": "navigate_to",
-          "primaryTarget": "academics",
-          "secondaryBtn": "Admissions Enquiry →",
-          "secondaryAction": "open_admissions_modal"
-        }
+    programmes: {
+      sections: [
+        { id: "prog-hero", type: "about-hero", title: "Choose the Right Academic Path", subtitle: "Explore our configurable intermediate programmes." },
+        { id: "prog-list", type: "programs", title: "Academic Streams", programs: [
+          { name: "MPC", code: "MPC", title: "MPC", subtitle: "Mathematics • Physics • Chemistry", description: "Mathematics, Physics and Chemistry based Intermediate pathway designed for students interested in engineering, technology and other science-oriented higher education options.\n\nPossible Pathways: Engineering, Technology, Physical Sciences, Architecture.", bgColor: "#F8E9E3", icon: "Atom" },
+          { name: "BiPC", code: "BiPC", title: "BiPC", subtitle: "Biology • Physics • Chemistry", description: "Biology, Physics and Chemistry based pathway for students interested in medicine, life sciences and related fields.\n\nPossible Pathways: Medicine, Pharmacy, Biotechnology, Life Sciences.", bgColor: "#EAF2EE", icon: "Dna" },
+          { name: "MEC", code: "MEC", title: "MEC", subtitle: "Mathematics • Economics • Commerce", description: "Mathematics, Economics and Commerce oriented pathway supporting higher education in commerce, management, economics and related fields.\n\nPossible Pathways: Commerce, Finance, Economics, Business, Management.", bgColor: "#F5EFE3", icon: "BarChart2" },
+          { name: "CEC", code: "CEC", title: "CEC", subtitle: "Civics • Economics • Commerce", description: "Commerce, Economics and Civics oriented pathway supporting students interested in commerce, business, management and related areas.\n\nPossible Pathways: Commerce, Management, Law, Economics, Social Sciences.", bgColor: "#F0ECF6", icon: "Users" }
+        ]}
       ]
     },
-    "academics": {
-      "sections": [
-        {
-          "id": "about-hero",
-          "type": "about-hero",
-          "enabled": true,
-          "eyebrow": "ACADEMIC EXCELLENCE",
-          "title": "Academic Excellence",
-          "subtitle": "Focused learning, regular evaluation and academic guidance designed to help students build strong foundations for their future."
-        },
-        {
-          "id": "story-layout",
-          "type": "story-layout",
-          "enabled": true,
-          "eyebrow": "ACADEMIC PHILOSOPHY",
-          "title": "Learning as a Continuous Journey",
-          "text": "Students learn best when concepts are understood clearly, reinforced through practice and supported by regular feedback. Teja's academic approach is presented around consistent learning, evaluation and guidance."
-        },
-        {
-          "id": "programs",
-          "type": "programs",
-          "enabled": true,
-          "eyebrow": "ACADEMIC PROGRAMS",
-          "title": "Academic Programs",
-          "subtitle": "Explore the subject groups currently presented for the Teja Junior College demo.",
-          "demoNotice": "Program groups shown are for demonstration and subject to confirmation by Teja Junior College."
-        },
-        {
-          "id": "learning-approach",
-          "type": "pillars",
-          "enabled": true,
-          "eyebrow": "LEARNING APPROACH",
-          "title": "Learning Approach",
-          "subtitle": "A practical approach that supports understanding, practice, evaluation and preparation.",
-          "pillars": [
-            {
-              "index": "01",
-              "title": "CONCEPT CLARITY",
-              "description": "Build a strong understanding of fundamental concepts before moving to more advanced applications.",
-              "icon": "BookOpen"
-            },
-            {
-              "index": "02",
-              "title": "PRACTICE & APPLICATION",
-              "description": "Reinforce classroom learning through consistent practice and application.",
-              "icon": "Target"
-            },
-            {
-              "index": "03",
-              "title": "REGULAR ASSESSMENT",
-              "description": "Use assessments and feedback to understand progress and identify areas that need attention.",
-              "icon": "BarChart"
-            },
-            {
-              "index": "04",
-              "title": "REVISION & EXAM PREPARATION",
-              "description": "Support students through revision and preparation for academic examinations.",
-              "icon": "Sparkles"
-            }
-          ]
-        },
-        {
-          "id": "student-support",
-          "type": "pillars",
-          "enabled": true,
-          "eyebrow": "ACADEMIC SUPPORT",
-          "title": "Academic Support Services",
-          "subtitle": "Complementary guidance that helps students stay focused and supported throughout their academic journey.",
-          "pillars": [
-            {
-              "index": "01",
-              "title": "Faculty Mentoring",
-              "description": "Supportive academic guidance throughout the learning journey.",
-              "icon": "Users"
-            },
-            {
-              "index": "02",
-              "title": "Doubt Clarification",
-              "description": "Dedicated opportunities for students to seek clarification and strengthen understanding.",
-              "icon": "Lightbulb"
-            },
-            {
-              "index": "03",
-              "title": "Academic Counselling",
-              "description": "Guidance that helps students think through their academic needs and learning goals.",
-              "icon": "Compass"
-            },
-            {
-              "index": "04",
-              "title": "Progress Tracking",
-              "description": "Regular assessment and feedback to help students understand their progress.",
-              "icon": "BarChart"
-            },
-            {
-              "index": "05",
-              "title": "Exam Preparation",
-              "description": "Focused preparation and revision support for academic examinations.",
-              "icon": "Sparkles"
-            }
-          ]
-        },
-        {
-          "id": "admissions-cta",
-          "type": "admissions-cta",
-          "enabled": true,
-          "eyebrow": "TEJA JUNIOR COLLEGE",
-          "title": "Begin Your Academic Journey",
-          "subtitle": "Explore the academic environment and program options available at Teja Junior College.",
-          "primaryBtn": "Enquire for Admissions →",
-          "primaryAction": "open_admissions_modal",
-          "secondaryBtn": "Call 08197179023",
-          "secondaryAction": "phone",
-          "phone": "08197179023"
-        }
+    'why-us': {
+      sections: [
+        { id: "why-hero", type: "about-hero", title: "More Than Just Classroom Learning", subtitle: "A focused environment designed to support academic learning, guidance and student development." },
+        { id: "why-pillars", type: "why-us", title: "Our Pillars", pillars: [
+          { id: "w1", title: "01 Strong Fundamentals", desc: "Building a solid base of core concepts." },
+          { id: "w2", title: "02 Focused Learning", desc: "A structured approach to academics." },
+          { id: "w3", title: "03 Regular Evaluation", desc: "Continuous assessment to track progress." },
+          { id: "w4", title: "04 Academic Guidance", desc: "Mentorship and direction for every student." },
+          { id: "w5", title: "05 Personal Attention", desc: "Individual focus to ensure understanding." },
+          { id: "w6", title: "06 Future Preparation", desc: "Readiness for higher education and beyond." }
+        ]}
       ]
     },
-    "campuses": {
-      "sections": [
-        {
-          "id": "about-hero",
-          "type": "about-hero",
-          "enabled": true,
-          "eyebrow": "ANANTAPUR CAMPUSES",
-          "title": "Our Campuses",
-          "subtitle": "Explore Teja Junior College campuses across Anantapur and find the location that works best for your academic journey."
-        },
-        {
-          "id": "campuses",
-          "type": "campuses",
-          "enabled": true,
-          "eyebrow": "CHOOSE YOUR CAMPUS",
-          "title": "Choose Your Campus",
-          "subtitle": "Select a campus to view its location, contact details, facilities and other available information."
-        },
-        {
-          "id": "admissions-cta",
-          "type": "admissions-cta",
-          "enabled": true,
-          "eyebrow": "VISIT TEJA",
-          "title": "Plan Your Visit",
-          "subtitle": "Explore a Teja Junior College campus and connect with the team for admissions and campus information.",
-          "primaryBtn": "Admissions Enquiry →",
-          "primaryAction": "open_admissions_modal",
-          "secondaryBtn": "Call 08197179023",
-          "secondaryAction": "phone",
-          "phone": "08197179023"
-        }
+    facilities: {
+      sections: [
+        { id: "facilities-hero", type: "about-hero", title: "Learning Beyond the Classroom", subtitle: "Explore the learning environment and facilities that support the Intermediate education journey." },
+        { id: "facilities-list", type: "philosophy", title: "Facilities", pillars: [
+          { title: "Classrooms", desc: "Learning spaces designed to support focused classroom education.", icon: "BookOpen" },
+          { title: "Laboratories", desc: "Practical learning spaces that complement science-based academic programmes.", icon: "FlaskConical" },
+          { title: "Library", desc: "A resource environment supporting reading, reference and academic learning.", icon: "BookMarked" },
+          { title: "Learning Spaces", desc: "Spaces that support individual study, academic activities and collaborative learning.", icon: "Layers" },
+          { title: "Student Facilities", desc: "Facilities intended to support students throughout their academic journey.", icon: "Users" },
+          { title: "Campus Environment", desc: "A focused and safe environment for student growth.", icon: "Map" }
+        ]}
       ]
     },
-    "facilities": {
-      "sections": [
-        {
-          "id": "about-hero",
-          "type": "about-hero",
-          "enabled": true,
-          "eyebrow": "CAMPUS INFRASTRUCTURE",
-          "title": "Designed for Learning",
-          "subtitle": "Learning spaces and student facilities designed to support focused study, practical learning and participation beyond the classroom."
-        },
-        {
-          "id": "facility-intro",
-          "type": "story-layout",
-          "enabled": true,
-          "eyebrow": "FACILITY HIGHLIGHTS",
-          "title": "An Environment Designed for Focused Learning",
-          "text": "Spaces that support classroom learning, independent study, digital learning and student activities."
-        },
-        {
-          "id": "facilities-preview",
-          "type": "campus-preview",
-          "enabled": true,
-          "microLabel": "FEATURED FACILITY",
-          "title": "Smart Classrooms",
-          "subtitle": "Technology-supported classroom spaces designed to create an engaging and focused learning environment.",
-          "categories": [
-            "Smart Classrooms",
-            "Library",
-            "Computer Lab",
-            "Sports"
-          ],
-          "tabs": [
-            {
-              "id": "classrooms",
-              "label": "CLASSROOMS",
-              "title": "Acoustically Balanced Lecture Halls",
-              "desc": "Spacious spaces equipped with modern visual learning aids.",
-              "image": "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80"
-            },
-            {
-              "id": "labs",
-              "label": "LABS",
-              "title": "Dedicated Science & Technology Labs",
-              "desc": "Computer labs and science inquiry stations.",
-              "image": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=80"
-            },
-            {
-              "id": "library",
-              "label": "LIBRARY",
-              "title": "Curated Knowledge & Reference Archives",
-              "desc": "Quiet reference zones and reading carrels.",
-              "image": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=80"
-            }
-          ],
-          "cta": {
-            "label": "View All Facilities →",
-            "action": "scroll_to",
-            "target": "#facilities-grid"
-          }
-        },
-        {
-          "id": "facilities-grid",
-          "type": "infrastructure",
-          "enabled": true,
-          "eyebrow": "TEJA INFRASTRUCTURE",
-          "title": "Facilities at Teja",
-          "subtitle": "Explore the spaces that support learning, preparation and student participation."
-        },
-        {
-          "id": "learning-environment",
-          "type": "pillars",
-          "enabled": true,
-          "eyebrow": "LEARNING ENVIRONMENT",
-          "title": "Learning Beyond the Classroom",
-          "subtitle": "Student development extends beyond academic lessons. Learning spaces and activities support study, practical engagement and collaboration.",
-          "pillars": [
-            {
-              "index": "01",
-              "title": "Focused Study",
-              "description": "Spaces that encourage concentration and independent learning.",
-              "icon": "BookOpen"
-            },
-            {
-              "index": "02",
-              "title": "Digital Learning",
-              "description": "Technology-supported environments for academic and digital activities.",
-              "icon": "Compass"
-            },
-            {
-              "index": "03",
-              "title": "Reading & Preparation",
-              "description": "Resources that support revision, reading and academic preparation.",
-              "icon": "FileText"
-            },
-            {
-              "index": "04",
-              "title": "Participation",
-              "description": "Activities that encourage teamwork, engagement and student development.",
-              "icon": "Users"
-            }
-          ]
-        },
-        {
-          "id": "admissions-cta",
-          "type": "admissions-cta",
-          "enabled": true,
-          "eyebrow": "TEJA JUNIOR COLLEGE",
-          "title": "Explore the Teja Learning Environment",
-          "subtitle": "Learn more about the academic environment and opportunities available at Teja Junior College.",
-          "primaryBtn": "Admissions Enquiry →",
-          "primaryAction": "open_admissions_modal",
-          "secondaryBtn": "Explore Academics →",
-          "secondaryAction": "navigate_to",
-          "secondaryTarget": "academics"
-        }
+    'student-life': {
+      sections: [
+        { id: "sl-hero", type: "about-hero", title: "Student Life at Teja", subtitle: "Academic growth is strengthened by participation, interaction, creativity and personal development." },
+        { id: "sl-activities", type: "why-us", title: "Activities", pillars: [
+          { id: "sl1", title: "Academic Activities", desc: "Encourage students to actively participate in their academic journey." },
+          { id: "sl2", title: "Student Engagement", desc: "Create opportunities for students to interact, participate and build confidence." },
+          { id: "sl3", title: "Sports & Recreation", desc: "Encourage students to maintain a healthy balance between academic responsibilities and physical activity." },
+          { id: "sl4", title: "Cultural Activities", desc: "Encourage creativity, expression and participation in cultural experiences." },
+          { id: "sl5", title: "Events", desc: "Provide opportunities for students to participate in institutional events." },
+          { id: "sl6", title: "Student Experiences", desc: "Building skills and memories that last a lifetime." }
+        ]}
       ]
     },
-    "student-life": {
-      "sections": [
-        {
-          "id": "about-hero",
-          "type": "about-hero",
-          "enabled": true,
-          "eyebrow": "STUDENT EXPERIENCE",
-          "title": "Life Beyond the Classroom",
-          "subtitle": "Opportunities to participate, collaborate, compete and grow beyond everyday academic learning."
-        },
-        {
-          "id": "student-activities-pillars",
-          "type": "pillars",
-          "enabled": true,
-          "eyebrow": "ACTIVITIES",
-          "title": "Student Activities",
-          "subtitle": "Opportunities that encourage participation, creativity, teamwork and confidence.",
-          "pillars": [
-            {
-              "index": "01",
-              "title": "Sports",
-              "description": "Encouraging teamwork, active participation and healthy engagement beyond academics.",
-              "icon": "Trophy"
-            },
-            {
-              "index": "02",
-              "title": "Competitions",
-              "description": "Opportunities for students to challenge themselves, participate and develop confidence through healthy competition.",
-              "icon": "Sparkles"
-            },
-            {
-              "index": "03",
-              "title": "Cultural Activities",
-              "description": "Activities that encourage creativity, expression, participation and appreciation of culture.",
-              "icon": "Users"
-            },
-            {
-              "index": "04",
-              "title": "Academic Events",
-              "description": "Activities that encourage curiosity, knowledge sharing and participation beyond regular classroom learning.",
-              "icon": "BookOpen"
-            },
-            {
-              "index": "05",
-              "title": "Student Activities",
-              "description": "Co-curricular programs and activities that encourage interaction, participation and student engagement.",
-              "icon": "Compass"
-            }
-          ]
-        },
-        {
-          "id": "beyond-academics",
-          "type": "pillars",
-          "enabled": true,
-          "eyebrow": "BEYOND ACADEMICS",
-          "title": "Learning Through Participation",
-          "subtitle": "Student development can extend beyond classroom learning through activities that encourage communication, teamwork, creativity, discipline and confidence.",
-          "pillars": [
-            {
-              "index": "01",
-              "title": "TEAMWORK",
-              "description": "Working with others encourages collaboration, responsibility and shared problem-solving.",
-              "icon": "Users"
-            },
-            {
-              "index": "02",
-              "title": "CONFIDENCE",
-              "description": "Participation gives students opportunities to express themselves and become more comfortable taking initiative.",
-              "icon": "Sparkles"
-            },
-            {
-              "index": "03",
-              "title": "CREATIVITY",
-              "description": "Cultural and co-curricular activities provide space for students to explore ideas and express themselves.",
-              "icon": "Lightbulb"
-            },
-            {
-              "index": "04",
-              "title": "DISCIPLINE",
-              "description": "Consistent participation encourages responsibility, time management and commitment.",
-              "icon": "Target"
-            }
-          ]
-        },
-        {
-          "id": "student-development",
-          "type": "pillars",
-          "enabled": true,
-          "eyebrow": "STUDENT DEVELOPMENT",
-          "title": "Growing Beyond the Classroom",
-          "subtitle": "Student life can contribute to the skills and habits students carry into their next stage of education.",
-          "pillars": [
-            {
-              "index": "01",
-              "title": "Communication",
-              "description": "Encouraging students to express ideas, participate in discussions and communicate with confidence.",
-              "icon": "Users"
-            },
-            {
-              "index": "02",
-              "title": "Collaboration",
-              "description": "Activities that encourage students to work with peers and contribute to shared goals.",
-              "icon": "Shield"
-            },
-            {
-              "index": "03",
-              "title": "Leadership",
-              "description": "Opportunities to take responsibility, contribute ideas and participate actively.",
-              "icon": "Compass"
-            },
-            {
-              "index": "04",
-              "title": "Responsibility",
-              "description": "Encouraging students to manage commitments, participate consistently and take ownership of their learning and activities.",
-              "icon": "CheckCircle"
-            }
-          ]
-        },
-        {
-          "id": "student-life-highlights",
-          "type": "student-experience",
-          "enabled": true,
-          "eyebrow": "STUDENT LIFE",
-          "title": "Moments That Build Confidence",
-          "subtitle": "Participation, collaboration and shared experiences can become an important part of a student's journey.",
-          "description": "Participation, collaboration and shared experiences can become an important part of a student's journey.",
-          "microTags": [
-            "PARTICIPATION",
-            "COLLABORATION",
-            "EXPRESSION"
-          ],
-          "dominantImage": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80"
-        },
-        {
-          "id": "admissions-cta",
-          "type": "admissions-cta",
-          "enabled": true,
-          "eyebrow": "TEJA JUNIOR COLLEGE",
-          "title": "Be Part of the Teja Community",
-          "subtitle": "Take the next step towards discovering an environment where academic learning and student participation come together.",
-          "primaryBtn": "Admissions Enquiry →",
-          "primaryAction": "open_admissions_modal",
-          "secondaryBtn": "Explore Academics →",
-          "secondaryAction": "navigate_to",
-          "secondaryTarget": "academics"
-        }
+    results: {
+      sections: [
+        { id: "results-hero", type: "about-hero", title: "Student Progress & Achievements", subtitle: "Recognising the academic effort, progress and achievements of our students." }
       ]
     },
-    "admissions": {
-      "sections": [
-        {
-          "id": "about-hero",
-          "type": "about-hero",
-          "enabled": true,
-          "eyebrow": "ADMISSIONS OPEN",
-          "title": "Begin Your Journey With Teja",
-          "subtitle": "Take the first step towards achieving your academic aspirations."
-        },
-        {
-          "id": "why-join-teja",
-          "type": "pillars",
-          "enabled": true,
-          "eyebrow": "WHY JOIN TEJA?",
-          "title": "WHY STUDENTS CHOOSE TEJA JUNIOR COLLEGE",
-          "subtitle": "Five core reasons parents and students trust Teja.",
-          "pillars": [
-            {
-              "index": "01",
-              "title": "Focused Academic Environment",
-              "description": "A disciplined atmosphere prioritizing concept mastery and regular study habits.",
-              "icon": "BookOpen"
-            },
-            {
-              "index": "02",
-              "title": "Experienced Guidance",
-              "description": "Dedicated faculty guidance and accessible mentoring throughout the year.",
-              "icon": "Users"
-            },
-            {
-              "index": "03",
-              "title": "Regular Evaluation",
-              "description": "Periodic testing and continuous feedback tracking student progress.",
-              "icon": "BarChart"
-            },
-            {
-              "index": "04",
-              "title": "Student Mentoring",
-              "description": "Individual guidance helping students stay motivated and focused.",
-              "icon": "Shield"
-            },
-            {
-              "index": "05",
-              "title": "Campus Facilities",
-              "description": "Modern classrooms, library, labs, and sports facilities across 3 campuses.",
-              "icon": "Compass"
-            }
-          ]
-        },
-        {
-          "id": "admission-process",
-          "type": "winning-process",
-          "enabled": true,
-          "eyebrow": "ADMISSION PROCESS",
-          "title": "SIMPLE 4-STEP ADMISSION FLOW",
-          "subtitle": "Clear, transparent admission steps from enquiry to enrollment.",
-          "steps": [
-            {
-              "step": "01",
-              "title": "SUBMIT ENQUIRY",
-              "sub": "Step 1",
-              "details": [
-                "Fill out online form",
-                "Provide contact info",
-                "Select course preference"
-              ]
-            },
-            {
-              "step": "02",
-              "title": "CHOOSE PROGRAM & CAMPUS",
-              "sub": "Step 2",
-              "details": [
-                "Select Kamalanagar, Ramnagar, or Girls Campus",
-                "Choose group stream"
-              ]
-            },
-            {
-              "step": "03",
-              "title": "COUNSELLING & GUIDANCE",
-              "sub": "Step 3",
-              "details": [
-                "Academic counselling session",
-                "Campus facility tour"
-              ]
-            },
-            {
-              "step": "04",
-              "title": "COMPLETE FORMALITIES",
-              "sub": "Step 4",
-              "details": [
-                "Document submission",
-                "Enrollment confirmation"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "admissions-cta",
-          "type": "admissions-cta",
-          "enabled": true,
-          "title": "Submit Enquiry Online",
-          "subtitle": "Fill out the online enquiry form to connect with our admissions desk.",
-          "primaryBtn": "Admissions Enquiry",
-          "secondaryBtn": "CALL 08197179023",
-          "phone": "08197179023"
-        },
-        {
-          "id": "contact-section",
-          "type": "contact",
-          "enabled": true,
-          "eyebrow": "ADMISSIONS HELPDESK",
-          "title": "CONTACT OUR CAMPUS DESK",
-          "address": "Raghuveera Towers, 4th Floor, Subhash Road, Kamalanagar, Anantapur - 515001",
-          "phones": [
-            "08197179023"
-          ]
-        }
+    admissions: {
+      sections: [
+        { id: "admissions-hero", type: "about-hero", title: "Begin Your Journey With Teja", subtitle: "Admission eligibility is subject to the applicable Intermediate education requirements and college admission guidelines." },
+        { id: "admissions-process", type: "winning-process", eyebrow: "ADMISSIONS", title: "Admission Process", steps: [
+          { title: "01 — Enquire", desc: "Contact our admissions team." },
+          { title: "02 — Choose Programme", desc: "Select from MPC, BiPC, MEC, CEC." },
+          { title: "03 — Counselling", desc: "Academic guidance and consultation." },
+          { title: "04 — Submit Documents", desc: "Provide necessary academic records." },
+          { title: "05 — Complete Admission", desc: "Finalize your enrollment." }
+        ]}
       ]
     },
-    "gallery": {
-      "sections": [
-        {
-          "id": "about-hero",
-          "type": "about-hero",
-          "enabled": true,
-          "eyebrow": "PHOTO ARCHIVE",
-          "title": "Life at Teja",
-          "subtitle": "Explore the campus environment, activities and experiences that make student life memorable."
-        },
-        {
-          "id": "gallery-section",
-          "type": "gallery",
-          "enabled": true,
-          "eyebrow": "GALLERY",
-          "title": "TEJA JUNIOR COLLEGE PHOTO GALLERY",
-          "subtitle": "Filter photos by Campus, Classrooms, Events, Sports, and Student Activities."
-        },
-        {
-          "id": "admissions-cta",
-          "type": "admissions-cta",
-          "enabled": true,
-          "title": "Visit Teja Junior College",
-          "subtitle": "Experience our campus environment in person.",
-          "primaryBtn": "Admissions Enquiry",
-          "secondaryBtn": "CALL 08197179023",
-          "phone": "08197179023"
-        }
-      ]
-    },
-    "contact": {
-      "sections": [
-        {
-          "id": "about-hero",
-          "type": "about-hero",
-          "enabled": true,
-          "eyebrow": "REACH OUT TO US",
-          "title": "Get in Touch",
-          "subtitle": "We're here to help you take the next step."
-        },
-        {
-          "id": "campuses",
-          "type": "campuses",
-          "enabled": true,
-          "eyebrow": "CAMPUS CONTACT CARDS",
-          "title": "OUR 3 CAMPUSES IN ANANTAPUR",
-          "subtitle": "Kamalanagar Campus, Ramnagar Campus, and Girls Campus contact details."
-        },
-        {
-          "id": "contact-section",
-          "type": "contact",
-          "enabled": true,
-          "eyebrow": "DIRECT ENQUIRY",
-          "title": "SEND AN ENQUIRY TO OUR HELPDESK",
-          "address": "Raghuveera Towers, 4th Floor, Subhash Road, Kamalanagar, Anantapur - 515001",
-          "phones": [
-            "08197179023"
-          ]
-        },
-        {
-          "id": "admissions-cta",
-          "type": "admissions-cta",
-          "enabled": true,
-          "title": "Admissions Open",
-          "subtitle": "Call our desk at 08197179023 or submit an enquiry online.",
-          "primaryBtn": "Admissions Enquiry",
-          "secondaryBtn": "CALL 08197179023",
-          "phone": "08197179023"
-        }
+    contact: {
+      sections: [
+        { id: "contact-hero", type: "about-hero", title: "Get in Touch With Teja Junior College", subtitle: "Our team is here to help you with any questions." }
       ]
     }
   },
-  "sections": {
-    "sections": [
-      {
-        "id": "hero",
-        "type": "hero",
-        "enabled": true,
-        "eyebrow": "TEJA JUNIOR COLLEGE • ANANTAPUR",
-        "brandSub": "BUILDING STRONG FOUNDATIONS",
-        "title": "SHAPE YOUR FUTURE\nWITH TEJA JUNIOR COLLEGE.",
-        "subtitle": "A focused learning environment designed to help students build strong academic foundations across Kamalanagar, Ramnagar, and Girls Campuses.",
-        "primaryCta": {
-          "label": "Admissions Enquiry",
-          "action": "open_admissions_modal"
-        },
-        "secondaryCta": {
-          "label": "Explore Campuses",
-          "action": "scroll_to",
-          "target": "#campuses"
-        },
-        "phoneContact": "08197179023",
-        "heroImage": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1920&q=80"
-      },
-      {
-        "id": "trust-strip",
-        "type": "trust-strip",
-        "enabled": true,
-        "items": [
-          "3 ANANTAPUR CAMPUSES",
-          "EXPERIENCED FACULTY",
-          "REGULAR EVALUATION",
-          "STUDENT MENTORING",
-          "SMART CLASSROOMS"
-        ]
-      },
-      {
-        "id": "about",
-        "type": "about",
-        "enabled": true,
-        "eyebrow": "WELCOME TO TEJA",
-        "title": "BUILDING STRONG FOUNDATIONS FOR A BRIGHTER FUTURE.",
-        "description": "Teja Junior College provides an academic environment focused on learning, regular evaluation, faculty guidance and comprehensive student development.",
-        "points": [
-          "Regular academic evaluation to track progress",
-          "Dedicated faculty guidance & mentorship",
-          "Modern smart classroom infrastructure",
-          "Comprehensive student development beyond academics"
-        ],
-        "image": "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80"
-      },
-      {
-        "id": "pillars",
-        "type": "pillars",
-        "enabled": true,
-        "eyebrow": "THE TEJA ADVANTAGE",
-        "title": "WHY CHOOSE TEJA JUNIOR COLLEGE?",
-        "subtitle": "Four core pillars ensuring academic excellence and individual guidance.",
-        "pillars": [
-          {
-            "index": "01",
-            "title": "Experienced Faculty",
-            "description": "Guidance and academic support from faculty members throughout the learning journey.",
-            "icon": "Users"
-          },
-          {
-            "index": "02",
-            "title": "Regular Evaluation",
-            "description": "Regular academic evaluation to help students track their learning progress.",
-            "icon": "BarChart"
-          },
-          {
-            "index": "03",
-            "title": "Student Mentoring",
-            "description": "Individual attention and mentoring to support students academically.",
-            "icon": "Shield"
-          },
-          {
-            "index": "04",
-            "title": "Modern Learning Environment",
-            "description": "A learning environment supported by modern classroom facilities.",
-            "icon": "BookOpen"
-          }
-        ]
-      },
-      {
-        "id": "programs",
-        "type": "programs",
-        "enabled": true,
-        "eyebrow": "ACADEMIC EXCELLENCE",
-        "title": "STRUCTURED ACADEMIC PATHWAYS",
-        "subtitle": "A structured academic environment focused on consistent learning, regular evaluation, practice and progress monitoring."
-      },
-      {
-        "id": "campuses",
-        "type": "campuses",
-        "enabled": true,
-        "eyebrow": "OUR CAMPUSES IN ANANTAPUR",
-        "title": "KAMALANAGAR, RAMNAGAR & GIRLS CAMPUSES.",
-        "subtitle": "Modern campus infrastructure providing safe and structured academic environments."
-      },
-      {
-        "id": "gallery-section",
-        "type": "gallery",
-        "enabled": true,
-        "eyebrow": "LIFE AT TEJA",
-        "title": "CAMPUS & LEARNING ENVIRONMENT",
-        "subtitle": "A glimpse into smart classrooms, resource spaces, and student activities."
-      },
-      {
-        "id": "admissions-cta",
-        "type": "admissions-cta",
-        "enabled": true,
-        "title": "ADMISSIONS OPEN FOR 2026–2027.",
-        "subtitle": "Take the next step towards your academic journey with Teja Junior College.",
-        "primaryBtn": "ENQUIRE NOW",
-        "secondaryBtn": "CALL ADMISSIONS DESK",
-        "phone": "08197179023"
-      },
-      {
-        "id": "contact-section",
-        "type": "contact",
-        "enabled": true,
-        "eyebrow": "GET IN TOUCH",
-        "title": "CONTACT TEJA JUNIOR COLLEGE",
-        "address": "Raghuveera Towers, 4th Floor, Subhash Road, Kamalanagar, Anantapur - 515001",
-        "phones": [
-          "08197179023"
-        ]
-      }
+  gallery: {
+    images: [
+      { src: "/teja/gallery/campus_kamalanagar_1789976860423.jpg", category: "Campus" },
+      { src: "/teja/gallery/campus_ramnagar_1789977013402.jpg", category: "Campus" },
+      { src: "/teja/gallery/girls_campus_1789977026225.jpg", category: "Campus" },
+      { src: "/teja/gallery/smart_classrooms_1789976999081.jpg", category: "Classrooms" },
+      { src: "/teja/gallery/sports_field_1789977041806.jpg", category: "Campus" },
+      { src: "/teja/gallery/student_activities_1789977201922.jpg", category: "Academic Activities" }
     ]
   },
-  "seo": {
-    "title": "Teja Junior College | Anantapur",
-    "metaDescription": "Teja Junior College provides a focused learning environment with experienced faculty, regular evaluation, and individual student mentoring in Anantapur."
-  },
-  "student-life": {
-    "heading": "Life Beyond the Classroom",
-    "subheading": "Education is about developing the whole individual.",
-    "activities": [
+  footer: {
+    brand: {
+      description: "Empowering Students. Shaping Futures."
+    },
+    columns: [
       {
-        "id": "sports",
-        "title": "Sports",
-        "description": "Encouraging teamwork, discipline and physical well-being."
+        title: "Quick Links",
+        links: [
+          { label: "Home", target: "" },
+          { label: "About", target: "about" },
+          { label: "Academics", target: "academics" },
+          { label: "Programmes", target: "programmes" },
+          { label: "Admissions", target: "admissions" },
+          { label: "Contact", target: "contact" }
+        ]
       },
       {
-        "id": "competitions",
-        "title": "Competitions",
-        "description": "Opportunities for students to challenge themselves and demonstrate their abilities."
-      },
-      {
-        "id": "cultural-activities",
-        "title": "Cultural Activities",
-        "description": "Celebrating creativity, expression and student participation."
-      },
-      {
-        "id": "academic-events",
-        "title": "Academic Events",
-        "description": "Activities that encourage curiosity, knowledge sharing and academic engagement."
+        title: "Programmes",
+        links: [
+          { label: "MPC", target: "programmes" },
+          { label: "BiPC", target: "programmes" },
+          { label: "MEC", target: "programmes" },
+          { label: "CEC", target: "programmes" }
+        ]
       }
     ],
-    "studentDevelopment": [
-      "Confidence",
-      "Leadership",
-      "Communication",
-      "Teamwork",
-      "Discipline",
-      "Responsibility"
-    ],
-    "eventsCalendarNotice": "Events and activities will be updated with the college's official calendar.",
-    "eventCategories": [
-      "Annual Events",
-      "Academic Competitions",
-      "Cultural Celebrations",
-      "Sports Events",
-      "Student Activities"
-    ]
-  }
+    contact: {
+      address: "Raghuveera Towers, ANANTAPURAMU.",
+      phone: "9948567527, 9490859421",
+      email: "info@tejajuniorcollege.edu.in"
+    },
+    bottom: {
+      copyright: "© Teja Junior College. All Rights Reserved."
+    }
+  },
+  faq: [
+    { q: "What programmes are available at Teja Junior College?", a: "Teja Junior College offers multiple Intermediate programmes. Please check the Programmes page for detailed information." },
+    { q: "How can I enquire about admission?", a: "You can contact the admissions office directly by phone or email. You can also fill in the enquiry form on our website." },
+    { q: "What documents are required for admission?", a: "You may need previous academic records, a transfer certificate, identity proof, passport-size photographs and any other documents required by the college. Contact the admissions office for the most current requirements." },
+    { q: "How can I contact the admissions team?", a: "You can reach the Teja admissions team using the contact details provided." },
+    { q: "Where is Teja Junior College located?", a: "Teja Junior College is located in Anantapur, Andhra Pradesh." }
+  ]
 };
 
 export default tejaContent;
