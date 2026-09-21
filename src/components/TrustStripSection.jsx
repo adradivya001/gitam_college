@@ -12,7 +12,7 @@ const ICON_MAP = [
 ];
 
 export function TrustStripSection({ data, sectionConfig }) {
-  const items = sectionConfig?.items || [
+  const items = sectionConfig?.features || sectionConfig?.items || [
     'FOUNDED 2022',
     'JEE + NEET FOCUSED',
     'EXPERT FACULTY',

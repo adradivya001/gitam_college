@@ -1,0 +1,303 @@
+/* =========================================
+   SgNavbar.css — Sri GITAM Tier 1 Navbar
+   Scoped to .sg-navbar* classes
+   ========================================= */
+
+/* ── Top Info Bar ─────────────────────────── */
+.sg-navbar-topbar {
+  background-color: #B6533E;
+  color: #fff;
+  font-size: 12.5px;
+  font-family: 'Inter', 'Manrope', sans-serif;
+  font-weight: 500;
+}
+.sg-navbar-topbar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 48px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sg-topbar-address {
+  display: flex;
+  align-items: center;
+  opacity: 0.92;
+  font-size: 12px;
+}
+.sg-topbar-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.sg-topbar-links span {
+  opacity: 0.88;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.sg-topbar-links span:hover { opacity: 1; }
+
+/* ── Main Navbar ────────────────────────────── */
+.sg-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #ffffff;
+  border-bottom: 1px solid #E8E1D9;
+  transition: box-shadow 0.25s ease, backdrop-filter 0.25s;
+}
+.sg-navbar.sg-navbar-scrolled {
+  box-shadow: 0 4px 24px rgba(23, 42, 67, 0.09);
+  backdrop-filter: blur(10px);
+}
+
+.sg-navbar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 48px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* ── Logo ───────────────────────────────────── */
+.sg-navbar-logo-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+.sg-navbar-logo-img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+.sg-navbar-logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #172A43;
+}
+
+/* ── Desktop Navigation ─────────────────────── */
+.sg-desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  justify-content: center;
+}
+
+.sg-nav-item {
+  position: relative;
+  background: none;
+  border: none;
+  padding: 6px 14px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.18s;
+  min-width: 0;
+}
+
+.sg-nav-item-label {
+  font-family: 'Inter', 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #172A43;
+  text-align: center;
+  line-height: 1.1;
+  white-space: normal;
+  max-width: 80px;
+  transition: color 0.18s;
+}
+
+.sg-nav-item:hover .sg-nav-item-label {
+  color: #102238;
+}
+
+.sg-nav-item--active .sg-nav-item-label {
+  color: #1062B8;
+  font-weight: 700;
+}
+
+/* Active underline */
+.sg-nav-item-underline {
+  display: block;
+  height: 3px;
+  width: 0;
+  background: #1062B8;
+  border-radius: 2px;
+  transition: width 0.2s ease;
+  align-self: center;
+}
+.sg-nav-item--active .sg-nav-item-underline {
+  width: 56px;
+}
+.sg-nav-item:hover .sg-nav-item-underline {
+  width: 32px;
+}
+
+/* ── Actions (Right) ────────────────────────── */
+.sg-navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.sg-apply-btn {
+  background: #B6533E;
+  color: #fff;
+  border: none;
+  border-radius: 9999px;
+  padding: 10px 22px;
+  font-family: 'Inter', 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.15s;
+}
+.sg-apply-btn:hover {
+  background: #963F30;
+  transform: translateY(-1px);
+}
+.sg-apply-btn--full {
+  width: 100%;
+  border-radius: 10px;
+  padding: 14px 24px;
+  font-size: 15px;
+}
+
+.sg-hamburger {
+  display: none;
+  background: none;
+  border: 1px solid #E8E1D9;
+  border-radius: 8px;
+  padding: 8px 10px;
+  color: #172A43;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+.sg-hamburger:hover { background: #FAF7F2; }
+
+/* ── Mobile Drawer ──────────────────────────── */
+.sg-mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  max-width: 88vw;
+  background: #fff;
+  border-left: 1px solid #E8E1D9;
+  z-index: 998;
+  transform: translateX(100%);
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -6px 0 32px rgba(23, 42, 67, 0.12);
+}
+.sg-mobile-drawer--open {
+  transform: translateX(0);
+}
+.sg-mobile-drawer-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.sg-mobile-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid #E8E1D9;
+}
+.sg-mobile-logo { height: 44px; }
+.sg-mobile-close {
+  background: none;
+  border: none;
+  color: #172A43;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.sg-mobile-links {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 0;
+}
+.sg-mobile-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 14px 24px;
+  font-family: 'Inter', 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #172A43;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  text-align: left;
+}
+.sg-mobile-link:hover {
+  background: #FAF7F2;
+  color: #B6533E;
+}
+.sg-mobile-link--active {
+  color: #1062B8;
+  background: #FAF7F2;
+}
+.sg-mobile-drawer-footer {
+  padding: 20px 24px;
+  border-top: 1px solid #E8E1D9;
+}
+
+.sg-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(23, 42, 67, 0.35);
+  z-index: 997;
+  backdrop-filter: blur(2px);
+}
+
+/* ── Responsive ─────────────────────────────── */
+
+/* Tablet: tighten spacing but keep desktop nav visible */
+@media (max-width: 1200px) {
+  .sg-navbar-topbar-inner,
+  .sg-navbar-inner {
+    padding: 0 24px;
+  }
+  .sg-nav-item { padding: 6px 7px; }
+  .sg-nav-item-label { font-size: 12.5px; max-width: 68px; }
+}
+
+/* Below 768px: switch to hamburger */
+@media (max-width: 768px) {
+  .sg-desktop-nav { display: none; }
+  .sg-hamburger { display: flex; }
+  .sg-apply-btn:not(.sg-apply-btn--full) { display: none; }
+  .sg-navbar-topbar { display: none; }
+  .sg-navbar-inner { height: 62px; }
+}
+
+@media (max-width: 480px) {
+  .sg-navbar-inner { padding: 0 16px; height: 58px; }
+  .sg-navbar-logo-img { height: 42px; }
+}

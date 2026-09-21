@@ -12,7 +12,7 @@ export function ProgramsSection({ data, sectionConfig, onAction }) {
   const title = sectionConfig?.title || 'Structured Learning & Progression';
   const subtitle = sectionConfig?.subtitle || 'Concept-based learning, regular assessment, personal mentoring and exam preparation.';
   const sectionCta = sectionConfig?.sectionCta || sectionConfig?.cta;
-  const programs = data?.courses?.programs || [];
+  const programs = sectionConfig?.programs || data?.courses?.programs || [];
 
   return (
     <section id="programs" className="visual-section programs-section">

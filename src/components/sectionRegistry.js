@@ -41,6 +41,14 @@ import { PhilosophyLayout } from './PhilosophyLayout';
 import { FounderMessageLayout } from './FounderMessageLayout';
 import { QuoteLayout } from './QuoteLayout';
 
+// Sri GITAM Custom Components
+import { SgHero } from '../colleges/sri-gitam/components/SgHero';
+import { SgAbout } from '../colleges/sri-gitam/components/SgAbout';
+import { SgProgrammes } from '../colleges/sri-gitam/components/SgProgrammes';
+import { SgWhyUs } from '../colleges/sri-gitam/components/SgWhyUs';
+import { SgAchievements } from '../colleges/sri-gitam/components/SgAchievements';
+import { SgAdmissionsCTA } from '../colleges/sri-gitam/components/SgAdmissionsCTA';
+
 export const SECTION_REGISTRY = {
   hero: HeroSection,
   'trust-strip': TrustStripSection,
@@ -86,7 +94,15 @@ export const SECTION_REGISTRY = {
   'philosophy-layout': PhilosophyLayout,
   'founder-message-layout': FounderMessageLayout,
   'quote-layout': QuoteLayout,
-  'final-cta-layout': AdmissionsCTASection
+  'final-cta-layout': AdmissionsCTASection,
+
+  // Sri GITAM Custom Components
+  'sg-hero': SgHero,
+  'sg-about': SgAbout,
+  'sg-programmes': SgProgrammes,
+  'sg-why': SgWhyUs,
+  'sg-achievements': SgAchievements,
+  'sg-admissions-cta': SgAdmissionsCTA
 };
 
 export function getSectionComponent(type) {

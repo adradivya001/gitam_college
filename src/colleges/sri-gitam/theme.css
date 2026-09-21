@@ -1,0 +1,90 @@
+.sri-gitam-app-root {
+  --color-primary: #172A43;
+  --color-primary-hover: #102238;
+  --color-secondary: #B6533E;
+  --color-secondary-hover: #963F30;
+  --color-accent: #B6533E;
+  
+  --color-background: #FAF7F2;
+  --color-background-soft: #FFFFFF;
+  --color-background-alt: #F4EEE7;
+  
+  --color-sg-peach: #F8E9E3;
+  --color-sg-sage: #EAF2EE;
+  --color-sg-sand: #F5EFE3;
+  --color-sg-lavender: #F0ECF6;
+  
+  --color-text: #172A43;
+  --color-text-muted: #657080;
+  --color-border: #E8E1D9;
+  
+  --font-heading: 'Playfair Display', 'DM Serif Display', serif;
+  --font-body: 'Inter', 'Manrope', sans-serif;
+}
+
+/* Global resets specifically scoped to sri-gitam */
+.sri-gitam-app-root h1, 
+.sri-gitam-app-root h2, 
+.sri-gitam-app-root h3, 
+.sri-gitam-app-root h4, 
+.sri-gitam-app-root h5, 
+.sri-gitam-app-root h6 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.sri-gitam-app-root body, 
+.sri-gitam-app-root p, 
+.sri-gitam-app-root span, 
+.sri-gitam-app-root div {
+  font-family: var(--font-body);
+}
+
+.sri-gitam-app-root .btn-primary {
+  background-color: var(--color-secondary);
+  color: #FFFFFF;
+  border-radius: 9999px;
+  padding: 12px 24px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.sri-gitam-app-root .btn-primary:hover {
+  background-color: var(--color-secondary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(182, 83, 62, 0.2);
+}
+
+.sri-gitam-app-root .btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: 9999px;
+  padding: 12px 24px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.sri-gitam-app-root .btn-secondary:hover {
+  background-color: rgba(23, 42, 67, 0.05);
+  transform: translateY(-2px);
+}
+
+.sri-gitam-app-root .eyebrow {
+  color: var(--color-secondary);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.sg-top-info-bar { background-color: var(--color-secondary); color: white; font-size: 13px; font-weight: 500; }
+.sg-top-bar-inner { display: flex; justify-content: space-between; align-items: center; min-height: 36px; padding: 4px 0; }
+.sg-top-left { display: flex; align-items: center; gap: 8px; opacity: 0.9; }
+.sg-top-right { display: flex; align-items: center; gap: 20px; }
+.sg-top-right a { color: white; text-decoration: none; display: flex; align-items: center; gap: 6px; opacity: 0.9; transition: opacity 0.2s; }
+.sg-top-right a:hover { opacity: 1; }
+@media (max-width: 768px) { .sg-top-right { display: none; } .sg-top-left { justify-content: center; width: 100%; text-align: center; } }

@@ -1,0 +1,8 @@
+.sg-cta-section { background-color: var(--color-primary); background-size: cover; background-position: center; padding: 64px 0; color: white; text-align: center; }
+.sg-cta-content { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+.sg-cta-eyebrow { color: var(--color-sg-peach); }
+.sg-cta-title { font-size: 48px; color: white; margin-bottom: 24px; }
+.sg-cta-subtitle { font-size: 18px; color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 40px; }
+.sg-cta-actions { display: flex; gap: 16px; justify-content: center; }
+.sg-cta-outline-btn { border-color: rgba(255,255,255,0.3); color: white; }
+.sg-cta-outline-btn:hover { background-color: rgba(255,255,255,0.1); border-color: white; }

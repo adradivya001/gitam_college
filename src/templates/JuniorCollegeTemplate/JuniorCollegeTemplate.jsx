@@ -2,10 +2,12 @@ import React from 'react';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 import { getSectionComponent } from '../../components/sectionRegistry';
 import { Navbar } from '../../components/common/Navbar';
+import { SgNavbar } from '../../colleges/sri-gitam/components/SgNavbar';
 import { FooterSection } from '../../components/FooterSection';
 import { DetailModal } from '../../components/common/DetailModal';
 import { AdmissionsModal } from '../../components/common/AdmissionsModal';
 import { Lightbox } from '../../components/common/Lightbox';
+import { SgPageRouter } from '../../colleges/sri-gitam/components/SgPageRouter';
 
 // We will need to adapt the context or manage state here
 import { useCollege } from '../../context/CollegeContext';
@@ -54,31 +56,38 @@ export function JuniorCollegeTemplate({ college }) {
     }
   };
 
+  // For Sri GITAM inner pages, use the dedicated page router
+  const isSriGitam = college.id === 'sri-gitam';
+  const isSriGitamInnerPage = isSriGitam && activePage !== 'home';
+
   return (
     <div className={`${college.id}-app-root`} style={{ width: '100%', minHeight: '100vh', overflowX: 'hidden' }}>
-      <Navbar />
+      {isSriGitam ? <SgNavbar /> : <Navbar />}
       
       <main className="college-page-content" key={activePage}>
-        {sections.map((sectionConfig) => {
-          if (sectionConfig.enabled === false) return null;
-
-          // Note: getSectionComponent must be updated to point to src/components/
-          const SectionComponent = getSectionComponent(sectionConfig.type);
-          if (!SectionComponent) {
-            console.warn(`[JuniorCollegeTemplate] Unknown section type: ${sectionConfig.type}`);
-            return null;
-          }
-
-          return (
-            <SectionComponent
-              key={sectionConfig.id}
-              data={collegeData}
-              sectionConfig={sectionConfig}
-              theme={theme}
-              onAction={handleAction}
-            />
-          );
-        })}
+        {isSriGitamInnerPage ? (
+          // Render the dedicated Sri GITAM page component
+          <SgPageRouter activePage={activePage} onAction={handleAction} />
+        ) : (
+          // Render sections from the content registry (home page & all other colleges)
+          sections.map((sectionConfig) => {
+            if (sectionConfig.enabled === false) return null;
+            const SectionComponent = getSectionComponent(sectionConfig.type);
+            if (!SectionComponent) {
+              console.warn(`[JuniorCollegeTemplate] Unknown section type: ${sectionConfig.type}`);
+              return null;
+            }
+            return (
+              <SectionComponent
+                key={sectionConfig.id}
+                data={collegeData}
+                sectionConfig={sectionConfig}
+                theme={theme}
+                onAction={handleAction}
+              />
+            );
+          })
+        )}
 
         <FooterSection
           data={collegeData}

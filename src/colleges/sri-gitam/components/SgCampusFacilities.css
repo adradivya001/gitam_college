@@ -1,0 +1,201 @@
+/* =============================================
+   SgCampusFacilities.css
+   Innovative hover-reveal facility card grid
+   ============================================= */
+
+.sgf-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid #E8E1D9;
+  margin-top: 56px;
+  min-height: 520px;
+}
+
+/* ── Individual Card ──────────────────────── */
+.sgf-card {
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #E8E1D9;
+  background: var(--card-accent, #FAF7F2);
+  transition: flex 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 520px;
+}
+.sgf-card:last-child { border-right: none; }
+
+/* Expand on hover */
+.sgf-card:hover {
+  flex: 2;
+}
+
+/* ── Background Image (revealed on hover) ─ */
+.sgf-card-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+}
+.sgf-card:hover .sgf-card-bg { opacity: 1; }
+.sgf-card-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.sgf-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(23,42,67,0.82) 0%, rgba(23,42,67,0.6) 100%);
+}
+
+/* ── Default Content (visible when not hovered) ─ */
+.sgf-card-default {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 36px 28px;
+  transition: opacity 0.3s ease;
+}
+.sgf-card:hover .sgf-card-default { opacity: 0; pointer-events: none; }
+
+.sgf-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #B6533E;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(23,42,67,0.08);
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+.sgf-card:hover .sgf-icon-wrap { transform: scale(1.05); }
+
+.sgf-icon-wrap--light {
+  background: rgba(255,255,255,0.15);
+  color: white;
+  box-shadow: none;
+}
+
+.sgf-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #B6533E;
+  background: rgba(182,83,62,0.1);
+  border-radius: 9999px;
+  padding: 4px 10px;
+  margin-bottom: 16px;
+  align-self: flex-start;
+}
+
+.sgf-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #172A43;
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+.sgf-title--light { color: white; font-size: 24px; }
+
+.sgf-desc {
+  font-size: 14px;
+  color: #657080;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+.sgf-hover-hint {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 28px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #B6533E;
+  opacity: 0.7;
+}
+
+/* ── Hover Content (revealed on hover) ────── */
+.sgf-card-hover {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px 32px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.35s ease 0.1s, transform 0.35s ease 0.1s;
+  pointer-events: none;
+}
+.sgf-card:hover .sgf-card-hover {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.sgf-detail {
+  font-size: 15px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.7;
+  margin: 12px 0 0;
+}
+
+/* ── Number Watermark ───────────────────── */
+.sgf-num {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  font-weight: 700;
+  color: rgba(0,0,0,0.06);
+  line-height: 1;
+  z-index: 0;
+  pointer-events: none;
+  transition: color 0.3s;
+}
+.sgf-card:hover .sgf-num { color: rgba(255,255,255,0.06); }
+
+/* ── Responsive ─────────────────────────── */
+@media (max-width: 1100px) {
+  .sgf-grid {
+    grid-template-columns: repeat(3, 1fr);
+    min-height: auto;
+  }
+  .sgf-card { min-height: 300px; flex: initial !important; }
+  .sgf-card:hover { flex: initial; }
+  .sgf-card-hover {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .sgf-card-default { opacity: 0; }
+  .sgf-card-bg { opacity: 1; }
+}
+
+@media (max-width: 640px) {
+  .sgf-grid {
+    grid-template-columns: 1fr;
+    border-radius: 16px;
+  }
+  .sgf-card { min-height: 260px; border-right: none; border-bottom: 1px solid #E8E1D9; }
+  .sgf-card:last-child { border-bottom: none; }
+}

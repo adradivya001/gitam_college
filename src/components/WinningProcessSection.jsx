@@ -73,12 +73,13 @@ export function WinningProcessSection({ data, sectionConfig }) {
                   className={`process-step-node ${isActive ? 'active' : ''}`}
                   onClick={() => setActiveStep(idx)}
                 >
-                  <div className="step-num-badge">{item.step}</div>
+                  <div className="step-num-badge">{item.step || String(idx + 1).padStart(2, '0')}</div>
                   <div className="step-icon-circle">
                     <IconComponent size={22} />
                   </div>
                   <h4 className="step-node-title">{item.title}</h4>
-                  <span className="step-node-sub">{item.sub}</span>
+                  {item.sub && <span className="step-node-sub">{item.sub}</span>}
+                  {!item.sub && item.desc && <span className="step-node-sub" style={{ display: 'none' }}>{item.desc}</span>}
 
                   {idx < steps.length - 1 && (
                     <div className="step-connector-arrow">
@@ -93,16 +94,22 @@ export function WinningProcessSection({ data, sectionConfig }) {
           {/* Active Step Details Panel */}
           <div className="process-detail-panel">
             <div className="panel-header">
-              <span className="panel-step-label">STAGE {steps[activeStep].step} OF 05</span>
-              <h3 className="panel-title">{steps[activeStep].title} — {steps[activeStep].sub}</h3>
+              <span className="panel-step-label">STAGE {steps[activeStep].step || String(activeStep + 1).padStart(2, '0')} OF {String(steps.length).padStart(2, '0')}</span>
+              <h3 className="panel-title">{steps[activeStep].title} {steps[activeStep].sub ? `— ${steps[activeStep].sub}` : ''}</h3>
             </div>
             <div className="panel-points-grid">
-              {steps[activeStep].details.map((detail, dIdx) => (
+              {(steps[activeStep].details || []).map((detail, dIdx) => (
                 <div key={dIdx} className="panel-point-card">
                   <CheckCircle2 size={18} className="panel-check-icon" />
                   <span>{detail}</span>
                 </div>
               ))}
+              {!steps[activeStep].details && steps[activeStep].desc && (
+                <div className="panel-point-card" style={{ width: '100%' }}>
+                  <CheckCircle2 size={18} className="panel-check-icon" />
+                  <span>{steps[activeStep].desc}</span>
+                </div>
+              )}
             </div>
           </div>
         </div>

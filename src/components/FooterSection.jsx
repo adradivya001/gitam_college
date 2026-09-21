@@ -2,11 +2,16 @@ import React from 'react';
 import { Container } from './common/Container';
 import { MapPin, Phone } from 'lucide-react';
 import { useCollege } from '../context/CollegeContext';
+import { SgFooter } from '../colleges/sri-gitam/components/SgFooter';
 import './FooterSection.css';
 
 export function FooterSection({ data, theme, onAction }) {
   const { navigateToPage } = useCollege();
   
+  if (data?.id === 'sri-gitam') {
+    return <SgFooter data={data} onAction={onAction} />;
+  }
+
   const college = data?.college || {};
   const nav = data?.navigation || {};
   const links = (nav.links || []).filter((l) => l.enabled !== false);
