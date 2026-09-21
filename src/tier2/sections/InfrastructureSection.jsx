@@ -9,7 +9,7 @@ import './InfrastructureSection.css';
 
 export function InfrastructureSection({ data, sectionConfig, theme, onAction }) {
   const facData = data?.facilities || {};
-  const items = (facData.items || []).filter((f) => f.enabled !== false);
+  const items = (facData.facilities || facData.items || sectionConfig?.facilities || []).filter((f) => f.enabled !== false);
   const [activeFacilityIdx, setActiveFacilityIdx] = useState(0);
 
   const eyebrow = sectionConfig?.eyebrow || 'CAMPUS & SPACES';
@@ -41,7 +41,7 @@ export function InfrastructureSection({ data, sectionConfig, theme, onAction }) 
                 onClick={() => setActiveFacilityIdx(idx)}
               >
                 <div className="infra-item-header">
-                  <span className="infra-cat-tag">{item.category}</span>
+                  <span className="infra-cat-tag">{item.category || 'Facility'}</span>
                   <span className="infra-index-num">0{idx + 1}</span>
                 </div>
                 <h4 className="infra-item-title">{item.title}</h4>
@@ -62,7 +62,7 @@ export function InfrastructureSection({ data, sectionConfig, theme, onAction }) 
               <div className="infra-image-gradient" />
 
               <div className="infra-caption-card">
-                <Badge variant="glow">{currentItem.category}</Badge>
+                <Badge variant="glow">{currentItem.category || 'Facility'}</Badge>
                 <h3 className="infra-caption-title">{currentItem.title}</h3>
                 
                 {currentItem.features && (

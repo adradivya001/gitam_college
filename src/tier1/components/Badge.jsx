@@ -25,35 +25,35 @@ export function Badge({
     switch (variant) {
       case 'primary':
         return {
-          background: 'var(--color-primary)',
-          color: '#FFFFFF',
-          border: '1px solid rgba(255, 255, 255, 0.2)'
+          background: '#EFF6FF',
+          color: '#1E40AF',
+          border: '1px solid #BFDBFE'
         };
       case 'secondary':
         return {
-          background: 'var(--color-secondary)',
-          color: '#000000',
-          border: '1px solid rgba(0, 0, 0, 0.1)'
+          background: '#FEF3C7',
+          color: '#D97706',
+          border: '1px solid #FDE68A'
         };
       case 'glow':
         return {
-          background: 'rgba(232, 90, 45, 0.12)',
-          color: 'var(--color-primary)',
-          border: '1px solid rgba(232, 90, 45, 0.3)',
-          boxShadow: '0 0 16px var(--color-primary-glow)'
+          background: '#FEF3C7',
+          color: '#D97706',
+          border: '1px solid #FDE68A',
+          boxShadow: '0 2px 10px rgba(217, 119, 6, 0.2)'
         };
       case 'outline':
         return {
-          background: 'transparent',
-          color: 'var(--color-text-muted)',
-          border: '1px solid var(--color-border)'
+          background: '#FFFFFF',
+          color: '#0F172A',
+          border: '1px solid #CBD5E1'
         };
       case 'subtle':
       default:
         return {
-          background: 'var(--color-surface-alt)',
-          color: 'var(--color-text)',
-          border: '1px solid var(--color-border)'
+          background: '#EFF6FF',
+          color: '#1E40AF',
+          border: '1px solid #BFDBFE'
         };
     }
   };

@@ -6,10 +6,40 @@ import { ArrowUpRight, Compass } from 'lucide-react';
 import './AdmissionsCTASection.css';
 
 export function AdmissionsCTASection({ data, sectionConfig, theme, onAction }) {
-  const statement = sectionConfig?.statement || 'YOUR NEXT CHAPTER STARTS HERE.';
+  const statement = sectionConfig?.title || sectionConfig?.statement || 'YOUR NEXT CHAPTER STARTS HERE.';
+  const subtitle = sectionConfig?.subtitle || '';
   const bgImage = sectionConfig?.backgroundImage || 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80';
-  const primaryCta = sectionConfig?.primaryCta || { label: 'Admissions Enquiry', action: 'open_admissions_modal' };
-  const secondaryCta = sectionConfig?.secondaryCta || { label: 'Visit Campus', action: 'open_admissions_modal', meta: 'campus_visit' };
+
+  const primaryLabel = sectionConfig?.primaryBtn || sectionConfig?.primaryCta?.label || 'Admissions Enquiry';
+  const secondaryLabel = sectionConfig?.secondaryBtn || sectionConfig?.secondaryCta?.label || 'Visit Campus';
+
+  const handlePrimaryClick = () => {
+    if (sectionConfig?.primaryCta?.action) {
+      onAction(sectionConfig.primaryCta.action, sectionConfig.primaryCta.target || '');
+      return;
+    }
+    if (primaryLabel.toLowerCase().includes('academics')) {
+      onAction('navigate_to', 'academics');
+    } else if (primaryLabel.toLowerCase().includes('campus')) {
+      onAction('navigate_to', 'campuses');
+    } else {
+      onAction('open_admissions_modal', '');
+    }
+  };
+
+  const handleSecondaryClick = () => {
+    if (sectionConfig?.secondaryCta?.action) {
+      onAction(sectionConfig.secondaryCta.action, sectionConfig.secondaryCta.target || '');
+      return;
+    }
+    if (secondaryLabel.toLowerCase().includes('campus')) {
+      onAction('navigate_to', 'campuses');
+    } else if (secondaryLabel.toLowerCase().includes('academics')) {
+      onAction('navigate_to', 'academics');
+    } else {
+      onAction('open_admissions_modal', 'campus_visit');
+    }
+  };
 
   return (
     <section id="final-cta" className="cinematic-final-cta-section">
@@ -24,33 +54,38 @@ export function AdmissionsCTASection({ data, sectionConfig, theme, onAction }) {
         <div className="final-cta-overlay" />
       </div>
 
-      {/* Subtle Chakra Orbital Motif */}
+      {/* Subtle Orbital Motif */}
       <OrbitalMotif motif={theme?.motif} />
 
       <Container>
         <div className="final-cta-content">
-          <span className="micro-label">ADMISSIONS 2026-27</span>
+          <span className="micro-label">TEJA JUNIOR COLLEGE</span>
 
           <h2 className="final-cta-statement">
             {statement}
           </h2>
+          {subtitle && (
+            <p style={{ color: 'var(--color-text-muted)', fontSize: '1.05rem', marginTop: '12px', maxWidth: '640px' }}>
+              {subtitle}
+            </p>
+          )}
 
           <div className="final-cta-actions">
             <Button
               variant="primary"
               size="lg"
               icon={ArrowUpRight}
-              onClick={() => onAction(primaryCta.action, primaryCta.meta || '')}
+              onClick={handlePrimaryClick}
             >
-              {primaryCta.label}
+              {primaryLabel}
             </Button>
 
             <Button
               variant="glass"
               size="lg"
-              onClick={() => onAction(secondaryCta.action, secondaryCta.meta || 'campus_visit')}
+              onClick={handleSecondaryClick}
             >
-              {secondaryCta.label}
+              {secondaryLabel}
             </Button>
           </div>
         </div>

@@ -7,11 +7,7 @@ import {
   BookOpen,
   ShieldCheck,
   Trophy,
-  Users,
   Compass,
-  MapPin,
-  Phone,
-  Clock,
   ArrowUpRight,
   CheckCircle2,
   Sparkles,
@@ -52,10 +48,10 @@ export function DetailModal() {
           <div className="detail-header-hero">
             <Badge variant="glow" size="sm">
               <Sparkles size={12} />
-              {program.code} — COGNIZANT PROGRAM
+              {program.code ? `${program.code} — ` : ''}{college.shortName || college.name || 'PROGRAM'}
             </Badge>
             <h2>{program.name}</h2>
-            <p className="detail-lead-text">{program.tagline}</p>
+            {program.tagline && <p className="detail-lead-text">{program.tagline}</p>}
           </div>
 
           <div style={{ padding: '20px', background: 'rgba(255, 255, 255, 0.03)', borderRadius: '16px', border: '1px solid var(--color-border)', marginBottom: '24px' }}>
@@ -63,8 +59,8 @@ export function DetailModal() {
               {program.description}
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-              <span className="pill-tag target-tag">Duration: {program.duration}</span>
-              <span className="pill-tag">Streams: {program.streams?.join(' / ')}</span>
+              {program.duration && <span className="pill-tag target-tag">Duration: {program.duration}</span>}
+              {program.streams && <span className="pill-tag">Streams: {program.streams.join(' / ')}</span>}
               {program.targetExams?.map((ex, i) => (
                 <span key={i} className="pill-tag" style={{ background: 'rgba(59, 130, 246, 0.15)', color: '#60A5FA' }}>
                   {ex}
@@ -73,17 +69,21 @@ export function DetailModal() {
             </div>
           </div>
 
-          <h3 style={{ fontSize: '1.1rem', color: 'var(--color-text)', marginBottom: '16px', fontWeight: 700 }}>
-            Key Academic Highlights
-          </h3>
-          <ul className="facility-feature-list" style={{ marginBottom: '24px' }}>
-            {program.keyFeatures?.map((feat, i) => (
-              <li key={i} style={{ fontSize: '0.92rem', display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '10px' }}>
-                <CheckCircle2 size={16} color="var(--color-secondary)" style={{ marginTop: '2px', flexShrink: 0 }} />
-                <span>{feat}</span>
-              </li>
-            ))}
-          </ul>
+          {program.keyFeatures && program.keyFeatures.length > 0 && (
+            <>
+              <h3 style={{ fontSize: '1.1rem', color: 'var(--color-text)', marginBottom: '16px', fontWeight: 700 }}>
+                Key Academic Highlights
+              </h3>
+              <ul className="facility-feature-list" style={{ marginBottom: '24px' }}>
+                {program.keyFeatures.map((feat, i) => (
+                  <li key={i} style={{ fontSize: '0.92rem', display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '10px' }}>
+                    <CheckCircle2 size={16} color="var(--color-secondary)" style={{ marginTop: '2px', flexShrink: 0 }} />
+                    <span>{feat}</span>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
         </div>
       );
     }
@@ -113,10 +113,10 @@ export function DetailModal() {
                   fontSize: '1.4rem'
                 }}
               >
-                {faculty.initials}
+                {faculty.initials || faculty.name.substring(0, 2).toUpperCase()}
               </div>
               <div>
-                <Badge variant="glow" size="sm">{faculty.subject} Mentor</Badge>
+                <Badge variant="glow" size="sm">{faculty.subject || 'Faculty'} Mentor</Badge>
                 <h2 style={{ margin: '4px 0 2px 0' }}>{faculty.name}</h2>
                 <span style={{ color: 'var(--color-secondary)', fontWeight: 600, fontSize: '0.9rem' }}>{faculty.role}</span>
               </div>
@@ -124,61 +124,66 @@ export function DetailModal() {
           </div>
 
           <div className="detail-cards-grid">
-            <div className="detail-card">
-              <div className="detail-card-icon"><GraduationCap size={20} /></div>
-              <h3>Qualification</h3>
-              <p>{faculty.qualification}</p>
-            </div>
-            <div className="detail-card">
-              <div className="detail-card-icon"><Award size={20} /></div>
-              <h3>Specialisation</h3>
-              <p>{faculty.specialization}</p>
-            </div>
+            {faculty.qualification && (
+              <div className="detail-card">
+                <div className="detail-card-icon"><GraduationCap size={20} /></div>
+                <h3>Qualification</h3>
+                <p>{faculty.qualification}</p>
+              </div>
+            )}
+            {faculty.specialization && (
+              <div className="detail-card">
+                <div className="detail-card-icon"><Award size={20} /></div>
+                <h3>Specialisation</h3>
+                <p>{faculty.specialization}</p>
+              </div>
+            )}
           </div>
 
-          <div style={{ padding: '20px', background: 'rgba(255, 255, 255, 0.03)', borderRadius: '14px', border: '1px solid var(--color-border)', marginTop: '20px' }}>
-            <h4 style={{ color: 'var(--color-text)', marginBottom: '8px' }}>Teaching & Mentorship Experience</h4>
-            <p style={{ color: 'var(--color-text-muted)', fontSize: '0.92rem', lineHeight: 1.6 }}>{faculty.experience}</p>
-          </div>
+          {faculty.experience && (
+            <div style={{ padding: '20px', background: 'rgba(255, 255, 255, 0.03)', borderRadius: '14px', border: '1px solid var(--color-border)', marginTop: '20px' }}>
+              <h4 style={{ color: 'var(--color-text)', marginBottom: '8px' }}>Teaching & Mentorship Experience</h4>
+              <p style={{ color: 'var(--color-text-muted)', fontSize: '0.92rem', lineHeight: 1.6 }}>{faculty.experience}</p>
+            </div>
+          )}
         </div>
       );
     }
 
     // Default About / Overview
+    const aboutTitle = collegeData.about?.title || `ABOUT ${college.name ? college.name.toUpperCase() : 'OUR INSTITUTION'}`;
+    const aboutLead = collegeData.about?.description || college.tagline || college.disclaimer || '';
+    const aboutEyebrow = collegeData.about?.eyebrow || `ABOUT ${college.shortName || college.name || 'COLLEGE'}`;
+    const points = collegeData.about?.points || [
+      'Strong fundamentals & conceptual understanding',
+      'Systematic problem solving & daily practice',
+      'Continuous testing & comprehensive evaluation',
+      'Detailed performance analysis & corrective feedback'
+    ];
+
     return (
       <div className="detail-modal-body">
         <div className="detail-header-hero">
           <Badge variant="glow" size="sm">
             <Sparkles size={12} />
-            ABOUT COGNIZANT JUNIOR COLLEGE
+            {aboutEyebrow}
           </Badge>
-          <h2>MORE THAN A COLLEGE. A SYSTEM BUILT AROUND STUDENT GROWTH.</h2>
-          <p className="detail-lead-text">
-            Cognizant was founded in 2022 with a vision to provide focused educational services and competitive-exam-oriented preparation for students in Anantapur and the Rayalaseema region.
-          </p>
+          <h2>{aboutTitle}</h2>
+          {aboutLead && <p className="detail-lead-text">{aboutLead}</p>}
         </div>
 
         <div className="detail-cards-grid">
-          <div className="detail-card">
-            <div className="detail-card-icon"><BookOpen size={20} /></div>
-            <h3>Strong Fundamentals</h3>
-            <p>Deep conceptual mastery ensuring students understand HOW and WHY before solving advanced numericals.</p>
-          </div>
-          <div className="detail-card">
-            <div className="detail-card-icon"><ShieldCheck size={20} /></div>
-            <h3>Structured Testing</h3>
-            <p>Daily objective tests, fortnight tests, and surprise revision tests simulating real NTA exam patterns.</p>
-          </div>
-          <div className="detail-card">
-            <div className="detail-card-icon"><Trophy size={20} /></div>
-            <h3>Performance Analysis</h3>
-            <p>Granular evaluation identifying strengths, weaknesses, speed, accuracy, and error minimisation.</p>
-          </div>
-          <div className="detail-card">
-            <div className="detail-card-icon"><Compass size={20} /></div>
-            <h3>Corrective Feedback</h3>
-            <p>Targeted micro-remediation sessions giving every student actionable steps for continuous improvement.</p>
-          </div>
+          {points.map((pt, i) => {
+            const icons = [BookOpen, ShieldCheck, Trophy, Compass];
+            const IconComp = icons[i % icons.length];
+            return (
+              <div key={i} className="detail-card">
+                <div className="detail-card-icon"><IconComp size={20} /></div>
+                <h3>Key Highlight {i + 1}</h3>
+                <p>{pt}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     );
@@ -187,7 +192,7 @@ export function DetailModal() {
   const getTitle = () => {
     if (activeDetailModal.startsWith('program:')) return 'Program Details';
     if (activeDetailModal.startsWith('faculty:')) return 'Faculty Profile';
-    return 'About Cognizant Junior College';
+    return `About ${college.shortName || college.name || 'College'}`;
   };
 
   return (

@@ -1,0 +1,374 @@
+/* Campuses Section Styling */
+
+.campuses-section {
+  background: var(--teja-navy, #0B151B);
+  border-bottom: 1px solid var(--teja-green-dark, #042F2A);
+}
+
+/* Selector Tabs Bar */
+.campus-tabs-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 32px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+
+.campus-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background: var(--teja-card-dark, #122A30);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--teja-white, #FFFFFF);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  box-shadow: 0 2px 8px rgba(11, 21, 27, 0.4);
+}
+
+.campus-tab-btn:hover {
+  border-color: var(--teja-blue, #2E86AB);
+  color: var(--teja-blue, #2E86AB);
+}
+
+.campus-tab-btn.tab-active {
+  background: var(--teja-blue, #2E86AB);
+  color: var(--teja-white, #FFFFFF);
+  border-color: var(--teja-blue, #2E86AB);
+  box-shadow: 0 4px 14px rgba(46, 134, 171, 0.35);
+}
+
+.campuses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.campus-card {
+  padding: 0;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--teja-card-dark, #122A30);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 28px rgba(11, 21, 27, 0.4);
+}
+
+.campus-card.card-selected {
+  border-color: var(--teja-blue, #2E86AB);
+  box-shadow: 0 12px 35px rgba(46, 134, 171, 0.18);
+}
+
+.campus-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--teja-blue, #2E86AB);
+  box-shadow: 0 12px 35px rgba(11, 21, 27, 0.6);
+}
+
+.campus-card-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 195px;
+  overflow: hidden;
+}
+
+.campus-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.campus-card:hover .campus-card-img {
+  transform: scale(1.05);
+}
+
+.campus-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 25, 47, 0.1) 0%, rgba(10, 25, 47, 0.6) 100%);
+}
+
+.campus-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  background: rgba(46, 134, 171, 0.15);
+  color: var(--teja-blue, #2E86AB);
+  border: 1px solid rgba(46, 134, 171, 0.35);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+}
+
+.campus-card-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.campus-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--teja-white, #FFFFFF);
+  margin-bottom: 12px;
+}
+
+.campus-info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 0.88rem;
+  color: var(--teja-text-light, #C4D4D7);
+  line-height: 1.5;
+}
+
+.campus-info-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.location-icon {
+  color: var(--teja-blue, #2E86AB);
+}
+
+.phone-icon {
+  color: var(--teja-blue, #2E86AB);
+}
+
+.campus-address-text {
+  font-size: 0.875rem;
+  color: var(--teja-text-light, #C4D4D7);
+}
+
+.campus-phone-link {
+  color: var(--teja-blue, #2E86AB);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.campus-phone-link:hover {
+  text-decoration: underline;
+  color: var(--teja-blue, #2E86AB);
+}
+
+.campus-facilities-block {
+  margin-top: 14px;
+  margin-bottom: 16px;
+}
+
+.facilities-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--teja-text-muted-light, #94A3B8);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.facilities-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.facility-pill {
+  font-size: 0.75rem;
+  background: rgba(46, 134, 171, 0.15);
+  border: 1px solid rgba(46, 134, 171, 0.35);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  color: var(--teja-blue, #2E86AB);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 700;
+}
+
+.campus-card-footer {
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+/* Selected Campus Details Container */
+.selected-campus-details-container {
+  margin-top: 36px;
+  scroll-margin-top: 100px;
+}
+
+.selected-campus-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  background: var(--teja-card-dark, #122A30);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-2xl);
+  padding: 28px;
+  box-shadow: 0 12px 35px rgba(11, 21, 27, 0.4);
+}
+
+.selected-campus-visual {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.selected-campus-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.selected-campus-img-tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(10, 25, 47, 0.88);
+  backdrop-filter: blur(8px);
+  color: var(--color-gold, #D97706);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(217, 119, 6, 0.4);
+}
+
+.selected-campus-info-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.detail-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--color-gold, #D97706);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.detail-campus-name {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--teja-white, #FFFFFF);
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+.detail-campus-desc {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--teja-text-light, #C4D4D7);
+  margin-bottom: 20px;
+}
+
+.detail-field-group {
+  margin-bottom: 16px;
+}
+
+.field-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--teja-text-muted-light, #94A3B8);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.field-value {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--teja-white, #FFFFFF);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.detail-phone-link {
+  color: var(--teja-blue, #2E86AB);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.detail-phone-link:hover {
+  text-decoration: underline;
+  color: var(--teja-blue, #2E86AB);
+}
+
+.detail-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.detail-facility-pill {
+  font-size: 0.8rem;
+  background: rgba(46, 134, 171, 0.15);
+  border: 1px solid rgba(46, 134, 171, 0.35);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  color: var(--teja-blue, #2E86AB);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+}
+
+.selected-campus-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+  .selected-campus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .selected-campus-visual {
+    height: 280px;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .campuses-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .selected-campus-details-container {
+    padding: 0;
+  }
+
+  .selected-campus-grid {
+    padding: 16px;
+  }
+}
+

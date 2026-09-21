@@ -1,23 +1,35 @@
 /* Mission & Vision Layout Styling */
 
 .mission-vision-section {
-  background: var(--color-bg-alt);
-  border-bottom: 1px solid var(--color-border);
+  background: var(--teja-navy, #0B151B);
+  border-bottom: 1px solid var(--teja-green-dark, #042F2A);
 }
 
 .mv-container {
-  display: flex;
-  flex-direction: column;
-  gap: 36px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
   margin-top: 48px;
 }
 
-.mission-box-card, .vision-box-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+.mission-box-card {
+  background: var(--teja-card-dark, #122A30);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-xl);
-  padding: 40px;
-  box-shadow: var(--shadow-md);
+  padding: 36px 32px;
+  box-shadow: 0 4px 20px rgba(11, 21, 27, 0.4);
+  display: flex;
+  flex-direction: column;
+}
+
+.vision-box-card {
+  background: var(--teja-card-dark, #122A30);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-xl);
+  padding: 36px 32px;
+  box-shadow: 0 4px 20px rgba(11, 21, 27, 0.4);
+  display: flex;
+  flex-direction: column;
 }
 
 .mv-header-row {
@@ -31,44 +43,47 @@
   width: 48px;
   height: 48px;
   border-radius: var(--radius-md);
-  background: rgba(59, 130, 246, 0.15);
-  border: 1px solid rgba(59, 130, 246, 0.3);
-  color: var(--color-primary);
+  background: rgba(46, 134, 171, 0.15);
+  border: 1px solid rgba(46, 134, 171, 0.35);
+  color: var(--teja-blue, #2E86AB);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .mv-icon-badge.vision-badge {
-  background: rgba(245, 158, 11, 0.15);
-  border-color: rgba(245, 158, 11, 0.3);
-  color: var(--color-secondary);
+  background: rgba(217, 169, 40, 0.15);
+  border-color: rgba(217, 169, 40, 0.35);
+  color: var(--teja-gold, #D9A928);
 }
 
 .mv-card-title {
   font-family: var(--font-heading);
-  font-size: 1.65rem;
+  font-size: 1.5rem;
   font-weight: 800;
-  color: var(--color-text);
+  color: var(--teja-white, #FFFFFF);
   letter-spacing: 0.02em;
+}
+
+.vision-box-card .mv-card-title {
+  color: var(--teja-white, #FFFFFF);
 }
 
 .mission-official-statement, .vision-official-statement {
   font-family: var(--font-body);
-  font-size: 1.15rem;
-  font-weight: 600;
-  line-height: 1.6;
-  color: var(--color-text);
-  margin-bottom: 24px;
-  font-style: italic;
-  padding: 16px 20px;
-  background: rgba(255, 255, 255, 0.03);
-  border-left: 3px solid var(--color-primary);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.65;
+  color: var(--teja-text-light, #FFFFFF);
+  margin-bottom: 0;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 4px solid var(--teja-blue, #2E86AB);
+  border-radius: var(--radius-md);
 }
 
 .vision-official-statement {
-  border-left-color: var(--color-secondary);
+  border-left-color: var(--teja-gold, #D9A928);
 }
 
 .mission-pillars-list {

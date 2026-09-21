@@ -1,118 +1,50 @@
 /* Tier 1 Navbar Component Styling */
 
-.top-demo-banner {
-  background: #020617;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 6px 0;
-  font-size: 0.75rem;
-  color: var(--color-text-muted);
+/* Top Scrolling Marquee Line */
+.top-scrolling-marquee-bar {
+  background: #0B3B82;
+  color: #FFFFFF;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   position: relative;
   z-index: 101;
 }
 
-.top-banner-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.banner-badge-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.banner-pulse-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: var(--color-success);
-  box-shadow: 0 0 8px var(--color-success);
-  animation: pulse-dot 2s infinite;
-}
-
-@keyframes pulse-dot {
-  0% { transform: scale(0.95); opacity: 0.8; }
-  50% { transform: scale(1.2); opacity: 1; }
-  100% { transform: scale(0.95); opacity: 0.8; }
-}
-
-.banner-title {
-  font-family: var(--font-mono);
-  font-weight: 700;
-  color: var(--color-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.banner-active-label {
-  color: var(--color-text);
-}
-
-.college-switch-buttons {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.switch-prompt {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--color-text-subtle);
-}
-
-.switch-btn {
+.marquee-announcement-item {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  padding: 3px 10px;
-  border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--color-text-muted);
-  font-size: 0.72rem;
-  font-weight: 600;
-  transition: all var(--transition-fast);
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  margin-right: 36px;
 }
 
-.switch-btn:hover {
-  color: var(--color-text);
-  border-color: rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.switch-btn.active {
-  background: rgba(59, 130, 246, 0.15);
-  border-color: rgba(59, 130, 246, 0.4);
-  color: var(--color-primary);
-}
-
-/* Main Navbar */
+/* Main Navbar - Pure Clean White Background */
 .app-navbar {
   position: sticky;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(6, 10, 20, 0.82);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  background: #FFFFFF;
+  border-bottom: 1px solid #E2E8F0;
+  box-shadow: 0 4px 14px rgba(10, 25, 47, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Expanded Navbar (Top of page or scrolling up) */
+/* Expanded Navbar */
 .app-navbar.navbar-expanded {
-  padding: 16px 0;
+  padding: 14px 0;
 }
 
-/* Compact Navbar (Scrolling down) */
+/* Compact Navbar */
 .app-navbar.navbar-compact {
   padding: 8px 0;
-  background: rgba(6, 10, 20, 0.94);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  border-bottom-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 4px 20px rgba(10, 25, 47, 0.1);
+  border-bottom-color: #CBD5E1;
 }
 
 .navbar-inner {
@@ -122,87 +54,96 @@
   gap: 24px;
 }
 
+.navbar-logo-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Center Desktop Nav Links */
 .desktop-nav-links {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 24px;
 }
 
 .nav-link-btn {
-  font-family: var(--font-body);
-  font-size: 0.875rem;
+  background: transparent;
+  border: none;
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.92rem;
   font-weight: 600;
-  color: var(--color-text-muted);
-  transition: color var(--transition-fast), transform var(--transition-fast);
-  padding: 6px 4px;
+  color: #1E293B;
+  transition: color var(--transition-fast, 0.18s ease);
+  padding: 6px 2px;
   position: relative;
+  cursor: pointer;
 }
 
-.nav-link-btn:hover,
+.nav-link-btn:hover {
+  color: #0B3B82;
+}
+
 .nav-link-btn.active {
-  color: var(--color-text);
+  color: #0B3B82;
+  font-weight: 700;
 }
 
 .nav-link-btn::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 50%;
+  bottom: -6px;
+  left: 0;
   width: 0;
-  height: 2px;
-  background: var(--color-secondary);
-  transition: all var(--transition-fast);
-  transform: translateX(-50%);
+  height: 4px;
+  background: #38BDF8; /* Cyan active underline bar matching user screenshot */
+  transition: width var(--transition-fast, 0.18s ease);
   border-radius: 2px;
 }
 
-.nav-link-btn:hover::after,
 .nav-link-btn.active::after {
-  width: 80%;
+  width: 100%;
+}
+
+.nav-link-btn:hover::after {
+  width: 60%;
 }
 
 .navbar-right-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
-.nav-icon-action {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 12px;
-  border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--color-border);
-  color: var(--color-text-muted);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  transition: all var(--transition-fast);
+/* Apply for Admission CTA Button */
+.apply-admission-btn {
+  background: #0B3B82;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 14px rgba(11, 59, 130, 0.25);
+  white-space: nowrap;
 }
 
-.nav-icon-action:hover {
-  color: var(--color-text);
-  border-color: rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.nav-icon-action.whatsapp-action {
-  color: #25D366;
-  border-color: rgba(37, 211, 102, 0.25);
-  background: rgba(37, 211, 102, 0.08);
-  padding: 8px;
-}
-
-.nav-icon-action.whatsapp-action:hover {
-  background: rgba(37, 211, 102, 0.18);
-  border-color: rgba(37, 211, 102, 0.5);
+.apply-admission-btn:hover {
+  background: #09316C;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(11, 59, 130, 0.35);
 }
 
 .mobile-menu-toggle {
   display: none;
-  color: var(--color-text);
+  color: #0B3B82;
   padding: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 /* Mobile Drawer */
@@ -213,12 +154,12 @@
   bottom: 0;
   width: 320px;
   max-width: 85vw;
-  background: #060A14;
-  border-left: 1px solid var(--color-border-strong);
+  background: #FFFFFF;
+  border-left: 1px solid #CBD5E1;
   z-index: 999;
   transform: translateX(100%);
-  transition: transform var(--transition-normal);
-  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8);
+  transition: transform var(--transition-normal, 0.3s ease);
+  box-shadow: -10px 0 40px rgba(10, 25, 47, 0.15);
 }
 
 .mobile-nav-drawer.drawer-open {
@@ -237,12 +178,15 @@
   align-items: center;
   justify-content: space-between;
   padding-bottom: 20px;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid #E2E8F0;
 }
 
 .mobile-close-btn {
-  color: var(--color-text-muted);
+  color: #0F172A;
   padding: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .mobile-links-list {
@@ -259,19 +203,23 @@
   align-items: center;
   justify-content: space-between;
   padding: 12px 14px;
-  border-radius: var(--radius-md);
-  color: var(--color-text);
+  border-radius: var(--radius-md, 12px);
+  color: #0F172A;
   font-weight: 600;
   font-size: 0.95rem;
-  transition: background var(--transition-fast);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-fast, 0.18s ease);
 }
 
 .mobile-link-item:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: #F1F5F9;
+  color: #0B3B82;
 }
 
 .mobile-link-item .link-arrow {
-  color: var(--color-secondary);
+  color: #0B3B82;
 }
 
 .mobile-drawer-contact-strip {
@@ -287,12 +235,13 @@
   justify-content: center;
   gap: 6px;
   padding: 10px;
-  border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--color-border);
-  color: var(--color-text);
+  border-radius: var(--radius-md, 12px);
+  background: #F8FAFC;
+  border: 1px solid #CBD5E1;
+  color: #0F172A;
   font-size: 0.8125rem;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .mobile-contact-pill.wa {
@@ -303,15 +252,12 @@
 
 .mobile-drawer-footer {
   padding-top: 16px;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid #E2E8F0;
 }
 
-/* Responsive adjustments */
+/* Responsive Adjustments */
 @media (max-width: 1024px) {
   .desktop-nav-links {
-    display: none;
-  }
-  .phone-num-text {
     display: none;
   }
   .mobile-menu-toggle {
@@ -320,16 +266,8 @@
 }
 
 @media (max-width: 640px) {
-  .top-banner-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-  }
-  .college-switch-buttons {
-    width: 100%;
-    justify-content: flex-end;
-  }
-  .nav-admissions-btn {
-    display: none;
+  .apply-admission-btn {
+    padding: 8px 14px;
+    font-size: 0.8rem;
   }
 }

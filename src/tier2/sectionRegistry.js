@@ -6,7 +6,7 @@ import { AboutSection } from './sections/AboutSection';
 import { FounderSection } from './sections/FounderSection';
 import { ProgramsSection } from './sections/ProgramsSection';
 import { WinningProcessSection } from './sections/WinningProcessSection';
-import { WhyCognizantSection } from './sections/WhyCognizantSection';
+import { PillarsSection } from './sections/PillarsSection';
 import { FacultySection } from './sections/FacultySection';
 import { ExamPrepSection } from './sections/ExamPrepSection';
 import { TestingAnalyticsSection } from './sections/TestingAnalyticsSection';
@@ -16,8 +16,23 @@ import { UpdatesSection } from './sections/UpdatesSection';
 import { AdmissionsCTASection } from './sections/AdmissionsCTASection';
 import { ContactSection } from './sections/ContactSection';
 import { ExperienceSection } from './sections/ExperienceSection';
+import { CampusesSection } from './sections/CampusesSection';
 
-// About Page Specific Layouts
+// Preview & Rich Media Layouts
+import { AcademicsPreviewSection } from './sections/AcademicsPreviewSection';
+import { CampusLifeSection } from './sections/CampusLifeSection';
+import { CampusPreviewSection } from './sections/CampusPreviewSection';
+import { HostelPreviewSection } from './sections/HostelPreviewSection';
+import { HostelSection } from './sections/HostelSection';
+import { InfrastructureSection } from './sections/InfrastructureSection';
+import { PersonalityDevelopmentSection } from './sections/PersonalityDevelopmentSection';
+import { PersonalityPreviewSection } from './sections/PersonalityPreviewSection';
+import { SportsPreviewSection } from './sections/SportsPreviewSection';
+import { SportsSection } from './sections/SportsSection';
+import { StudentExperienceSection } from './sections/StudentExperienceSection';
+import { StudentLifePreviewSection } from './sections/StudentLifePreviewSection';
+
+// Secondary Page Layouts
 import { AboutHeroLayout } from './sections/AboutHeroLayout';
 import { StoryLayout } from './sections/StoryLayout';
 import { CommitmentLayout } from './sections/CommitmentLayout';
@@ -27,15 +42,16 @@ import { FounderMessageLayout } from './sections/FounderMessageLayout';
 import { QuoteLayout } from './sections/QuoteLayout';
 
 export const SECTION_REGISTRY = {
-  // Cognizant Homepage Sections
+  // Primary Core Section Layouts
   hero: HeroSection,
   'trust-strip': TrustStripSection,
   about: AboutSection,
   founder: FounderSection,
   programs: ProgramsSection,
   'winning-process': WinningProcessSection,
-  'why-cognizant': WhyCognizantSection,
-  'why-us': WhyCognizantSection,
+  pillars: PillarsSection,
+  'why-us': PillarsSection,
+  'why-cognizant': PillarsSection,
   faculty: FacultySection,
   'exam-prep': ExamPrepSection,
   'testing-analytics': TestingAnalyticsSection,
@@ -46,8 +62,26 @@ export const SECTION_REGISTRY = {
   'admissions-cta': AdmissionsCTASection,
   'final-cta': AdmissionsCTASection,
   contact: ContactSection,
+  'contact-preview': ContactSection,
+  campuses: CampusesSection,
+  'campuses-preview': CampusesSection,
 
-  // Cognizant About Page Layouts
+  // Rich Media & Campus Preview Section Layouts
+  'student-experience': StudentExperienceSection,
+  'campus-preview': CampusPreviewSection,
+  'academics-preview': AcademicsPreviewSection,
+  'sports-preview': SportsPreviewSection,
+  'hostel-preview': HostelPreviewSection,
+  'student-life-preview': StudentLifePreviewSection,
+  'personality-preview': PersonalityPreviewSection,
+  'chakra-experience': ExperienceSection,
+  'campus-life': CampusLifeSection,
+  hostel: HostelSection,
+  infrastructure: InfrastructureSection,
+  'personality-development': PersonalityDevelopmentSection,
+  sports: SportsSection,
+
+  // About Page Layouts
   'about-hero': AboutHeroLayout,
   'story-layout': StoryLayout,
   'commitment-layout': CommitmentLayout,
@@ -55,13 +89,7 @@ export const SECTION_REGISTRY = {
   'philosophy-layout': PhilosophyLayout,
   'founder-message-layout': FounderMessageLayout,
   'quote-layout': QuoteLayout,
-  'final-cta-layout': AdmissionsCTASection,
-
-  // Fallbacks & Previous Aliases
-  'student-experience': AboutSection,
-  'campus-preview': GallerySection,
-  'academics-preview': ProgramsSection,
-  'chakra-experience': ExperienceSection
+  'final-cta-layout': AdmissionsCTASection
 };
 
 /**

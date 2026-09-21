@@ -1,37 +1,38 @@
-import { siteConfig } from '../data/siteConfig';
-import { homeData } from '../data/homeData';
-import { programsData } from '../data/programsData';
-import { gurusData } from '../data/gurusData';
-import { eventsData } from '../data/eventsData';
-
-import { SiteConfig, HomeData } from '../types/site';
-import { ProgramsSectionData } from '../types/program';
-import { GurusSectionData } from '../types/guru';
-import { EventsSectionData } from '../types/event';
+import { loadCollegeData, getAvailableColleges } from '../tier3/contentLoader';
 
 /**
- * Service abstraction layer for fetching content.
- * Structuring it this way ensures backend/Supabase API integration
- * can replace static datasets seamlessly in the future without modifying UI components.
+ * Service abstraction layer for fetching college content dynamically from Tier 3 JSONs.
  */
 export const contentService = {
-  getSiteConfig(): SiteConfig {
-    return siteConfig;
+  getCollegeData(collegeId = 'cognizant') {
+    return loadCollegeData(collegeId);
   },
 
-  getHomePageData(): HomeData {
-    return homeData;
+  getAvailableColleges() {
+    return getAvailableColleges();
   },
 
-  getPrograms(): ProgramsSectionData {
-    return programsData;
+  getSiteConfig(collegeId = 'cognizant') {
+    const data = loadCollegeData(collegeId);
+    return data?.college || {};
   },
 
-  getGurus(): GurusSectionData {
-    return gurusData;
+  getHomePageData(collegeId = 'cognizant') {
+    const data = loadCollegeData(collegeId);
+    return {
+      college: data?.college,
+      sections: data?.sections,
+      theme: data?.theme
+    };
   },
 
-  getEvents(): EventsSectionData {
-    return eventsData;
+  getPrograms(collegeId = 'cognizant') {
+    const data = loadCollegeData(collegeId);
+    return data?.courses || { programs: [] };
+  },
+
+  getGurus(collegeId = 'cognizant') {
+    const data = loadCollegeData(collegeId);
+    return data?.faculty || { members: [] };
   }
 };

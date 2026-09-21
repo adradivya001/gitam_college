@@ -1,8 +1,8 @@
 /* Contact Section Styling */
 
 .contact-section {
-  background: var(--color-bg-alt);
-  border-bottom: 1px solid var(--color-border);
+  background: var(--teja-green, #063F38);
+  border-bottom: 1px solid var(--teja-green-dark, #042F2A);
 }
 
 .contact-grid-container {
@@ -14,18 +14,19 @@
 
 .contact-info-card {
   padding: 40px;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background: var(--teja-card-dark, #122A30);
+  border: 1px solid #24454E;
   border-radius: var(--radius-xl);
   display: flex;
   flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .contact-institution-name {
   font-family: var(--font-heading);
   font-size: 1.75rem;
   font-weight: 800;
-  color: var(--color-text);
+  color: var(--teja-white, #FFFFFF);
   margin-bottom: 4px;
 }
 
@@ -33,7 +34,7 @@
   font-family: var(--font-mono);
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--color-secondary);
+  color: var(--teja-pink, #E83B8C);
   text-transform: uppercase;
   margin-bottom: 28px;
   display: block;
@@ -50,12 +51,12 @@
   width: 42px;
   height: 42px;
   border-radius: var(--radius-md);
-  background: rgba(59, 130, 246, 0.12);
-  border: 1px solid rgba(59, 130, 246, 0.25);
+  background: rgba(232, 59, 140, 0.15);
+  border: 1px solid rgba(232, 59, 140, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-primary);
+  color: var(--teja-pink, #E83B8C);
   flex-shrink: 0;
 }
 
@@ -63,7 +64,7 @@
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--color-text-subtle);
+  color: var(--teja-text-muted-light, #C4D4D7);
   text-transform: uppercase;
   display: block;
   margin-bottom: 2px;
@@ -73,7 +74,7 @@
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.5;
-  color: var(--color-text);
+  color: var(--teja-white, #FFFFFF);
 }
 
 .phone-links {
@@ -86,16 +87,16 @@
   font-family: var(--font-heading);
   font-size: 1.1rem;
   font-weight: 800;
-  color: var(--color-text);
+  color: var(--teja-white, #FFFFFF);
   transition: color var(--transition-fast);
 }
 
 .phone-link:hover {
-  color: var(--color-secondary);
+  color: var(--teja-pink, #E83B8C);
 }
 
 .phone-sep {
-  color: var(--color-border-strong);
+  color: #24454E;
 }
 
 .contact-action-row {
@@ -116,14 +117,14 @@
   font-weight: 700;
   transition: all var(--transition-fast);
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--color-border);
-  color: var(--color-text);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--teja-white, #FFFFFF);
 }
 
 .contact-action-btn.call:hover {
-  background: rgba(59, 130, 246, 0.15);
-  border-color: rgba(59, 130, 246, 0.4);
-  color: var(--color-primary);
+  background: rgba(232, 59, 140, 0.15);
+  border-color: rgba(232, 59, 140, 0.35);
+  color: var(--teja-pink, #E83B8C);
 }
 
 .contact-action-btn.wa {
@@ -137,9 +138,9 @@
 }
 
 .contact-action-btn.map:hover {
-  background: rgba(245, 158, 11, 0.15);
-  border-color: rgba(245, 158, 11, 0.4);
-  color: var(--color-secondary);
+  background: rgba(4, 47, 42, 0.3);
+  border-color: rgba(4, 47, 42, 0.5);
+  color: var(--teja-white, #FFFFFF);
 }
 
 .contact-enquire-box {
@@ -149,9 +150,10 @@
 .contact-map-frame {
   border-radius: var(--radius-xl);
   overflow: hidden;
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 30px rgba(11, 21, 27, 0.5);
   min-height: 380px;
+  background: var(--teja-card-dark, #122A30);
 }
 
 @media (max-width: 900px) {

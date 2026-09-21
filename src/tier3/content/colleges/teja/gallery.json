@@ -1,0 +1,44 @@
+{
+  "heading": "Life at Teja",
+  "subheading": "Explore the campus environment, activities and experiences that make student life memorable.",
+  "filters": ["All", "Campus", "Classrooms", "Events", "Sports", "Student Activities"],
+  "categories": ["Campus Life", "Academic Environment", "Student Activities", "Sports", "Events", "Celebrations"],
+  "images": [
+    {
+      "id": "g1",
+      "title": "Kamalanagar Campus Grounds",
+      "category": "Campus",
+      "src": "/assets/images/gallery/campus_kamalanagar.jpg"
+    },
+    {
+      "id": "g2",
+      "title": "Smart Classrooms",
+      "category": "Classrooms",
+      "src": "/assets/images/gallery/smart_classrooms.jpg"
+    },
+    {
+      "id": "g3",
+      "title": "Ramnagar Campus",
+      "category": "Campus",
+      "src": "/assets/images/gallery/campus_ramnagar.jpg"
+    },
+    {
+      "id": "g4",
+      "title": "Girls Campus Environment",
+      "category": "Campus",
+      "src": "/assets/images/gallery/girls_campus.jpg"
+    },
+    {
+      "id": "g5",
+      "title": "Sports & Athletic Field",
+      "category": "Sports",
+      "src": "/assets/images/gallery/sports_field.jpg"
+    },
+    {
+      "id": "g6",
+      "title": "Student Activities & Celebrations",
+      "category": "Student Activities",
+      "src": "/assets/images/gallery/student_activities.jpg"
+    }
+  ]
+}

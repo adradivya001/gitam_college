@@ -41,7 +41,7 @@ export function SectionHeading({
             fontWeight: 800,
             lineHeight: 1.15,
             letterSpacing: '-0.025em',
-            color: light ? 'var(--color-text-light)' : 'var(--color-text)',
+            color: light ? '#0F172A' : 'var(--color-text, #FFFFFF)',
             whiteSpace: 'pre-line'
           }}
         >
@@ -54,9 +54,9 @@ export function SectionHeading({
           style={{
             fontSize: 'clamp(1rem, 1.2vw, 1.1875rem)',
             lineHeight: 1.65,
-            color: light ? 'var(--color-text-light-muted)' : 'var(--color-text-muted)',
+            color: light ? '#334155' : 'var(--color-text-muted, #E2E8F0)',
             maxWidth: '640px',
-            fontWeight: 400
+            fontWeight: 450
           }}
         >
           {subtitle}

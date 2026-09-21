@@ -1,6 +1,6 @@
 .infra-section {
   padding: 100px 0;
-  background: var(--color-bg-alt);
+  background: var(--teja-navy, #0B151B);
   position: relative;
 }
 
@@ -21,8 +21,8 @@
 }
 
 .infra-item-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background: var(--teja-card-dark, #122A30);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-lg, 16px);
   padding: 20px 24px;
   cursor: pointer;
@@ -30,17 +30,19 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+  box-shadow: 0 10px 30px rgba(11, 21, 27, 0.4);
 }
 
 .infra-item-card:hover {
-  border-color: var(--color-border-strong);
+  background: var(--teja-green-dark, #042F2A);
+  border-color: var(--teja-pink, #E83B8C);
   transform: translateX(4px);
 }
 
 .infra-item-card.active {
-  background: var(--color-surface-alt);
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 20px var(--color-primary-glow);
+  background: var(--teja-green-dark, #042F2A);
+  border-color: var(--teja-pink, #E83B8C);
+  box-shadow: 0 4px 20px rgba(232, 59, 140, 0.3);
 }
 
 .infra-item-header {
@@ -54,26 +56,26 @@
   font-size: 0.6875rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-primary);
+  color: var(--teja-gold, #D9A928);
   font-weight: 700;
 }
 
 .infra-index-num {
   font-family: var(--font-mono);
   font-size: 0.8125rem;
-  color: var(--color-text-muted);
+  color: var(--teja-text-muted-light, #C4D4D7);
 }
 
 .infra-item-title {
   font-family: var(--font-heading);
   font-size: 1.1875rem;
   font-weight: 700;
-  color: var(--color-text);
+  color: var(--teja-text-light, #FFFFFF);
 }
 
 .infra-item-desc {
   font-size: 0.875rem;
-  color: var(--color-text-muted);
+  color: var(--teja-text-muted-light, #C4D4D7);
   line-height: 1.5;
 }
 
@@ -89,7 +91,7 @@
   height: 500px;
   border-radius: var(--radius-xl, 24px);
   overflow: hidden;
-  border: 1px solid var(--color-border-strong);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: var(--shadow-lg);
 }
 
@@ -107,7 +109,7 @@
 .infra-image-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(11, 14, 20, 0.95) 0%, rgba(11, 14, 20, 0.2) 60%, transparent 100%);
+  background: linear-gradient(to top, rgba(11, 21, 27, 0.95) 0%, rgba(11, 21, 27, 0.2) 60%, transparent 100%);
 }
 
 .infra-caption-card {
@@ -124,7 +126,7 @@
   font-family: var(--font-heading);
   font-size: 1.625rem;
   font-weight: 800;
-  color: var(--color-text);
+  color: #FFFFFF;
   line-height: 1.2;
 }
 

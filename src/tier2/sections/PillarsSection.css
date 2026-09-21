@@ -1,0 +1,131 @@
+/* Pillars Section Styling */
+
+.pillars-section {
+  background: var(--teja-navy, #0B151B);
+  border-bottom: 1px solid var(--teja-green-dark, #042F2A);
+}
+
+/* Dynamic Grid Layout for 4, 5, or 6 Pillars */
+.why-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+
+/* 6 Items Layout: 3 x 2 */
+.why-pillars-grid:has(> :nth-child(6)) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* 5 Items Layout: 3 Top + 2 Centered Bottom */
+.why-pillars-grid:has(> :nth-child(5)):not(:has(> :nth-child(6))) {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.why-pillars-grid:has(> :nth-child(5)):not(:has(> :nth-child(6))) > :nth-child(1),
+.why-pillars-grid:has(> :nth-child(5)):not(:has(> :nth-child(6))) > :nth-child(2),
+.why-pillars-grid:has(> :nth-child(5)):not(:has(> :nth-child(6))) > :nth-child(3) {
+  grid-column: span 2;
+}
+
+.why-pillars-grid:has(> :nth-child(5)):not(:has(> :nth-child(6))) > :nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.why-pillars-grid:has(> :nth-child(5)):not(:has(> :nth-child(6))) > :nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
+/* 4 Items Layout: 4 Columns */
+.why-pillars-grid:has(> :nth-child(4)):not(:has(> :nth-child(5))) {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.why-pillar-card {
+  padding: 28px 24px;
+  background: var(--teja-card-dark, #122A30);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 280ms cubic-bezier(0.16, 1, 0.3, 1), border-color 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(11, 21, 27, 0.4);
+}
+
+.why-pillar-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--teja-pink, #E83B8C);
+  box-shadow: 0 16px 35px rgba(232, 59, 140, 0.2);
+}
+
+.pillar-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.pillar-num {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--teja-pink, #E83B8C);
+}
+
+.pillar-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(232, 59, 140, 0.15);
+  border: 1px solid rgba(232, 59, 140, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--teja-pink, #E83B8C);
+  transition: transform 250ms ease;
+}
+
+.why-pillar-card:hover .pillar-icon-box {
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Card Accent Variations */
+.why-pillar-card:nth-child(1) .pillar-icon-box { background: rgba(232, 59, 140, 0.15); border-color: rgba(232, 59, 140, 0.35); color: var(--teja-pink, #E83B8C); }
+.why-pillar-card:nth-child(2) .pillar-icon-box { background: rgba(46, 134, 171, 0.15); border-color: rgba(46, 134, 171, 0.35); color: var(--teja-blue, #2E86AB); }
+.why-pillar-card:nth-child(3) .pillar-icon-box { background: rgba(6, 63, 56, 0.3); border-color: rgba(6, 63, 56, 0.6); color: #52C4B9; }
+.why-pillar-card:nth-child(4) .pillar-icon-box { background: rgba(217, 169, 40, 0.15); border-color: rgba(217, 169, 40, 0.35); color: var(--teja-gold, #D9A928); }
+.why-pillar-card:nth-child(5) .pillar-icon-box { background: rgba(232, 59, 140, 0.15); border-color: rgba(232, 59, 140, 0.35); color: var(--teja-pink, #E83B8C); }
+.why-pillar-card:nth-child(6) .pillar-icon-box { background: rgba(46, 134, 171, 0.15); border-color: rgba(46, 134, 171, 0.35); color: var(--teja-blue, #2E86AB); }
+
+.pillar-title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--teja-white, #FFFFFF);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+.pillar-desc {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--teja-text-muted-light, #C4D4D7);
+}
+
+@media (max-width: 1024px) {
+  .why-pillars-grid,
+  .why-pillars-grid:has(> :nth-child(5)) {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .why-pillars-grid > * {
+    grid-column: auto !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .why-pillars-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

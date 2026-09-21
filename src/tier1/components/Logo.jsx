@@ -2,34 +2,54 @@ import React from 'react';
 import { Shield, GraduationCap } from 'lucide-react';
 
 export function Logo({
-  name = 'COGNIZANT',
-  subtext = 'JUNIOR COLLEGE • JEE • NEET',
+  name = 'TEJA',
+  subtext = 'JUNIOR COLLEGE • ANANTAPUR',
+  logoUrl = '',
   motif = 'shield',
   size = 'md',
+  lightBackground = false,
   className = ''
 }) {
   const isSm = size === 'sm';
-  const logoWidth = isSm ? '38px' : '44px';
-  const logoHeight = isSm ? '38px' : '44px';
+  const logoWidth = isSm ? '40px' : '48px';
+  const logoHeight = isSm ? '40px' : '48px';
 
   return (
     <div className={`college-logo college-logo-${size} ${className}`} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-      <div
-        style={{
-          width: logoWidth,
-          height: logoHeight,
-          borderRadius: '12px',
-          background: 'linear-gradient(135deg, #1E40AF 0%, #3B82F6 50%, #F59E0B 100%)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          boxShadow: '0 4px 16px rgba(59, 130, 246, 0.35)',
-          position: 'relative',
-          flexShrink: 0
-        }}
-      >
-        <GraduationCap size={isSm ? 20 : 24} color="#FFFFFF" strokeWidth={2.2} />
-      </div>
+      {logoUrl ? (
+        <img
+          src={logoUrl}
+          alt={name}
+          style={{
+            width: logoWidth,
+            height: logoHeight,
+            objectFit: 'contain',
+            borderRadius: '50%',
+            flexShrink: 0,
+            background: '#FFFFFF',
+            padding: '2px',
+            boxShadow: '0 4px 14px rgba(11, 59, 130, 0.25)',
+            border: '2px solid #0B3B82'
+          }}
+        />
+      ) : (
+        <div
+          style={{
+            width: logoWidth,
+            height: logoHeight,
+            borderRadius: '12px',
+            background: 'linear-gradient(135deg, #0B3B82 0%, #2563EB 100%)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            boxShadow: '0 4px 14px rgba(11, 59, 130, 0.25)',
+            position: 'relative',
+            flexShrink: 0
+          }}
+        >
+          <GraduationCap size={isSm ? 20 : 24} color="#FFFFFF" strokeWidth={2.2} />
+        </div>
+      )}
 
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <span
@@ -39,7 +59,7 @@ export function Logo({
             fontWeight: 800,
             letterSpacing: '0.04em',
             lineHeight: 1.1,
-            color: 'var(--color-text)',
+            color: lightBackground ? '#0B3B82' : 'var(--color-text, #FFFFFF)',
             display: 'flex',
             alignItems: 'center',
             gap: '6px'
@@ -55,7 +75,7 @@ export function Logo({
               fontWeight: 700,
               letterSpacing: '0.12em',
               textTransform: 'uppercase',
-              color: 'var(--color-secondary)',
+              color: lightBackground ? '#2563EB' : 'var(--color-gold, #D97706)',
               marginTop: '2px'
             }}
           >

@@ -4,14 +4,15 @@ import { loadCollegeData, getAvailableColleges } from '../tier3/contentLoader';
 const CollegeContext = createContext(null);
 
 export function CollegeProvider({ children }) {
-  const [activeCollegeId, setActiveCollegeId] = useState('cognizant');
-  const [collegeData, setCollegeData] = useState(() => loadCollegeData('cognizant'));
+  const [activeCollegeId, setActiveCollegeId] = useState('teja');
+  const [collegeData, setCollegeData] = useState(() => loadCollegeData('teja'));
   
-  // Active Page Route State ('home' | 'about')
+  // Active Page Route State ('home' | 'about' | 'academics' | 'campuses' | 'facilities' | 'student-life' | 'admissions' | 'gallery' | 'contact')
   const [activePage, setActivePage] = useState(() => {
     if (typeof window !== 'undefined') {
-      const path = window.location.hash || window.location.pathname;
-      if (path.includes('about')) return 'about';
+      const path = (window.location.hash || window.location.pathname).replace(/^#\/?/, '').replace(/^\//, '');
+      const validPages = ['about', 'academics', 'campuses', 'why-teja', 'facilities', 'student-life', 'admissions', 'gallery', 'contact'];
+      if (validPages.includes(path)) return path;
     }
     return 'home';
   });
@@ -30,13 +31,7 @@ export function CollegeProvider({ children }) {
   useEffect(() => {
     if (!collegeData) return;
 
-    if (activePage === 'about' && collegeData.about?.seo) {
-      document.title = collegeData.about.seo.title || `About ${collegeData.college?.name}`;
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) {
-        metaDesc.setAttribute('content', collegeData.about.seo.metaDescription || '');
-      }
-    } else if (collegeData.seo) {
+    if (collegeData.seo) {
       document.title = collegeData.seo.title || collegeData.college?.name;
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) {
@@ -48,12 +43,14 @@ export function CollegeProvider({ children }) {
   // Listen to hash change for navigation
   useEffect(() => {
     const handleHashChange = () => {
-      const hash = window.location.hash;
-      if (hash === '#about' || hash === '#/about') {
-        setActivePage('about');
+      const path = (window.location.hash || window.location.pathname).replace(/^#\/?/, '').replace(/^\//, '');
+      const validPages = ['about', 'academics', 'campuses', 'why-teja', 'facilities', 'student-life', 'admissions', 'gallery', 'contact'];
+      if (validPages.includes(path)) {
+        setActivePage(path);
         window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else if (hash === '#home' || hash === '#/home' || hash === '#hero' || hash === '') {
+      } else if (path === 'home' || path === 'hero' || path === '') {
         setActivePage('home');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     };
 
@@ -64,7 +61,7 @@ export function CollegeProvider({ children }) {
   const navigateToPage = (pageName, scrollTarget = null) => {
     setActivePage(pageName);
     if (typeof window !== 'undefined') {
-      window.location.hash = pageName === 'about' ? 'about' : 'home';
+      window.location.hash = pageName === 'home' ? '' : pageName;
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 

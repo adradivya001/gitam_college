@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import HomePage from './app/page';
-import AboutPage from './app/about/page';
-import WhyCognizantPage from './app/why-cognizant/page';
-import ProgramsPage from './app/programs/page';
-import DynamicProgramPage from './app/programs/[slug]/page';
-import GurusPage from './app/gurus/page';
-import DynamicGuruPage from './app/gurus/[slug]/page';
-import AdmissionsPage from './app/admissions/page';
-import ResultsPage from './app/results/page';
-import ContactPage from './app/contact/page';
+import React from 'react';
+import { CollegeProvider, useCollege } from './context/CollegeContext';
+import { ThemeProvider } from './tier1/design-system/ThemeProvider';
+import { Navbar } from './tier1/components/Navbar';
+import { PageRenderer } from './tier2/PageRenderer';
+import { DetailModal } from './tier1/components/DetailModal';
+import { AdmissionsModal } from './tier1/components/AdmissionsModal';
+import { Lightbox } from './tier1/components/Lightbox';
 
 // Error Boundary to prevent blank screen crashes
 class ErrorBoundary extends React.Component {
@@ -58,169 +55,34 @@ class ErrorBoundary extends React.Component {
   }
 }
 
+function MainAppContent() {
+  const { collegeData, activeLightboxImage, closeLightbox } = useCollege();
+
+  return (
+    <ThemeProvider theme={collegeData?.theme}>
+      <div className="cognizant-app-root" style={{ width: '100%', minHeight: '100vh', overflowX: 'hidden' }}>
+        <Navbar />
+        <PageRenderer />
+        <DetailModal />
+        <AdmissionsModal />
+        {activeLightboxImage && (
+          <Lightbox
+            src={activeLightboxImage.src || activeLightboxImage}
+            alt={activeLightboxImage.alt || 'Gallery Preview'}
+            onClose={closeLightbox}
+          />
+        )}
+      </div>
+    </ThemeProvider>
+  );
+}
+
 export default function App() {
-  const getPathFromLocation = () => {
-    const hash = window.location.hash.replace(/^#\/?/, '');
-    const pathname = window.location.pathname;
-
-    if (hash === 'about' || pathname === '/about') {
-      return '/about';
-    }
-    if (hash === 'why-cognizant' || pathname === '/why-cognizant') {
-      return '/why-cognizant';
-    }
-    if (hash === 'programs' || pathname === '/programs') {
-      return '/programs';
-    }
-    if (hash.startsWith('programs/') || pathname.startsWith('/programs/')) {
-      const slug = hash.startsWith('programs/')
-        ? hash.replace('programs/', '')
-        : pathname.replace('/programs/', '');
-      return `/programs/${slug}`;
-    }
-    if (hash === 'gurus' || pathname === '/gurus') {
-      return '/gurus';
-    }
-    if (hash.startsWith('gurus/') || pathname.startsWith('/gurus/')) {
-      const slug = hash.startsWith('gurus/')
-        ? hash.replace('gurus/', '')
-        : pathname.replace('/gurus/', '');
-      return `/gurus/${slug}`;
-    }
-    if (hash === 'admissions' || pathname === '/admissions') {
-      return '/admissions';
-    }
-    if (hash === 'results' || pathname === '/results') {
-      return '/results';
-    }
-    if (hash === 'contact' || pathname === '/contact') {
-      return '/contact';
-    }
-    return '/';
-  };
-
-  const [currentPath, setCurrentPath] = useState(getPathFromLocation);
-
-  useEffect(() => {
-    const handleHashChange = () => {
-      setCurrentPath(getPathFromLocation());
-    };
-
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
-
-  const handleNavigate = (path) => {
-    if (!path) return;
-    if (path.startsWith('#')) {
-      const id = path.replace('#', '');
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-        return;
-      }
-    }
-
-    setCurrentPath(path);
-    if (path === '/') {
-      window.location.hash = '';
-    } else {
-      window.location.hash = path.replace(/^\//, '');
-    }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const renderContent = () => {
-    if (currentPath === '/about') {
-      return <AboutPage onNavigateHome={() => handleNavigate('/')} onNavigate={handleNavigate} />;
-    }
-
-    if (currentPath === '/why-cognizant') {
-      return <WhyCognizantPage onNavigateHome={() => handleNavigate('/')} onNavigate={handleNavigate} />;
-    }
-
-    if (currentPath === '/programs') {
-      return (
-        <ProgramsPage
-          onNavigateHome={() => handleNavigate('/')}
-          onSelectProgram={(slug) => handleNavigate(`/programs/${slug}`)}
-          onNavigate={handleNavigate}
-        />
-      );
-    }
-
-    if (currentPath.startsWith('/programs/')) {
-      const slug = currentPath.replace('/programs/', '');
-      return (
-        <DynamicProgramPage
-          slug={slug}
-          onNavigatePrograms={() => handleNavigate('/programs')}
-          onNavigateHome={() => handleNavigate('/')}
-          onNavigate={handleNavigate}
-        />
-      );
-    }
-
-    if (currentPath === '/gurus') {
-      return (
-        <GurusPage
-          onNavigateHome={() => handleNavigate('/')}
-          onSelectGuru={(slug) => handleNavigate(`/gurus/${slug}`)}
-          onNavigate={handleNavigate}
-        />
-      );
-    }
-
-    if (currentPath.startsWith('/gurus/')) {
-      const slug = currentPath.replace('/gurus/', '');
-      return (
-        <DynamicGuruPage
-          slug={slug}
-          onNavigateGurus={() => handleNavigate('/gurus')}
-          onNavigateHome={() => handleNavigate('/')}
-        />
-      );
-    }
-
-    if (currentPath === '/admissions') {
-      return (
-        <AdmissionsPage
-          onNavigateHome={() => handleNavigate('/')}
-          onNavigatePrograms={() => handleNavigate('/programs')}
-          onSelectProgram={(slug) => handleNavigate(`/programs/${slug}`)}
-          onNavigate={handleNavigate}
-        />
-      );
-    }
-
-    if (currentPath === '/results') {
-      return (
-        <ResultsPage
-          onNavigateHome={() => handleNavigate('/')}
-          onNavigatePrograms={() => handleNavigate('/programs')}
-          onNavigateContact={() => handleNavigate('/contact')}
-          onNavigate={handleNavigate}
-        />
-      );
-    }
-
-    if (currentPath === '/contact') {
-      return (
-        <ContactPage
-          onNavigateHome={() => handleNavigate('/')}
-          onNavigatePrograms={() => handleNavigate('/programs')}
-          onNavigate={handleNavigate}
-        />
-      );
-    }
-
-    return (
-      <HomePage
-        onNavigateAbout={() => handleNavigate('/about')}
-        onNavigate={handleNavigate}
-      />
-    );
-  };
-
-  return <ErrorBoundary>{renderContent()}</ErrorBoundary>;
+  return (
+    <ErrorBoundary>
+      <CollegeProvider>
+        <MainAppContent />
+      </CollegeProvider>
+    </ErrorBoundary>
+  );
 }

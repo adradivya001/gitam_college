@@ -5,10 +5,13 @@ import { Card } from '../../tier1/components/Card';
 import { ArrowRight } from 'lucide-react';
 import './ProgramsSection.css';
 
+import { Button } from '../../tier1/components/Button';
+
 export function ProgramsSection({ data, sectionConfig, onAction }) {
-  const eyebrow = sectionConfig?.eyebrow || 'ACADEMIC PROGRAMS';
-  const title = sectionConfig?.title || 'PROGRAMS BUILT FOR THE COMPETITION';
-  const subtitle = sectionConfig?.subtitle || 'Focused academic pathways designed around strong fundamentals, competitive-exam preparation, problem-solving and continuous academic development.';
+  const eyebrow = sectionConfig?.eyebrow || 'ACADEMIC HIGHLIGHTS';
+  const title = sectionConfig?.title || 'Structured Learning & Progression';
+  const subtitle = sectionConfig?.subtitle || 'Concept-based learning, regular assessment, personal mentoring and exam preparation.';
+  const sectionCta = sectionConfig?.sectionCta || sectionConfig?.cta;
   const programs = data?.courses?.programs || [];
 
   return (
@@ -59,6 +62,18 @@ export function ProgramsSection({ data, sectionConfig, onAction }) {
             );
           })}
         </div>
+
+        {sectionCta && (
+          <div style={{ marginTop: '40px', textAlign: 'center' }}>
+            <Button
+              variant="primary"
+              size="md"
+              onClick={() => onAction && onAction(sectionCta.action || 'navigate_to', sectionCta.target || 'academics')}
+            >
+              {sectionCta.label || 'Explore Academics →'}
+            </Button>
+          </div>
+        )}
       </Container>
     </section>
   );

@@ -41,6 +41,21 @@ import demoCampusLife from './content/colleges/demo/campus-life.json';
 import demoGallery from './content/colleges/demo/gallery.json';
 import demoSeo from './content/colleges/demo/seo.json';
 
+// Teja Junior College Data
+import tejaCollege from './content/colleges/teja/college.json';
+import tejaTheme from './content/colleges/teja/theme.json';
+import tejaSections from './content/colleges/teja/sections.json';
+import tejaNav from './content/colleges/teja/navigation.json';
+import tejaCourses from './content/colleges/teja/courses.json';
+import tejaFacilities from './content/colleges/teja/facilities.json';
+import tejaGallery from './content/colleges/teja/gallery.json';
+import tejaSeo from './content/colleges/teja/seo.json';
+import tejaAbout from './content/colleges/teja/about.json';
+import tejaPages from './content/colleges/teja/pages.json';
+import tejaStudentLife from './content/colleges/teja/student-life.json';
+import tejaAdmissions from './content/colleges/teja/admissions.json';
+import tejaContact from './content/colleges/teja/contact.json';
+
 const collegeDatabase = {
   cognizant: {
     college: cognizantCollege,
@@ -82,6 +97,21 @@ const collegeDatabase = {
     campusLife: demoCampusLife,
     gallery: demoGallery,
     seo: demoSeo
+  },
+  teja: {
+    college: tejaCollege,
+    theme: tejaTheme,
+    sections: tejaSections.sections,
+    navigation: tejaNav,
+    courses: tejaCourses,
+    facilities: tejaFacilities,
+    gallery: tejaGallery,
+    seo: tejaSeo,
+    about: tejaAbout,
+    pages: tejaPages,
+    studentLife: tejaStudentLife,
+    admissions: tejaAdmissions,
+    contact: tejaContact
   }
 };
 
@@ -90,6 +120,7 @@ const collegeDatabase = {
  */
 export function getAvailableColleges() {
   return [
+    { id: 'teja', name: tejaCollege.name, location: tejaCollege.location.city },
     { id: 'cognizant', name: cognizantCollege.name, location: cognizantCollege.location.city },
     { id: 'chakra', name: chakraCollege.name, location: chakraCollege.location.city },
     { id: 'demo', name: demoCollege.name, location: demoCollege.location.city }
@@ -101,8 +132,8 @@ export function getAvailableColleges() {
  * @param {string} collegeId 
  * @returns {object} Full college data bundle
  */
-export function loadCollegeData(collegeId = 'cognizant') {
-  const data = collegeDatabase[collegeId] || collegeDatabase.cognizant;
+export function loadCollegeData(collegeId = 'teja') {
+  const data = collegeDatabase[collegeId] || collegeDatabase.teja;
   return data;
 }
 

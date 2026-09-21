@@ -3,7 +3,7 @@ import { Modal } from './Modal';
 import { Input, Select, Textarea } from './FormControls';
 import { Button } from './Button';
 import { Badge } from './Badge';
-import { CheckCircle, Send, User, Phone, MapPin, Calendar, PhoneCall } from 'lucide-react';
+import { CheckCircle, Send, User, Phone, MapPin, Calendar, PhoneCall, Building2 } from 'lucide-react';
 import { useCollege } from '../../context/CollegeContext';
 
 export function AdmissionsModal() {
@@ -14,16 +14,37 @@ export function AdmissionsModal() {
     collegeData
   } = useCollege();
 
-  const collegeName = collegeData?.college?.name || 'Cognizant Junior College';
+  const collegeName = collegeData?.college?.name || 'Junior College';
+  const collegeCity = collegeData?.college?.location?.city || '';
   const isCampusVisit = admissionsModalMeta === 'campus_visit';
-  const directPhone = collegeData?.college?.contact?.phone || '8096651111';
-  const directPhone2 = collegeData?.college?.contact?.phone2 || '8096671111';
+  const directPhone = collegeData?.college?.contact?.phone || '';
+  const directPhone2 = collegeData?.college?.contact?.phone2 || '';
+
+  const rawPrograms = collegeData?.courses?.programs || [];
+  const streamOptions = rawPrograms.length > 0
+    ? rawPrograms.map((p) => ({
+        value: p.name || p.id,
+        label: `${p.code ? p.code + ' — ' : ''}${p.name}${p.focus ? ' (' + p.focus.join(', ') + ')' : ''}`
+      }))
+    : [
+        { value: 'MPC', label: 'MPC (Mathematics, Physics, Chemistry)' },
+        { value: 'BiPC', label: 'BiPC (Biology, Physics, Chemistry)' },
+        { value: 'MEC', label: 'MEC (Mathematics, Economics, Commerce)' },
+        { value: 'CEC', label: 'CEC (Civics, Economics, Commerce)' }
+      ];
+
+  const campuses = collegeData?.college?.campuses || [];
+  const campusOptions = campuses.map((c) => ({
+    value: c.displayName || c.name || c.id,
+    label: `${c.displayName || c.name}${c.city ? ' (' + c.city + ')' : ''}`
+  }));
 
   const [formData, setFormData] = useState({
     studentName: '',
     parentName: '',
     phone: '',
     city: '',
+    campus: campusOptions.length > 0 ? campusOptions[0].value : '',
     stream: '',
     visitDate: '',
     message: ''
@@ -31,15 +52,6 @@ export function AdmissionsModal() {
 
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState({});
-
-  const streamOptions = [
-    { value: 'M2 Meta Morph (MPC - JEE Integrated)', label: 'M² Meta Morph — MPC (JEE Focus)' },
-    { value: 'M2 Meta Morph (BPC - NEET Integrated)', label: 'M² Meta Morph — BPC (NEET Focus)' },
-    { value: 'E2 Eagle Eye (Conceptual Rigor)', label: 'E² Eagle Eye — Focused Methodology' },
-    { value: 'PV Pyrric Victors (2nd Year Advanced)', label: 'PV Pyrric Victors — 2nd Year Advanced' },
-    { value: 'General MPC', label: 'MPC (Mathematics, Physics, Chemistry)' },
-    { value: 'General BPC', label: 'BPC (Biology, Physics, Chemistry)' }
-  ];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -80,6 +92,7 @@ export function AdmissionsModal() {
       parentName: '',
       phone: '',
       city: '',
+      campus: campusOptions.length > 0 ? campusOptions[0].value : '',
       stream: '',
       visitDate: '',
       message: ''
@@ -91,8 +104,8 @@ export function AdmissionsModal() {
     <Modal
       isOpen={isAdmissionsModalOpen}
       onClose={closeAdmissionsModal}
-      title={isCampusVisit ? 'Schedule a Campus Visit' : 'Admissions Enquiry — Cognizant'}
-      subtitle={`${collegeName} • Ramnagar, Anantapur`}
+      title={isCampusVisit ? 'Schedule a Campus Visit' : `Admissions Enquiry — ${collegeData?.college?.shortName || collegeName}`}
+      subtitle={`${collegeName}${collegeCity ? ' • ' + collegeCity : ''}`}
       maxWidth="620px"
     >
       {submitted ? (
@@ -134,16 +147,18 @@ export function AdmissionsModal() {
               margin: '0 auto 20px auto'
             }}
           >
-            Your enquiry for <strong>{formData.stream}</strong> has been logged. Our admissions counseling team will contact you at <strong>{formData.phone}</strong> shortly.
+            Your enquiry for <strong>{formData.stream}</strong> {formData.campus ? `at ${formData.campus}` : ''} has been logged. Our admissions counseling team will contact you at <strong>{formData.phone}</strong> shortly.
           </p>
 
-          <div style={{ padding: '16px', background: 'rgba(255, 255, 255, 0.04)', borderRadius: '12px', marginBottom: '24px' }}>
-            <span style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)', display: 'block', marginBottom: '6px' }}>Need Immediate Counseling? Call directly:</span>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', fontWeight: 700, color: 'var(--color-secondary)' }}>
-              <a href={`tel:${directPhone}`}>📞 {directPhone}</a>
-              <a href={`tel:${directPhone2}`}>📞 {directPhone2}</a>
+          {(directPhone || directPhone2) && (
+            <div style={{ padding: '16px', background: 'rgba(255, 255, 255, 0.04)', borderRadius: '12px', marginBottom: '24px' }}>
+              <span style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)', display: 'block', marginBottom: '6px' }}>Need Immediate Counseling? Call directly:</span>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', fontWeight: 700, color: 'var(--color-secondary)' }}>
+                {directPhone && <a href={`tel:${directPhone}`}>📞 {directPhone}</a>}
+                {directPhone2 && <a href={`tel:${directPhone2}`}>📞 {directPhone2}</a>}
+              </div>
             </div>
-          </div>
+          )}
 
           <Button variant="primary" onClick={handleReset}>
             Done
@@ -189,7 +204,7 @@ export function AdmissionsModal() {
             <Input
               label="Town / City"
               name="city"
-              placeholder="e.g. Anantapur"
+              placeholder={collegeCity ? `e.g. ${collegeCity}` : 'e.g. City'}
               value={formData.city}
               onChange={handleChange}
               required
@@ -197,6 +212,17 @@ export function AdmissionsModal() {
               icon={MapPin}
             />
           </div>
+
+          {campusOptions.length > 0 && (
+            <Select
+              label="Preferred Campus"
+              name="campus"
+              options={campusOptions}
+              value={formData.campus}
+              onChange={handleChange}
+              placeholder="Select Preferred Campus"
+            />
+          )}
 
           <Select
             label="Program / Stream of Interest"
@@ -225,17 +251,19 @@ export function AdmissionsModal() {
           <Textarea
             label="Questions / Notes (Optional)"
             name="message"
-            placeholder="Mention 10th board status, questions on JEE/NEET coaching, or campus location queries..."
+            placeholder="Mention 10th board status or any specific queries..."
             value={formData.message}
             onChange={handleChange}
             rows={2}
           />
 
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '16px' }}>
-            <div style={{ fontSize: '0.8125rem', color: 'var(--color-text-muted)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <PhoneCall size={14} color="var(--color-secondary)" />
-              <span>Helpdesk: {directPhone}</span>
-            </div>
+            {directPhone ? (
+              <div style={{ fontSize: '0.8125rem', color: 'var(--color-text-muted)', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <PhoneCall size={14} color="var(--color-secondary)" />
+                <span>Helpdesk: {directPhone}</span>
+              </div>
+            ) : <div />}
 
             <div style={{ display: 'flex', gap: '12px' }}>
               <Button variant="ghost" onClick={closeAdmissionsModal}>

@@ -2,12 +2,15 @@ import React from 'react';
 import { getSectionComponent } from './sectionRegistry';
 import { FooterSection } from './sections/FooterSection';
 import { useCollege } from '../context/CollegeContext';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 /**
  * PageRenderer: Config-driven dynamic section renderer
  * Driven 100% by Tier 3 content JSON configurations.
  */
 export function PageRenderer() {
+  useScrollReveal();
+
   const {
     collegeData,
     activePage,
@@ -19,10 +22,13 @@ export function PageRenderer() {
 
   if (!collegeData) return null;
 
-  // Select sections array based on active page route ('home' vs 'about')
-  const sections = (activePage === 'about' && collegeData.about?.sections)
-    ? collegeData.about.sections
-    : (collegeData.sections || []);
+  // Select sections array based on active page route (home, about, academics, campuses, facilities, student-life, admissions, gallery, contact)
+  const pageSections = collegeData?.pages?.[activePage]?.sections;
+  const sections = pageSections
+    ? pageSections
+    : (activePage === 'about' && collegeData.about?.sections)
+      ? collegeData.about.sections
+      : (collegeData.sections || []);
 
   const theme = collegeData.theme;
 
@@ -36,13 +42,11 @@ export function PageRenderer() {
     } else if (action === 'navigate_to') {
       navigateToPage(payload || 'home');
     } else if (action === 'scroll_to' && payload) {
-      if (activePage !== 'home' && payload.startsWith('#')) {
-        navigateToPage('home', payload);
+      const el = document.querySelector(payload);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
       } else {
-        const el = document.querySelector(payload);
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
-        }
+        navigateToPage('home', payload);
       }
     }
   };

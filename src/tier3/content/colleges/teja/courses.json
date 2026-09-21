@@ -1,0 +1,63 @@
+{
+  "heading": "Academic Excellence",
+  "subheading": "Building strong foundations today for the opportunities of tomorrow.",
+  "description": "At Teja Junior College, learning is approached as a continuous journey. Students are encouraged to understand concepts, practise consistently, evaluate their progress and seek guidance whenever required.",
+  "demoNotice": "Demo Program Structure — Official groups to be confirmed by Teja Junior College",
+  "programs": [
+    {
+      "id": "mpc",
+      "code": "MPC",
+      "name": "Mathematics, Physics & Chemistry",
+      "stream": "Science Stream",
+      "description": "Mathematics, Physics and Chemistry with a strong foundation for engineering, technology and other quantitative fields.",
+      "focus": ["Mathematics", "Physics", "Chemistry"],
+      "ctaText": "Enquire Program"
+    },
+    {
+      "id": "bipc",
+      "code": "BiPC",
+      "name": "Biology, Physics & Chemistry",
+      "stream": "Science Stream",
+      "description": "Biology, Physics and Chemistry designed for students aspiring towards medicine, life sciences and related fields.",
+      "focus": ["Biology", "Physics", "Chemistry"],
+      "ctaText": "Enquire Program"
+    },
+    {
+      "id": "mec",
+      "code": "MEC",
+      "name": "Mathematics, Economics & Commerce",
+      "stream": "Commerce / Humanities",
+      "description": "Mathematics, Economics and Commerce for students interested in commerce, business and related fields.",
+      "focus": ["Mathematics", "Economics", "Commerce"],
+      "ctaText": "Enquire Program"
+    },
+    {
+      "id": "cec",
+      "code": "CEC",
+      "name": "Civics, Economics & Commerce",
+      "stream": "Commerce / Humanities",
+      "description": "Civics, Economics and Commerce providing a foundation for business, social sciences and related pathways.",
+      "focus": ["Civics", "Economics", "Commerce"],
+      "ctaText": "Enquire Program"
+    }
+  ],
+  "learningMethodology": [
+    { "step": "01", "title": "Concept Learning", "desc": "Understanding core fundamentals" },
+    { "step": "02", "title": "Classroom Practice", "desc": "Solving guided problems & assignments" },
+    { "step": "03", "title": "Regular Assessment", "desc": "Periodic evaluations & mock tests" },
+    { "step": "04", "title": "Performance Analysis", "desc": "Identifying strength & improvement areas" },
+    { "step": "05", "title": "Revision & Improvement", "desc": "Targeted feedback and doubt clearance" }
+  ],
+  "studentSupport": [
+    "Faculty Mentoring",
+    "Doubt Clarification",
+    "Academic Counselling",
+    "Progress Tracking",
+    "Exam Preparation"
+  ],
+  "achievementsPlaceholders": [
+    { "title": "Academic Results", "note": "[Official data to be added]" },
+    { "title": "Student Achievements", "note": "[Official data to be added]" },
+    { "title": "Competitive Examination Success", "note": "[Official data to be added]" }
+  ]
+}

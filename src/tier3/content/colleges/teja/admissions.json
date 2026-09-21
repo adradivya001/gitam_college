@@ -1,0 +1,35 @@
+{
+  "heading": "Begin Your Journey With Teja",
+  "subheading": "Take the first step towards achieving your academic aspirations.",
+  "whyJoin": [
+    "Focused Academic Environment",
+    "Experienced Guidance",
+    "Regular Evaluation",
+    "Student Mentoring",
+    "Campus Facilities"
+  ],
+  "process": [
+    { "step": "01", "title": "Submit Enquiry", "sub": "Online Form", "details": ["Fill in student details", "Select preferred campus", "Submit application"] },
+    { "step": "02", "title": "Choose Program & Campus", "sub": "Selection", "details": ["Choose Kamalanagar, Ramnagar or Girls Campus", "Select group preference"] },
+    { "step": "03", "title": "Counselling & Guidance", "sub": "Academic Counseling", "details": ["Meet campus mentors", "Discuss curriculum & routine"] },
+    { "step": "04", "title": "Complete Formalities", "sub": "Enrollment", "details": ["Document verification", "Complete admission process"] }
+  ],
+  "faqs": [
+    {
+      "question": "What courses are available?",
+      "answer": "Course availability varies by campus and academic year. Contact the college for current program details."
+    },
+    {
+      "question": "How can I enquire about admission?",
+      "answer": "Submit the enquiry form or contact the respective campus."
+    },
+    {
+      "question": "Can I choose a preferred campus?",
+      "answer": "Yes. Students can indicate their preferred campus during the enquiry process."
+    },
+    {
+      "question": "When does admission begin?",
+      "answer": "Admission dates will be announced by the college for each academic year."
+    }
+  ]
+}

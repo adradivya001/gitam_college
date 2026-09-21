@@ -11,48 +11,43 @@ export function Card({
 }) {
   const getVariantStyles = () => {
     switch (variant) {
+      case 'dark':
       case 'glass':
         return {
-          background: 'rgba(22, 29, 43, 0.7)',
-          backdropFilter: 'blur(16px)',
-          WebkitBackdropFilter: 'blur(16px)',
-          border: '1px solid var(--color-border)',
-          color: 'var(--color-text)'
+          background: '#132A30',
+          border: '1px solid #29474A',
+          color: '#FFFFFF',
+          boxShadow: '0 8px 24px rgba(0, 0, 0, 0.22)'
         };
       case 'surface-alt':
         return {
-          background: 'var(--color-surface-alt)',
-          border: '1px solid var(--color-border)',
-          color: 'var(--color-text)'
-        };
-      case 'light':
-        return {
-          background: 'var(--color-surface-light)',
-          border: '1px solid var(--color-border-light)',
-          color: 'var(--color-text-light)',
-          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)'
+          background: '#F4F7F6',
+          border: '1px solid #CBD9D6',
+          color: '#162126'
         };
       case 'outline':
         return {
-          background: 'transparent',
-          border: '1px solid var(--color-border-strong)',
-          color: 'var(--color-text)'
+          background: '#FFFFFF',
+          border: '1px solid #CBD9D6',
+          color: '#162126'
         };
+      case 'light':
       case 'default':
       default:
         return {
-          background: 'var(--color-surface)',
-          border: '1px solid var(--color-border)',
-          color: 'var(--color-text)'
+          background: '#FFFFFF',
+          border: '1px solid #CBD9D6',
+          color: '#162126',
+          boxShadow: '0 8px 24px rgba(11, 21, 27, 0.10)'
         };
     }
   };
 
   const cardStyles = {
-    borderRadius: 'var(--radius-lg, 20px)',
-    padding: '32px',
+    borderRadius: '16px',
+    padding: '28px',
     position: 'relative',
-    transition: 'all var(--transition-normal)',
+    transition: 'transform 280ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 280ms cubic-bezier(0.16, 1, 0.3, 1), border-color 280ms cubic-bezier(0.16, 1, 0.3, 1)',
     cursor: interactive ? 'pointer' : 'default',
     ...getVariantStyles(),
     ...style

@@ -1,56 +1,70 @@
 /* About Hero Layout Styling */
 
 .about-hero-section {
-  background: var(--color-bg);
+  position: relative;
   padding: 80px 0 60px 0;
-  border-bottom: 1px solid var(--color-border);
+  background: radial-gradient(circle at 75% 25%, var(--teja-green-dark, #042F2A) 0%, var(--teja-navy, #0B151B) 65%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .about-hero-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1.2fr 0.8fr;
   gap: 48px;
   align-items: center;
 }
 
-.about-hero-title {
-  font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 4.5vw, 3.75rem);
-  font-weight: 900;
-  line-height: 1.1;
-  color: var(--color-text);
-  margin: 16px 0 20px 0;
-  letter-spacing: -0.02em;
+.about-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  background: rgba(232, 59, 140, 0.15);
+  border: 1px solid rgba(232, 59, 140, 0.35);
+  color: var(--teja-gold, #D9A928);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
-.about-hero-line {
-  display: block;
+.about-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  font-weight: 900;
+  color: var(--teja-text-light, #FFFFFF);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
 }
 
 .about-hero-desc {
   font-family: var(--font-body);
   font-size: 1.1rem;
+  color: var(--teja-text-muted-light, #C4D4D7);
   line-height: 1.65;
-  color: var(--color-text-muted);
-  max-width: 620px;
+  margin-bottom: 32px;
 }
 
 .about-hero-img-frame {
+  position: relative;
   border-radius: var(--radius-xl);
   overflow: hidden;
-  border: 1px solid var(--color-border-strong);
-  box-shadow: var(--shadow-lg);
-  aspect-ratio: 16 / 10;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 12px 36px rgba(11, 21, 27, 0.4);
+  aspect-ratio: 4 / 3;
 }
 
 .about-hero-img-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 900px) {
   .about-hero-grid {
     grid-template-columns: 1fr;
     gap: 32px;

@@ -1,0 +1,37 @@
+{
+  "eyebrow": "ABOUT TEJA JUNIOR COLLEGE",
+  "title": "About Teja Junior College",
+  "subtitle": "Building strong foundations for a brighter future through focused learning, guidance and student development.",
+  "paragraphs": [
+    "Teja Junior College is committed to creating an environment where students are encouraged to learn with purpose, develop confidence and prepare for the next stage of their education.",
+    "Through structured academics, faculty guidance, regular evaluation and student-focused learning, Teja aims to help young learners discover their potential and work towards their aspirations."
+  ],
+  "vision": "To become a trusted centre for quality intermediate education, empowering students with knowledge, confidence and values to build successful futures.",
+  "mission": "Our mission is to provide a disciplined and supportive learning environment that promotes academic excellence, individual attention, continuous improvement and holistic student development.",
+  "chairmanMessage": {
+    "eyebrow": "CHAIRMAN'S MESSAGE",
+    "title": "Preparing Students for Tomorrow",
+    "name": "[Chairman's Name]",
+    "role": "Chairman, Teja Junior College",
+    "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80",
+    "paragraphs": [
+      "Education is not simply about achieving marks; it is about developing the confidence, discipline and knowledge required to face the future.",
+      "At Teja Junior College, we strive to provide every student with the guidance and environment they need to discover their potential, pursue their aspirations and prepare themselves for the opportunities ahead."
+    ],
+    "closing": "Wishing you every success,"
+  },
+  "educationalPhilosophy": [
+    { "index": "01", "title": "LEARN", "description": "Build strong conceptual foundations and develop a deeper understanding of subjects.", "icon": "BookOpen" },
+    { "index": "02", "title": "PRACTICE", "description": "Strengthen knowledge through consistent practice and application.", "icon": "Edit" },
+    { "index": "03", "title": "EVALUATE", "description": "Understand progress through regular assessment and meaningful feedback.", "icon": "BarChart" },
+    { "index": "04", "title": "GROW", "description": "Develop confidence, discipline, responsibility and a positive approach towards learning.", "icon": "TrendingUp" }
+  ],
+  "coreValues": [
+    { "index": "01", "title": "Academic Excellence", "description": "Encouraging students to pursue consistent learning and strive for their best.", "icon": "Award" },
+    { "index": "02", "title": "Integrity", "description": "Building honesty, responsibility and ethical thinking into everyday learning.", "icon": "ShieldCheck" },
+    { "index": "03", "title": "Discipline", "description": "Developing focus, consistency and respect for commitments.", "icon": "Target" },
+    { "index": "04", "title": "Respect", "description": "Creating an environment where students, faculty and the wider community are treated with respect.", "icon": "Users" },
+    { "index": "05", "title": "Responsibility", "description": "Encouraging students to take ownership of their learning and decisions.", "icon": "CheckCircle" },
+    { "index": "06", "title": "Continuous Improvement", "description": "Promoting reflection, learning from experience and the desire to improve.", "icon": "TrendingUp" }
+  ]
+}

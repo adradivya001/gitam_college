@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Container } from './Container';
 import { Button } from './Button';
 import { Logo } from './Logo';
+import { Marquee } from './Marquee';
 import { Menu, X, ArrowUpRight, Phone, MessageSquare } from 'lucide-react';
 import { useCollege } from '../../context/CollegeContext';
 import './Navbar.css';
@@ -41,17 +42,24 @@ export function Navbar() {
 
   const nav = collegeData?.navigation || {};
   const links = (nav.links || []).filter((l) => l.enabled !== false);
-  const brand = nav.brand || { name: 'COGNIZANT', subtext: 'JUNIOR COLLEGE • JEE • NEET' };
+  const collegeName = collegeData?.college?.name || 'COLLEGE';
+  const brand = nav.brand || {
+    name: (collegeData?.college?.shortName || collegeName).toUpperCase(),
+    subtext: collegeData?.college?.tagline || ''
+  };
   const motif = collegeData?.theme?.motif || 'shield';
-  const phone = collegeData?.college?.contact?.phone || '8096651111';
-  const whatsapp = collegeData?.college?.contact?.whatsapp || '8096651111';
+  const phone = collegeData?.college?.contact?.phone || nav?.cta?.phone || '';
+  const whatsapp = collegeData?.college?.contact?.whatsapp || phone;
 
   const handleNavAction = (link) => {
     setIsMobileMenuOpen(false);
 
-    if (link.type === 'page' || link.target === 'home' || link.target === 'about') {
+    if (link.target && !link.target.startsWith('#')) {
       navigateToPage(link.target);
-    } else if (link.type === 'scroll' || link.target?.startsWith('#')) {
+      return;
+    }
+
+    if (link.type === 'scroll' || link.target?.startsWith('#')) {
       if (activePage !== 'home') {
         navigateToPage('home', link.target);
       } else {
@@ -60,22 +68,30 @@ export function Navbar() {
           el.scrollIntoView({ behavior: 'smooth' });
         }
       }
-    } else if (link.type === 'page_modal') {
-      openDetailModal(link.target);
-    } else if (link.type === 'admissions_modal' || link.id === 'admissions') {
-      openAdmissionsModal();
     } else {
-      openDetailModal(link.target);
+      navigateToPage(link.target || 'home');
     }
   };
 
   return (
     <>
-      {/* Main Sticky Dynamic Navbar */}
+      {/* Top Scrolling Marquee Banner Line */}
+      <div className="top-scrolling-marquee-bar">
+        <Marquee speed={22} pauseOnHover={true}>
+          <span className="marquee-announcement-item">Admissions Open For 2026–27.</span>
+          <span className="marquee-announcement-item">Admissions Open For 2026–27.</span>
+          <span className="marquee-announcement-item">Admissions Open For 2026–27.</span>
+          <span className="marquee-announcement-item">Admissions Open For 2026–27.</span>
+          <span className="marquee-announcement-item">Admissions Open For 2026–27.</span>
+          <span className="marquee-announcement-item">Admissions Open For 2026–27.</span>
+        </Marquee>
+      </div>
+
+      {/* Main Sticky Dynamic Clean White Navbar */}
       <header className={`app-navbar navbar-${navState}`}>
-        <Container>
+        <Container maxWidth="1360px">
           <div className="navbar-inner">
-            {/* Left: Cognizant Logo */}
+            {/* Left: Dynamic Logo */}
             <a
               href="#home"
               className="navbar-logo-link"
@@ -87,16 +103,17 @@ export function Navbar() {
               <Logo
                 name={brand.name}
                 subtext={brand.subtext}
+                logoUrl={collegeData?.college?.logo}
                 motif={motif}
                 size={navState === 'compact' ? 'sm' : 'md'}
+                lightBackground={true}
               />
             </a>
 
-            {/* Center/Left: Navigation Links */}
+            {/* Center: Navigation Links */}
             <nav className="desktop-nav-links" aria-label="Main Navigation">
               {links.map((link) => {
-                const isActive = (activePage === 'about' && (link.id === 'about' || link.target === 'about')) ||
-                                 (activePage === 'home' && (link.id === 'home' || link.target === 'home'));
+                const isActive = activePage === link.target || activePage === link.id || (activePage === 'home' && (link.target === 'home' || link.id === 'home'));
 
                 return (
                   <button
@@ -110,36 +127,14 @@ export function Navbar() {
               })}
             </nav>
 
-            {/* Right: Phone, WhatsApp, Admissions CTA */}
+            {/* Right: Apply for Admission CTA */}
             <div className="navbar-right-actions">
-              <a
-                href={`tel:${phone}`}
-                className="nav-icon-action call-action"
-                title={`Call Cognizant Admissions (${phone})`}
-              >
-                <Phone size={17} />
-                <span className="phone-num-text">{phone}</span>
-              </a>
-
-              <a
-                href={`https://wa.me/91${whatsapp}?text=Hello%20Cognizant%20Junior%20College%20Admissions`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="nav-icon-action whatsapp-action"
-                title="WhatsApp Admissions Desk"
-              >
-                <MessageSquare size={17} />
-              </a>
-
-              <Button
-                variant="primary"
-                size={navState === 'compact' ? 'sm' : 'md'}
-                icon={ArrowUpRight}
+              <button
+                className="apply-admission-btn"
                 onClick={() => openAdmissionsModal()}
-                className="nav-admissions-btn"
               >
-                Admissions →
-              </Button>
+                Apply for Admission
+              </button>
 
               {/* Mobile Hamburger Button */}
               <button
@@ -147,18 +142,18 @@ export function Navbar() {
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 aria-label="Toggle Navigation Menu"
               >
-                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                {isMobileMenuOpen ? <X size={24} color="#0B3B82" /> : <Menu size={24} color="#0B3B82" />}
               </button>
             </div>
           </div>
         </Container>
       </header>
 
-      {/* Mobile Navigation Drawer */}
-      <div className={`mobile-nav-drawer ${isMobileMenuOpen ? 'drawer-open' : ''}`}>
-        <div className="mobile-nav-content">
-          <div className="mobile-nav-header">
-            <Logo name={brand.name} subtext={brand.subtext} motif={motif} size="sm" />
+    {/* Mobile Navigation Drawer */}
+    <div className={`mobile-nav-drawer ${isMobileMenuOpen ? 'drawer-open' : ''}`}>
+      <div className="mobile-nav-content">
+        <div className="mobile-nav-header">
+          <Logo name={brand.name} subtext={brand.subtext} logoUrl={collegeData?.college?.logo} motif={motif} size="sm" />
             <button
               className="mobile-close-btn"
               onClick={() => setIsMobileMenuOpen(false)}
@@ -182,19 +177,23 @@ export function Navbar() {
           </div>
 
           <div className="mobile-drawer-contact-strip">
-            <a href={`tel:${phone}`} className="mobile-contact-pill">
-              <Phone size={16} />
-              <span>Call {phone}</span>
-            </a>
-            <a
-              href={`https://wa.me/91${whatsapp}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mobile-contact-pill wa"
-            >
-              <MessageSquare size={16} />
-              <span>WhatsApp</span>
-            </a>
+            {phone && (
+              <a href={`tel:${phone}`} className="mobile-contact-pill">
+                <Phone size={16} />
+                <span>Call {phone}</span>
+              </a>
+            )}
+            {whatsapp && (
+              <a
+                href={`https://wa.me/91${whatsapp}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mobile-contact-pill wa"
+              >
+                <MessageSquare size={16} />
+                <span>WhatsApp</span>
+              </a>
+            )}
           </div>
 
           <div className="mobile-drawer-footer">

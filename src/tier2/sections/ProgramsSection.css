@@ -1,15 +1,15 @@
 /* Tier 2 Academic Programs Section Styling */
 
 .programs-section {
-  background: var(--color-bg-alt);
-  border-bottom: 1px solid var(--color-border);
+  background: var(--teja-green, #063F38);
+  border-bottom: 1px solid var(--teja-green-dark, #042F2A);
   position: relative;
 }
 
 .programs-cards-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
   margin-top: 48px;
 }
 
@@ -23,8 +23,8 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 36px 30px;
-  background: rgba(15, 23, 42, 0.65);
-  border: 1px solid var(--color-border);
+  background: var(--teja-card-dark, #122A30);
+  border: 1px solid #24454E;
   border-radius: var(--radius-xl);
   transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
   position: relative;
@@ -37,20 +37,28 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  opacity: 0;
-  transition: opacity var(--transition-fast);
+  height: 3px;
+  background: var(--teja-blue, #2E86AB);
+  opacity: 0.8;
 }
+
+/* Program Specific Accent Bars & Badges */
+.program-card-wrap:nth-child(1) .program-card::before { background: var(--teja-blue, #2E86AB); }
+.program-card-wrap:nth-child(1) .program-code-pill { color: var(--teja-blue, #2E86AB); background: rgba(46, 134, 171, 0.15); border-color: rgba(46, 134, 171, 0.4); }
+
+.program-card-wrap:nth-child(2) .program-card::before { background: var(--teja-green, #063F38); }
+.program-card-wrap:nth-child(2) .program-code-pill { color: #52C4B9; background: rgba(6, 63, 56, 0.3); border-color: rgba(6, 63, 56, 0.6); }
+
+.program-card-wrap:nth-child(3) .program-card::before { background: var(--teja-gold, #D9A928); }
+.program-card-wrap:nth-child(3) .program-code-pill { color: var(--teja-gold, #D9A928); background: rgba(217, 169, 40, 0.15); border-color: rgba(217, 169, 40, 0.4); }
+
+.program-card-wrap:nth-child(4) .program-card::before { background: var(--teja-pink, #E83B8C); }
+.program-card-wrap:nth-child(4) .program-code-pill { color: var(--teja-pink, #E83B8C); background: rgba(232, 59, 140, 0.15); border-color: rgba(232, 59, 140, 0.4); }
 
 .program-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(59, 130, 246, 0.35);
+  transform: translateY(-4px);
+  border-color: var(--teja-pink, #E83B8C);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
-}
-
-.program-card:hover::before {
-  opacity: 1;
 }
 
 .program-card-header {
@@ -65,19 +73,15 @@
   font-size: 1.25rem;
   font-weight: 900;
   letter-spacing: 0.05em;
-  color: var(--color-secondary);
-  background: rgba(245, 158, 11, 0.1);
-  border: 1px solid rgba(245, 158, 11, 0.25);
   padding: 6px 16px;
   border-radius: var(--radius-md);
-  transition: transform var(--transition-fast), background var(--transition-fast);
+  border: 1px solid transparent;
+  transition: transform var(--transition-fast);
   display: inline-block;
 }
 
 .program-card:hover .program-code-pill {
   transform: scale(1.05);
-  background: rgba(245, 158, 11, 0.18);
-  border-color: rgba(245, 158, 11, 0.4);
 }
 
 .program-card-body {
@@ -90,7 +94,7 @@
   font-family: var(--font-heading);
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--color-text);
+  color: var(--teja-white, #FFFFFF);
   margin-bottom: 12px;
   letter-spacing: -0.01em;
   line-height: 1.2;
@@ -100,7 +104,7 @@
   font-family: var(--font-body);
   font-size: 0.95rem;
   line-height: 1.6;
-  color: var(--color-text-muted);
+  color: var(--teja-text-muted-light, #C4D4D7);
   margin-bottom: 24px;
 }
 
@@ -117,22 +121,22 @@
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.04em;
-  color: var(--color-text-muted);
+  color: var(--teja-text-muted-light, #C4D4D7);
   background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 4px 10px;
   border-radius: var(--radius-sm);
   transition: color var(--transition-fast), border-color var(--transition-fast);
 }
 
 .program-card:hover .focus-chip {
-  color: var(--color-text);
-  border-color: rgba(255, 255, 255, 0.18);
+  color: var(--teja-white, #FFFFFF);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .program-card-footer {
   padding-top: 20px;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .program-cta-btn {
@@ -144,17 +148,17 @@
   font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: var(--color-text);
+  color: var(--teja-text-light, #FFFFFF);
   transition: color var(--transition-fast);
   padding: 4px 0;
 }
 
 .program-cta-btn:hover {
-  color: var(--color-secondary);
+  color: var(--teja-pink, #E83B8C);
 }
 
 .cta-arrow {
-  color: var(--color-secondary);
+  color: var(--teja-pink, #E83B8C);
   transition: transform var(--transition-fast);
 }
 

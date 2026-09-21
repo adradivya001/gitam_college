@@ -1,16 +1,16 @@
 /* Founder Message Layout Styling */
 
 .founder-message-section {
-  background: var(--color-bg-alt);
-  border-bottom: 1px solid var(--color-border);
+  background: var(--teja-green, #063F38);
+  border-bottom: 1px solid var(--teja-green-dark, #042F2A);
 }
 
 .founder-msg-container {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-strong);
+  background: var(--teja-card-dark, #122A30);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-xl);
   padding: 56px 48px;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 4px 24px rgba(11, 21, 27, 0.4);
 }
 
 .founder-msg-grid {
@@ -24,10 +24,10 @@
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 16px rgba(11, 21, 27, 0.3);
   aspect-ratio: 4 / 5;
-  background: var(--color-surface-alt);
+  background: var(--teja-green-dark, #042F2A);
 }
 
 .founder-msg-img-frame img {
@@ -42,7 +42,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(0deg, rgba(6, 10, 20, 0.95) 0%, rgba(6, 10, 20, 0) 100%);
+  background: linear-gradient(0deg, rgba(11, 21, 27, 0.95) 0%, rgba(11, 21, 27, 0) 100%);
   padding: 24px 16px 14px 16px;
   text-align: center;
 }
@@ -51,7 +51,7 @@
   font-family: var(--font-heading);
   font-size: 1.15rem;
   font-weight: 800;
-  color: var(--color-text);
+  color: var(--teja-text-light, #FFFFFF);
   margin-bottom: 2px;
 }
 
@@ -59,7 +59,7 @@
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--color-secondary);
+  color: var(--teja-gold, #D9A928);
 }
 
 .founder-msg-title {
@@ -67,7 +67,7 @@
   font-size: clamp(1.75rem, 3.2vw, 2.5rem);
   font-weight: 900;
   line-height: 1.15;
-  color: var(--color-text);
+  color: #FFFFFF;
   margin: 14px 0 24px 0;
   letter-spacing: -0.01em;
 }
@@ -81,7 +81,7 @@
 }
 
 .quote-watermark {
-  color: rgba(245, 158, 11, 0.25);
+  color: var(--color-gold, #D97706);
   margin-bottom: 4px;
 }
 
@@ -89,19 +89,19 @@
   font-family: var(--font-body);
   font-size: 1.05rem;
   line-height: 1.68;
-  color: var(--color-text-muted);
+  color: #E2E8F0;
 }
 
 .founder-msg-signoff {
   padding-top: 20px;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid #233554;
 }
 
 .signoff-closing {
   font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 600;
-  color: var(--color-secondary);
+  color: var(--color-gold, #D97706);
   margin-bottom: 8px;
 }
 
@@ -109,7 +109,7 @@
   font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 800;
-  color: var(--color-text);
+  color: #FFFFFF;
   margin-bottom: 2px;
 }
 
@@ -117,7 +117,7 @@
   font-family: var(--font-mono);
   font-size: 0.78rem;
   font-weight: 700;
-  color: var(--color-text-muted);
+  color: #94A3B8;
 }
 
 @media (max-width: 992px) {
