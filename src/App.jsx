@@ -1,13 +1,10 @@
 import React from 'react';
-import { CollegeProvider, useCollege } from './context/CollegeContext';
-import { ThemeProvider } from './tier1/design-system/ThemeProvider';
-import { Navbar } from './tier1/components/Navbar';
-import { PageRenderer } from './tier2/PageRenderer';
-import { DetailModal } from './tier1/components/DetailModal';
-import { AdmissionsModal } from './tier1/components/AdmissionsModal';
-import { Lightbox } from './tier1/components/Lightbox';
+import { BrowserRouter as Router, Routes, Route, Navigate, useParams } from 'react-router-dom';
+import { CollegeProvider } from './context/CollegeContext';
+import { ThemeProvider } from './components/design-system/ThemeProvider';
+import collegeRegistry from './config/collegeRegistry';
+import { JuniorCollegeTemplate } from './templates/JuniorCollegeTemplate/JuniorCollegeTemplate';
 
-// Error Boundary to prevent blank screen crashes
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
@@ -33,8 +30,7 @@ class ErrorBoundary extends React.Component {
           <button
             onClick={() => {
               this.setState({ hasError: false, error: null });
-              window.location.hash = '';
-              window.location.reload();
+              window.location.href = '/';
             }}
             style={{
               background: '#f97316',
@@ -55,34 +51,36 @@ class ErrorBoundary extends React.Component {
   }
 }
 
-function MainAppContent() {
-  const { collegeData, activeLightboxImage, closeLightbox } = useCollege();
+function CollegeRouteHandler() {
+  const { collegeId } = useParams();
+  const college = collegeRegistry[collegeId];
+
+  console.log("CollegeRouteHandler mounted. collegeId:", collegeId, "college:", college);
+
+  if (!college) {
+    console.warn("College not found in registry! Redirecting to /teja. collegeId:", collegeId);
+    // If the college is not found, redirect to a default college or show a 404
+    return <Navigate to="/teja" replace />;
+  }
 
   return (
-    <ThemeProvider theme={collegeData?.theme}>
-      <div className="cognizant-app-root" style={{ width: '100%', minHeight: '100vh', overflowX: 'hidden' }}>
-        <Navbar />
-        <PageRenderer />
-        <DetailModal />
-        <AdmissionsModal />
-        {activeLightboxImage && (
-          <Lightbox
-            src={activeLightboxImage.src || activeLightboxImage}
-            alt={activeLightboxImage.alt || 'Gallery Preview'}
-            onClose={closeLightbox}
-          />
-        )}
-      </div>
-    </ThemeProvider>
+    <CollegeProvider key={collegeId} initialCollegeId={collegeId} collegeData={college.content}>
+      <ThemeProvider theme={college.theme}>
+        <JuniorCollegeTemplate college={college} />
+      </ThemeProvider>
+    </CollegeProvider>
   );
 }
 
 export default function App() {
   return (
     <ErrorBoundary>
-      <CollegeProvider>
-        <MainAppContent />
-      </CollegeProvider>
+      <Router>
+        <Routes>
+          <Route path="/:collegeId/*" element={<CollegeRouteHandler />} />
+          <Route path="/" element={<Navigate to="/gitam" replace />} />
+        </Routes>
+      </Router>
     </ErrorBoundary>
   );
 }

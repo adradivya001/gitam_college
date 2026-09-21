@@ -1,31 +1,34 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { loadCollegeData, getAvailableColleges } from '../tier3/contentLoader';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const CollegeContext = createContext(null);
 
-export function CollegeProvider({ children }) {
-  const [activeCollegeId, setActiveCollegeId] = useState('teja');
-  const [collegeData, setCollegeData] = useState(() => loadCollegeData('teja'));
+export function CollegeProvider({ children, initialCollegeId, collegeData }) {
+  const location = useLocation();
+  const navigate = useNavigate();
   
-  // Active Page Route State ('home' | 'about' | 'academics' | 'campuses' | 'facilities' | 'student-life' | 'admissions' | 'gallery' | 'contact')
-  const [activePage, setActivePage] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const path = (window.location.hash || window.location.pathname).replace(/^#\/?/, '').replace(/^\//, '');
-      const validPages = ['about', 'academics', 'campuses', 'why-teja', 'facilities', 'student-life', 'admissions', 'gallery', 'contact'];
-      if (validPages.includes(path)) return path;
+  const [activeCollegeId, setActiveCollegeId] = useState(initialCollegeId);
+  
+  // Extract active page from React Router path: e.g. /teja/about -> "about"
+  const getPageFromPath = (pathname, colId) => {
+    const segments = pathname.split('/').filter(Boolean);
+    if (segments.length > 1 && segments[0] === colId) {
+      return segments[1];
     }
     return 'home';
-  });
+  };
+
+  const [activePage, setActivePage] = useState(() => getPageFromPath(location.pathname, initialCollegeId));
 
   const [isAdmissionsModalOpen, setIsAdmissionsModalOpen] = useState(false);
   const [admissionsModalMeta, setAdmissionsModalMeta] = useState('');
   const [activeLightboxImage, setActiveLightboxImage] = useState(null);
   const [activeDetailModal, setActiveDetailModal] = useState(null);
 
+  // Sync active page on route change
   useEffect(() => {
-    const data = loadCollegeData(activeCollegeId);
-    setCollegeData(data);
-  }, [activeCollegeId]);
+    setActivePage(getPageFromPath(location.pathname, initialCollegeId));
+  }, [location.pathname, initialCollegeId]);
 
   // Sync SEO and Document Title based on Active Page & Data
   useEffect(() => {
@@ -40,29 +43,14 @@ export function CollegeProvider({ children }) {
     }
   }, [collegeData, activePage]);
 
-  // Listen to hash change for navigation
-  useEffect(() => {
-    const handleHashChange = () => {
-      const path = (window.location.hash || window.location.pathname).replace(/^#\/?/, '').replace(/^\//, '');
-      const validPages = ['about', 'academics', 'campuses', 'why-teja', 'facilities', 'student-life', 'admissions', 'gallery', 'contact'];
-      if (validPages.includes(path)) {
-        setActivePage(path);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else if (path === 'home' || path === 'hero' || path === '') {
-        setActivePage('home');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    };
-
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
-
   const navigateToPage = (pageName, scrollTarget = null) => {
     setActivePage(pageName);
-    if (typeof window !== 'undefined') {
-      window.location.hash = pageName === 'home' ? '' : pageName;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    // Navigate via React Router
+    if (pageName === 'home') {
+      navigate(`/${initialCollegeId}`);
+    } else {
+      navigate(`/${initialCollegeId}/${pageName}`);
     }
 
     if (scrollTarget) {
@@ -105,7 +93,6 @@ export function CollegeProvider({ children }) {
         activeCollegeId,
         setActiveCollegeId,
         collegeData,
-        availableColleges: getAvailableColleges(),
         activePage,
         setActivePage,
         navigateToPage,
