@@ -96,15 +96,7 @@ export function HeroSection({ data, sectionConfig, theme, onAction }) {
               )}
             </div>
 
-            {phoneContact && (
-              <a
-                href={`tel:${phoneContact}`}
-                className="hero-secondary-phone"
-              >
-                <Phone size={16} className="phone-icon" />
-                <span>Call {phoneContact}</span>
-              </a>
-            )}
+
           </div>
         </div>
       </Container>

@@ -85,7 +85,7 @@
       {
         "id": "contact-preview",
         "type": "contact-preview",
-        "enabled": true,
+        "enabled": false,
         "eyebrow": "CONNECT WITH TEJA",
         "title": "Connect With Teja Junior College",
         "subtitle": "Have questions about admissions, campuses or programs? Get in touch with us.",
