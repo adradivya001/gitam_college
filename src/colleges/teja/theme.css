@@ -108,6 +108,8 @@
   color: var(--teja-navy) !important;
   font-weight: 700 !important;
   border: none !important;
+  border-radius: 9999px !important;
+  padding: 12px 32px !important;
 }
 .teja-app-root .sg-apply-btn:hover,
 .teja-app-root .sg-btn-primary:hover,
@@ -121,6 +123,8 @@
   border: 1px solid var(--teja-teal) !important;
   color: var(--teja-teal) !important;
   font-weight: 600 !important;
+  border-radius: 9999px !important;
+  padding: 12px 32px !important;
 }
 
 /* Hero Section */
@@ -175,10 +179,7 @@
 
 /* General Section Adjustments */
 .teja-app-root .sg-section-title {
-  color: var(--teja-navy) !important;
-}
-.teja-app-root .sg-section p {
-  color: var(--teja-text-sec) !important;
+  font-weight: 800 !important;
 }
 
 /* About (Split) Section */
@@ -244,10 +245,17 @@
   position: relative;
   z-index: 2;
 }
-.teja-app-root .sg-statement-text {
+.teja-app-root .sg-statement-text,
+.teja-app-root .sg-section-title-light,
+.teja-app-root .sg-cta-title,
+.teja-app-root .sg-cta-banner h2 {
   color: var(--teja-white) !important;
 }
-.teja-app-root .sg-statement-section p {
+.teja-app-root .sg-statement-section p,
+.teja-app-root .sg-section-desc-light,
+.teja-app-root .sg-cta-subtitle,
+.teja-app-root .sg-cta-banner p,
+.teja-app-root .sg-cta-banner span {
   color: #E8EEF2 !important;
 }
 .teja-app-root .sg-statement-section .sg-btn-secondary {

@@ -81,7 +81,7 @@ export function SgAboutPage({ onAction, data }) {
               { n: '04', h: 'Evaluate', p: 'Track academic progress and identify areas for improvement.' },
               { n: '05', h: 'Prepare', p: 'Build readiness for higher education and future pathways.' },
             ].map((s, i) => (
-              <div key={i} className="sg-process-step">
+              <div key={i} className="sg-process-step" data-step={s.n}>
                 <div className="sg-process-num">{s.n}</div>
                 <h4>{s.h}</h4>
                 <p>{s.p}</p>
