@@ -89,14 +89,16 @@ export function SgProgrammesPage({ onAction, data }) {
                 </div>
                 <div className="sg-prog-visual" style={{ background: prog.bg }}>
                   <div className="sg-prog-icon-big">
-                    <IconComponent size={40} color="var(--color-primary, #172A43)" />
+                    <IconComponent size={36} color="var(--color-brand-crimson, #7D0303)" />
                   </div>
-                  <h3 style={{ fontFamily: 'var(--font-heading, Playfair Display, serif)', fontSize: '28px', fontWeight: '700', color: 'var(--color-primary, #172A43)' }}>{prog.name}</h3>
-                  <p style={{ fontSize: '14px', color: 'var(--color-muted, #657080)', lineHeight: '1.6' }}>{prog.subjects}</p>
-                  <div style={{ borderTop: '1px solid rgba(0,0,0,0.08)', paddingTop: '24px' }}>
-                    <p style={{ fontSize: '13px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-primary, #172A43)', marginBottom: '12px' }}>Core Subjects</p>
+                  <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '30px', fontWeight: '800', color: 'var(--text-primary, #2A2A29)', margin: '0 0 4px' }}>{prog.name}</h3>
+                  <p style={{ fontSize: '14.5px', fontWeight: '600', color: 'var(--color-brand-crimson, #7D0303)', lineHeight: '1.5', margin: '0 0 8px' }}>{prog.subjects}</p>
+                  <div style={{ borderTop: '1px solid var(--color-border, #D9A5A5)', paddingTop: '20px', marginTop: '12px' }}>
+                    <p style={{ fontSize: '12px', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--text-primary, #2A2A29)', marginBottom: '12px' }}>Core Subjects</p>
                     {prog.subjects.split(' • ').map((s, i) => (
-                      <div key={i} style={{ padding: '10px 0', borderBottom: '1px solid rgba(0,0,0,0.05)', fontSize: '15px', color: 'var(--color-muted, #657080)' }}>{s}</div>
+                      <div key={i} style={{ padding: '10px 0', borderBottom: '1px solid rgba(125, 3, 3, 0.1)', fontSize: '15px', fontWeight: '600', color: 'var(--text-primary, #2A2A29)' }}>
+                        ✓ {s}
+                      </div>
                     ))}
                   </div>
                 </div>
