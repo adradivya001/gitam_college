@@ -30,25 +30,28 @@ export function SgAboutPage({ onAction, data }) {
         <section className="sg-section sg-section-cream" style={{ borderBottom: '1px solid var(--color-border)' }}>
           <Container maxWidth="1280px">
             <div className="sg-split" style={{ alignItems: 'center' }}>
-              <div className="sg-split-left" style={{ flex: '0 0 45%', maxWidth: '45%' }}>
+              <div className="sg-split-left" style={{ flex: '0 0 42%', maxWidth: '42%', display: 'flex', justifyContent: 'center' }}>
                 <div 
-                  className="sg-split-img" 
                   style={{ 
                     borderRadius: '20px', 
                     border: '1px solid var(--color-border)', 
-                    boxShadow: '0 12px 32px rgba(125, 3, 3, 0.08)',
+                    boxShadow: '0 12px 32px rgba(125, 3, 3, 0.12)',
                     overflow: 'hidden',
-                    background: '#f8f4ec',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    maxHeight: '620px'
+                    lineHeight: 0,
+                    width: '100%',
+                    maxWidth: '420px',
+                    margin: '0 auto'
                   }}
                 >
                   <img 
                     src={chairmanData.image || "/sri-gitam/chairperson.jpg"} 
                     alt={chairmanData.name || "Manisha Nair.K"} 
-                    style={{ width: '100%', height: 'auto', maxHeight: '620px', objectFit: 'contain', display: 'block' }}
+                    style={{ 
+                      width: '100%', 
+                      height: 'auto', 
+                      display: 'block', 
+                      borderRadius: '19px'
+                    }}
                   />
                 </div>
               </div>
