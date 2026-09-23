@@ -67,7 +67,13 @@ export function SgStudentLifePage({ onAction, data }) {
               return (
                 <div key={i} className={`sg-activity-item ${i % 2 !== 0 ? 'reverse' : ''}`}>
                   <div className="sg-activity-img">
-                    <img src={imgSrc} alt={act.title} />
+                    <img
+                      src={imgSrc}
+                      alt={act.title}
+                      style={{
+                        objectPosition: imgSrc.includes('flag_assembly') ? 'center 75%' : 'center 20%'
+                      }}
+                    />
                   </div>
                   <div className="sg-activity-content">
                     <span className="sg-eyebrow">{String(i + 1).padStart(2, '0')}</span>
