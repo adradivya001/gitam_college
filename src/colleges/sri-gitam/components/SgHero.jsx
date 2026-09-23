@@ -13,8 +13,13 @@ export function SgHero({ sectionConfig, onAction, data }) {
           <div className="sg-hero-text-content">
             <span className="eyebrow">{sectionConfig.eyebrow}</span>
             <h1 className="sg-hero-title">
-              {sectionConfig.title.split('\n').map((line, i) => (
-                <span key={i} className="sg-title-line">{line}</span>
+              {sectionConfig.title.split('\n').map((line, i, arr) => (
+                <span 
+                  key={i} 
+                  className={`sg-title-line ${i === arr.length - 1 ? 'font-serif editorial-italic' : ''}`}
+                >
+                  {line}
+                </span>
               ))}
             </h1>
             <p className="sg-hero-subtitle">{sectionConfig.subtitle}</p>

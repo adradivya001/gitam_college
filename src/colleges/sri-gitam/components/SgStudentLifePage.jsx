@@ -18,7 +18,7 @@ export function SgStudentLifePage({ onAction, data }) {
         breadcrumb={heroData.breadcrumb || "Student Life"}
         title={heroData.title || "Life Beyond the Classroom"}
         subtitle={heroData.subtitle || "Academic growth is strengthened by participation, interaction, creativity and personal development."}
-        image={data?.gallery?.images?.[2]?.src || "/sri-gitam/gallery/student_activities_1789977201922.jpg"}
+        image={data?.gallery?.images?.[1]?.src || "/sri-gitam/campus_flag_assembly.png"}
       />
 
       {/* Intro */}
@@ -27,7 +27,7 @@ export function SgStudentLifePage({ onAction, data }) {
           <div className="sg-split">
             <div className="sg-split-left">
               <div className="sg-split-img">
-                <img src={data?.gallery?.images?.[3]?.src || "/sri-gitam/gallery/student_activities_1789977201922.jpg"} alt="Student Life" />
+                <img src={data?.gallery?.images?.[1]?.src || "/sri-gitam/campus_flag_assembly.png"} alt="Student Life" />
               </div>
             </div>
             <div className="sg-split-right">
@@ -53,10 +53,17 @@ export function SgStudentLifePage({ onAction, data }) {
           </div>
           <div className="sg-activity-strip">
             {(activitiesData.pillars || []).map((act, i) => {
-              const imgSrc = data?.gallery?.images?.[i % (data?.gallery?.images?.length || 1)]?.src || '/sri-gitam/gallery/smart_classrooms_1789976999081.jpg';
+              const activityImages = [
+                '/sri-gitam/yoga_session.png',
+                '/sri-gitam/meditation_wellness.png',
+                '/sri-gitam/sports_volleyball.png',
+                '/sri-gitam/lawn_study.png',
+                '/sri-gitam/campus_flag_assembly.png'
+              ];
+              const imgSrc = activityImages[i % activityImages.length];
               return (
                 <div key={i} className={`sg-activity-item ${i % 2 !== 0 ? 'reverse' : ''}`}>
-                  <div className="sg-activity-img">
+                  <div className="sg-activity-img" style={{ border: '1px solid var(--color-border, #EDE5D8)', boxShadow: '0 4px 16px rgba(24, 30, 36, 0.06)' }}>
                     <img src={imgSrc} alt={act.title} />
                   </div>
                   <div className="sg-activity-content">

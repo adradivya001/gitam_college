@@ -20,6 +20,7 @@ export function SgCampusPage({ onAction, data }) {
         breadcrumb={heroData.title || "Campus"}
         title={heroData.title || "A Space Designed for Learning"}
         subtitle={heroData.subtitle || `Explore the learning environment and facilities that support the Intermediate education journey at ${data?.college?.name}.`}
+        image={galleryImages[1] || "/sri-gitam/campus_flag_assembly.png"}
       />
 
       {/* Campus Intro */}
@@ -28,7 +29,7 @@ export function SgCampusPage({ onAction, data }) {
           <div className="sg-split">
             <div className="sg-split-left">
               <div className="sg-split-img">
-                <img src={galleryImages[0] || "/sri-gitam/gallery/campus_kamalanagar_1789976860423.jpg"} alt={`${data?.college?.name} Campus`} />
+                <img src={galleryImages[1] || "/sri-gitam/campus_flag_assembly.png"} alt={`${data?.college?.name} Campus`} />
               </div>
             </div>
             <div className="sg-split-right">
@@ -110,13 +111,39 @@ export function SgCampusPage({ onAction, data }) {
         <Container maxWidth="1280px">
           <div className="sg-section-header-center">
             <span className="sg-eyebrow">GALLERY</span>
-            <h2 className="sg-section-title">Campus Gallery</h2>
-            <p className="sg-section-desc sg-section-desc-center">A visual look at the {data?.college?.name} learning environment.</p>
+            <h2 className="sg-section-title">Campus Life & Facility Gallery</h2>
+            <p className="sg-section-desc sg-section-desc-center">A comprehensive look at life, learning and activities at {data?.college?.name}.</p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
-            {galleryImages.slice(0, 4).map((src, i) => (
-              <div key={i} style={{ borderRadius: '16px', overflow: 'hidden', aspectRatio: i === 0 ? '16/9' : '4/3', gridColumn: i === 0 ? 'span 2' : 'auto' }}>
-                <img src={src} alt={`Campus ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
+            {(data?.gallery?.images || []).map((item, i) => (
+              <div 
+                key={i} 
+                className="sg-card"
+                style={{ 
+                  borderRadius: '16px', 
+                  overflow: 'hidden', 
+                  padding: 0,
+                  border: '1px solid var(--color-border, #EDE5D8)',
+                  boxShadow: '0 4px 16px rgba(24, 30, 36, 0.05)',
+                  display: 'flex',
+                  flexDirection: 'column'
+                }}
+              >
+                <div style={{ height: '220px', width: '100%', overflow: 'hidden', background: '#F8F4EC' }}>
+                  <img 
+                    src={item.src} 
+                    alt={item.title} 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.3s ease' }} 
+                  />
+                </div>
+                <div style={{ padding: '16px 20px' }}>
+                  <span className="sg-eyebrow" style={{ fontSize: '10px', padding: '2px 8px', marginBottom: '6px' }}>
+                    {item.category || 'Campus'}
+                  </span>
+                  <h4 style={{ fontSize: '14px', fontWeight: '700', color: 'var(--color-text, #181E24)', margin: 0 }}>
+                    {item.title}
+                  </h4>
+                </div>
               </div>
             ))}
           </div>

@@ -1,28 +1,62 @@
-.sri-gitam-app-root {
-  --color-primary: #172A43;
-  --color-primary-hover: #102238;
-  --color-secondary: #B6533E;
-  --color-secondary-hover: #963F30;
-  --color-accent: #B6533E;
+.sri-gitam-app-root, :root {
+  /* Requested Color Palette */
+  --primary: #7D0303;
+  --primary-light: #9A1717;
+  --primary-soft: #F3D6D6;
+  --primary-bg: #F8E8E8;
+  --primary-border: #D9A5A5;
+
+  --text-primary: #2A2A29;
+  --text-secondary: #66615F;
+
+  --background: #FFFDFB;
+  --white: #FFFFFF;
+
+  /* Mappings & Compatibility Aliases */
+  --color-primary: #7D0303;
+  --color-primary-hover: #9A1717;
+  --color-secondary: #7D0303;
+  --color-secondary-hover: #9A1717;
+  --color-accent: #7D0303;
   
-  --color-background: #FAF7F2;
+  --color-brand-crimson: #7D0303;
+  --color-brand-burgundy: #9A1717;
+  --color-brand-light: #F3D6D6;
+  --color-brand-subtle: #F8E8E8;
+  
+  /* Warm Canvas & Neutral Palette */
+  --color-background: #FFFDFB;
   --color-background-soft: #FFFFFF;
-  --color-background-alt: #F4EEE7;
+  --color-background-alt: #F8E8E8;
+  --color-surface: #FFFFFF;
   
-  --color-sg-peach: #F8E9E3;
-  --color-sg-sage: #EAF2EE;
+  --color-sg-peach: #F8E8E8;
+  --color-sg-sage: #F0F4F1;
   --color-sg-sand: #F5EFE3;
-  --color-sg-lavender: #F0ECF6;
+  --color-sg-lavender: #F3EFF8;
   
-  --color-text: #172A43;
-  --color-text-muted: #657080;
-  --color-border: #E8E1D9;
+  /* Typography & Structure Colors */
+  --color-text: #2A2A29;
+  --color-text-muted: #66615F;
+  --color-border: #D9A5A5;
+  --color-card-bg: #FFFFFF;
+  --color-card-border: #D9A5A5;
+  --color-dark-section: #101216;
+  --color-footer-dark: #080A0D;
   
-  --font-heading: 'Playfair Display', 'DM Serif Display', serif;
-  --font-body: 'Inter', 'Manrope', sans-serif;
+  /* Fonts */
+  --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Newsreader', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 }
 
 /* Global resets specifically scoped to sri-gitam */
+.sri-gitam-app-root {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
 .sri-gitam-app-root h1, 
 .sri-gitam-app-root h2, 
 .sri-gitam-app-root h3, 
@@ -30,8 +64,17 @@
 .sri-gitam-app-root h5, 
 .sri-gitam-app-root h6 {
   font-family: var(--font-heading);
-  color: var(--color-primary);
-  font-weight: 700;
+  color: var(--color-text);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.sri-gitam-app-root .font-serif,
+.sri-gitam-app-root .editorial-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-brand-crimson);
 }
 
 .sri-gitam-app-root body, 
@@ -42,49 +85,85 @@
 }
 
 .sri-gitam-app-root .btn-primary {
-  background-color: var(--color-secondary);
+  background-color: var(--color-brand-crimson);
   color: #FFFFFF;
   border-radius: 9999px;
-  padding: 12px 24px;
-  font-weight: 500;
-  transition: all 0.2s ease;
+  padding: 12px 26px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(138, 28, 20, 0.2);
 }
 
 .sri-gitam-app-root .btn-primary:hover {
-  background-color: var(--color-secondary-hover);
+  background-color: var(--color-brand-burgundy);
   transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(182, 83, 62, 0.2);
+  box-shadow: 0 6px 16px rgba(138, 28, 20, 0.28);
 }
 
 .sri-gitam-app-root .btn-secondary {
-  background-color: transparent;
-  color: var(--color-primary);
-  border: 1px solid var(--color-primary);
+  background-color: #FFFFFF;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
   border-radius: 9999px;
-  padding: 12px 24px;
-  font-weight: 500;
-  transition: all 0.2s ease;
+  padding: 12px 26px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .sri-gitam-app-root .btn-secondary:hover {
-  background-color: rgba(23, 42, 67, 0.05);
+  background-color: var(--color-background-alt);
+  border-color: #D1C7B7;
   transform: translateY(-2px);
+  color: var(--color-brand-crimson);
 }
 
-.sri-gitam-app-root .eyebrow {
-  color: var(--color-secondary);
-  font-size: 0.75rem;
+.sri-gitam-app-root .eyebrow,
+.sri-gitam-app-root .sg-eyebrow {
+  color: var(--color-brand-crimson);
+  background-color: var(--color-brand-light);
+  font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 600;
-  display: block;
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  border: 1px solid rgba(138, 28, 20, 0.15);
+  margin-bottom: 1rem;
 }
-.sg-top-info-bar { background-color: var(--color-secondary); color: white; font-size: 13px; font-weight: 500; }
-.sg-top-bar-inner { display: flex; justify-content: space-between; align-items: center; min-height: 36px; padding: 4px 0; }
-.sg-top-left { display: flex; align-items: center; gap: 8px; opacity: 0.9; }
+
+/* Top bar styled with Brand Crimson */
+.sg-top-info-bar,
+.sg-navbar-topbar { 
+  background-color: var(--color-brand-crimson) !important; 
+  color: #FFFFFF !important; 
+  font-size: 12px; 
+  font-weight: 500; 
+}
+.sg-top-bar-inner,
+.sg-navbar-topbar-inner { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  min-height: 36px; 
+  padding: 4px 0; 
+}
+.sg-top-left { display: flex; align-items: center; gap: 8px; opacity: 0.95; }
 .sg-top-right { display: flex; align-items: center; gap: 20px; }
-.sg-top-right a { color: white; text-decoration: none; display: flex; align-items: center; gap: 6px; opacity: 0.9; transition: opacity 0.2s; }
+.sg-top-right a { color: white; text-decoration: none; display: flex; align-items: center; gap: 6px; opacity: 0.92; transition: opacity 0.2s; }
 .sg-top-right a:hover { opacity: 1; }
-@media (max-width: 768px) { .sg-top-right { display: none; } .sg-top-left { justify-content: center; width: 100%; text-align: center; } }
+@media (max-width: 768px) { 
+  .sg-top-right { display: none; } 
+  .sg-top-left { justify-content: center; width: 100%; text-align: center; } 
+}

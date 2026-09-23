@@ -13,6 +13,8 @@ export function SgAboutPage({ onAction, data }) {
   const heroData = pageData.find(s => s.type === 'about-hero') || {};
   const introData = pageData.find(s => s.type === 'about-content') || {};
 
+  const chairmanData = pageData.find(s => s.type === 'chairperson-message') || {};
+
   return (
     <div className="sg-page">
       <SgInnerHero
@@ -20,8 +22,77 @@ export function SgAboutPage({ onAction, data }) {
         breadcrumb="About"
         title={heroData.title || `About ${cName}`}
         subtitle={heroData.subtitle || "Building academic foundations and helping students move confidently towards higher education."}
-        image={data?.gallery?.images?.[0]?.src || "/sri-gitam/gallery/campus_kamalanagar_1789976860423.jpg"}
+        image={heroData.image || data?.gallery?.images?.[1]?.src || "/sri-gitam/campus_quad.png"}
       />
+
+      {/* Chairman / Leadership Message */}
+      {chairmanData && (
+        <section className="sg-section sg-section-cream" style={{ borderBottom: '1px solid var(--color-border)' }}>
+          <Container maxWidth="1280px">
+            <div className="sg-split" style={{ alignItems: 'center' }}>
+              <div className="sg-split-left" style={{ flex: '0 0 42%', maxWidth: '42%' }}>
+                <div 
+                  className="sg-split-img" 
+                  style={{ 
+                    aspectRatio: '4/5', 
+                    maxHeight: '520px', 
+                    borderRadius: '20px', 
+                    border: '1px solid var(--color-border)', 
+                    boxShadow: '0 12px 32px rgba(125, 3, 3, 0.08)',
+                    overflow: 'hidden',
+                    background: '#f8f4ec'
+                  }}
+                >
+                  <img 
+                    src={chairmanData.image || "/sri-gitam/chairperson.jpg"} 
+                    alt={chairmanData.name || "Chairperson"} 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
+                  />
+                </div>
+              </div>
+              <div className="sg-split-right" style={{ paddingLeft: '12px' }}>
+                <span className="sg-eyebrow" style={{ color: 'var(--color-primary)' }}>
+                  {chairmanData.eyebrow || "LEADERSHIP & VISION"}
+                </span>
+                <h2 className="sg-section-title" style={{ marginBottom: '20px' }}>
+                  {chairmanData.title || "Chairperson's Message"}
+                </h2>
+                
+                {chairmanData.quote && (
+                  <div style={{
+                    borderLeft: '4px solid var(--color-primary)',
+                    paddingLeft: '18px',
+                    margin: '16px 0 24px 0',
+                    fontFamily: 'var(--font-serif)',
+                    fontStyle: 'italic',
+                    fontSize: '18px',
+                    color: 'var(--color-primary)',
+                    lineHeight: '1.5'
+                  }}>
+                    "{chairmanData.quote}"
+                  </div>
+                )}
+
+                <p style={{ fontSize: '15.5px', color: 'var(--text-secondary, #66615F)', lineHeight: '1.75', marginBottom: '24px', whiteSpace: 'pre-line' }}>
+                  {chairmanData.content}
+                </p>
+
+                <div style={{ marginTop: '28px', paddingTop: '20px', borderTop: '1px solid var(--color-border)' }}>
+                  <h4 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text-primary, #2A2A29)', margin: '0 0 4px 0' }}>
+                    {chairmanData.name || "Smt. G. Swetha"}
+                  </h4>
+                  <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-primary, #7D0303)', margin: 0 }}>
+                    {chairmanData.designation || "Chairperson & Managing Director"}
+                  </p>
+                  <p style={{ fontSize: '13px', color: 'var(--text-secondary, #66615F)', margin: '2px 0 0 0' }}>
+                    {chairmanData.college || cName}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Container>
+        </section>
+      )}
 
       {/* Introduction */}
       <section className="sg-section sg-section-white">
@@ -29,7 +100,7 @@ export function SgAboutPage({ onAction, data }) {
           <div className="sg-split">
             <div className="sg-split-left">
               <div className="sg-split-img">
-                <img src={data?.gallery?.images?.[0]?.src || "/sri-gitam/gallery/campus_kamalanagar_1789976860423.jpg"} alt={`${cName} Campus`} />
+                <img src={introData.image || data?.gallery?.images?.[5]?.src || "/sri-gitam/lawn_study.png"} alt={`${cName} Campus`} />
               </div>
             </div>
             <div className="sg-split-right">

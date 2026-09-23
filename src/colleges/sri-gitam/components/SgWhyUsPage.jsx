@@ -21,7 +21,7 @@ export function SgWhyUsPage({ onAction, data }) {
         breadcrumb={heroData.title || "Why Us"}
         title={heroData.title || "Why Choose Us?"}
         subtitle={heroData.subtitle || "An environment designed for success."}
-        image={data?.gallery?.images?.[0]?.src || "/sri-gitam/gallery/campus_kamalanagar_1789976860423.jpg"}
+        image={heroData.image || data?.gallery?.images?.[3]?.src || "/sri-gitam/students_lecture.png"}
       />
 
       {/* More than a Classroom */}
@@ -30,7 +30,7 @@ export function SgWhyUsPage({ onAction, data }) {
           <div className="sg-split">
             <div className="sg-split-left">
               <div className="sg-split-img">
-                <img src={data?.gallery?.images?.[1]?.src || "/sri-gitam/gallery/smart_classrooms_1789976999081.jpg"} alt={data?.college?.name} />
+                <img src={data?.gallery?.images?.[4]?.src || "/sri-gitam/classroom_focus.png"} alt={data?.college?.name} />
               </div>
             </div>
             <div className="sg-split-right">

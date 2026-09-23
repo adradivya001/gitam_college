@@ -25,7 +25,7 @@ export function SgAcademicsPage({ onAction, data }) {
         breadcrumb="Academics"
         title={heroData.title || "Learning With Purpose"}
         subtitle={heroData.subtitle || "Develop strong concepts, strengthen subject knowledge and prepare for the next stage of your education."}
-        image={data?.gallery?.images?.[1]?.src || "/sri-gitam/gallery/smart_classrooms_1789976999081.jpg"}
+        image={heroData.image || "/sri-gitam/classroom_focus.png"}
       />
 
       {/* Academic Intro */}
@@ -34,7 +34,7 @@ export function SgAcademicsPage({ onAction, data }) {
           <div className="sg-split">
             <div className="sg-split-left">
               <div className="sg-split-img">
-                <img src={data?.gallery?.images?.[1]?.src || "/sri-gitam/gallery/smart_classrooms_1789976999081.jpg"} alt="Academics" />
+                <img src="/sri-gitam/classroom_study.png" alt="Classroom Faculty and Learning" />
               </div>
             </div>
             <div className="sg-split-right">
@@ -65,10 +65,14 @@ export function SgAcademicsPage({ onAction, data }) {
                 {(journeyData.steps || []).map((s, i) => (
                   <div key={i} className="sg-timeline-item" style={{ alignItems: 'flex-start' }}>
                     <div className="sg-timeline-num" style={{ marginTop: '8px', boxShadow: '0 0 0 8px white' }}>{s.n || `0${i+1}`}</div>
-                    <div className="sg-timeline-body sg-card" style={{ flex: 1, padding: '28px', marginTop: '0', cursor: 'default' }}>
-                      <p className="sg-timeline-label" style={{ marginBottom: '8px' }}>{s.label}</p>
-                      <h3 style={{ fontFamily: 'var(--font-heading, Playfair Display, serif)', fontSize: '22px', fontWeight: '700', color: 'var(--color-primary, #172A43)', margin: '0 0 12px 0' }}>{s.h}</h3>
-                      <p style={{ fontSize: '15px', color: 'var(--color-muted, #657080)', lineHeight: '1.6', margin: 0 }}>{s.p}</p>
+                    <div className="sg-timeline-body sg-card" style={{ flex: 1, padding: '24px 28px', marginTop: '0', cursor: 'default' }}>
+                      {s.label && <p className="sg-timeline-label" style={{ marginBottom: '6px' }}>{s.label}</p>}
+                      <h3 style={{ fontFamily: 'var(--font-heading, Plus Jakarta Sans, sans-serif)', fontSize: '20px', fontWeight: '800', color: 'var(--color-text, #181E24)', margin: '0 0 8px 0', letterSpacing: '-0.02em' }}>
+                        {s.title || s.h}
+                      </h3>
+                      <p style={{ fontSize: '14.5px', color: 'var(--color-text-muted, #7A7267)', lineHeight: '1.6', margin: 0 }}>
+                        {s.desc || s.p}
+                      </p>
                     </div>
                   </div>
                 ))}

@@ -54,7 +54,7 @@ const sriGitamContent = {
           eyebrow: "SRI GITAM JUNIOR COLLEGE · ANANTAPUR",
           title: "Shape Your Future\nWith the Right\nFoundation",
           subtitle: "Sri GITAM Junior College, Anantapur, provides Intermediate education focused on strong academic foundations, structured learning and preparation for higher education.",
-          heroImage: "/sri-gitam/gallery/campus_ramnagar_1789977013402.jpg",
+          heroImage: "/sri-gitam/gitam_college_main.png",
           primaryCta: { label: "Explore Programmes →", action: "navigate_to", target: "programmes" },
           secondaryCta: { label: "Apply Now", action: "navigate_to", target: "admissions" },
           highlights: [
@@ -71,7 +71,7 @@ const sriGitamContent = {
           eyebrow: "ABOUT SRI GITAM",
           title: "Welcome to Sri GITAM\nJunior College",
           content: "Sri GITAM Junior College is an Intermediate educational institution in Anantapur offering academic pathways designed to help students build subject knowledge and prepare for their future studies. With programmes across MPC, BiPC, MEC and CEC, students can choose a stream aligned with their interests and career direction.",
-          image: "/sri-gitam/gallery/smart_classrooms_1789976999081.jpg",
+          image: "/sri-gitam/campus_quad.png",
           hasVideo: true,
           features: [
             { icon: "BookOpen", label: "Strong Academic Foundation" },
@@ -165,21 +165,33 @@ const sriGitamContent = {
           subtitle: "Explore our programmes and take the first step towards your Intermediate education journey.",
           primaryCta: { label: "Begin Your Admission Journey →", action: "open_admissions_modal" },
           secondaryCta: { label: "Visit Campus", action: "navigate_to", target: "facilities" },
-          image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1920&q=80"
+          image: "/sri-gitam/students_lecture.png"
         }
       ]
     },
     about: {
       sections: [
-        { id: "about-hero", type: "about-hero", title: "About Sri GITAM Junior College", subtitle: "Building academic foundations and helping students move confidently towards higher education." },
-        { id: "about-intro", type: "about-content", title: "A Foundation for the Future", content: "Sri GITAM Junior College is an Intermediate college located in Anantapur, Andhra Pradesh. The institution focuses on providing students with a structured academic environment where they can strengthen their subject knowledge, develop academic discipline and prepare for their next stage of education.\n\nStudents can choose from different Intermediate streams according to their interests and future aspirations." },
+        { id: "about-hero", type: "about-hero", title: "About Sri GITAM Junior College", subtitle: "Building academic foundations and helping students move confidently towards higher education.", image: "/sri-gitam/campus_quad.png" },
+        { 
+          id: "about-chairperson", 
+          type: "chairperson-message", 
+          title: "Chairperson's Message",
+          eyebrow: "LEADERSHIP & VISION",
+          quote: "Education is not merely about examinations; it is about building character, discipline, and the intellectual foundation for a lifetime of success.",
+          content: "Welcome to Sri GITAM Junior College. Our institution was founded with a profound commitment to providing intermediate students with an inspiring, supportive, and rigorous academic environment. We believe that these two crucial years shape the trajectory of a student's entire career and personal growth.\n\nAt Sri GITAM, we blend strong academic fundamentals with personalized guidance, state-of-the-art facilities, and value-driven mentorship. Every student is nurtured to realize their utmost potential, excel in competitive benchmarks, and step into higher education with clarity and unshakeable confidence.",
+          name: "Smt. G. Swetha",
+          designation: "Chairperson & Managing Director",
+          college: "Sri GITAM Junior College",
+          image: "/sri-gitam/chairperson.jpg"
+        },
+        { id: "about-intro", type: "about-content", title: "A Foundation for the Future", content: "Sri GITAM Junior College is an Intermediate college located in Anantapur, Andhra Pradesh. The institution focuses on providing students with a structured academic environment where they can strengthen their subject knowledge, develop academic discipline and prepare for their next stage of education.\n\nStudents can choose from different Intermediate streams according to their interests and future aspirations.", image: "/sri-gitam/lawn_study.png" },
         { id: "about-philosophy", type: "philosophy", title: "Educational Approach", headline: "Our Approach to Learning", content: "We believe that strong fundamentals, consistent learning and proper academic direction help students make informed decisions about their future." },
         { id: "vision-mission", type: "vision-mission", vision: { title: "Vision", desc: "To provide a focused educational environment where students can develop strong academic foundations, discover their potential and progress confidently towards higher education." }, mission: { title: "Mission", desc: "To support students through structured Intermediate education, academic guidance and opportunities for personal development while preparing them for future academic pathways." } }
       ]
     },
     academics: {
       sections: [
-        { id: "academics-hero", type: "about-hero", title: "Learning With Purpose", subtitle: "Develop strong concepts, strengthen subject knowledge and prepare for the next stage of your education." },
+        { id: "academics-hero", type: "about-hero", title: "Learning With Purpose", subtitle: "Develop strong concepts, strengthen subject knowledge and prepare for the next stage of your education.", image: "/sri-gitam/classroom_focus.png" },
         { id: "academics-journey", type: "winning-process", eyebrow: "ACADEMIC JOURNEY", title: "Academic Journey", steps: [
           { title: "Understand", desc: "Build clarity in fundamental concepts." },
           { title: "Learn", desc: "Develop subject knowledge through structured classroom learning." },
@@ -197,7 +209,7 @@ const sriGitamContent = {
     },
     programmes: {
       sections: [
-        { id: "prog-hero", type: "about-hero", title: "Choose the Path That Fits Your Future", subtitle: "Explore the Intermediate programmes available at Sri GITAM Junior College." },
+        { id: "prog-hero", type: "about-hero", title: "Choose the Path That Fits Your Future", subtitle: "Explore the Intermediate programmes available at Sri GITAM Junior College.", image: "/sri-gitam/science_lab.png" },
         { id: "prog-list", type: "programs", title: "Academic Streams", programs: [
           { name: "MPC", code: "MPC", title: "MPC", subtitle: "Mathematics • Physics • Chemistry", description: "MPC provides a strong foundation in mathematics and physical sciences for students interested in analytical, technical and scientific fields.\n\nFuture pathways: Engineering, Technology, Computer Science, Mathematics, Physical Sciences, Architecture and related fields." },
           { name: "BiPC", code: "BiPC", title: "BiPC", subtitle: "Biology • Physics • Chemistry", description: "BiPC provides a foundation in biological and physical sciences for students interested in healthcare, life sciences and related fields.\n\nFuture pathways: Medicine, Pharmacy, Biotechnology, Life Sciences, Allied Health Sciences, Agricultural Sciences." },
@@ -208,7 +220,7 @@ const sriGitamContent = {
     },
     'why-us': {
       sections: [
-        { id: "why-hero", type: "about-hero", title: "Why Sri GITAM?", subtitle: "An academic environment focused on learning, guidance, personal development and future preparation." },
+        { id: "why-hero", type: "about-hero", title: "Why Sri GITAM?", subtitle: "An academic environment focused on learning, guidance, personal development and future preparation.", image: "/sri-gitam/students_lecture.png" },
         { id: "why-pillars", type: "why-us", title: "Six Major Sections", pillars: [
           { id: "w1", title: "01 Academic Foundation", desc: "Build a strong foundation in the core subjects of your chosen Intermediate stream." },
           { id: "w2", title: "02 Focused Learning", desc: "Follow a structured academic journey designed around consistent learning and progress." },
@@ -222,11 +234,11 @@ const sriGitamContent = {
     },
     facilities: {
       sections: [
-        { id: "facilities-hero", type: "about-hero", title: "A Space Designed for Learning", subtitle: "Explore the learning environment and facilities that support the Intermediate education journey." },
+        { id: "facilities-hero", type: "about-hero", title: "A Space Designed for Learning", subtitle: "Explore the learning environment and facilities that support the Intermediate education journey.", image: "/sri-gitam/campus_quad.png" },
         { id: "facilities-list", type: "philosophy", title: "Facilities", pillars: [
           { title: "Classrooms", desc: "Learning spaces designed to support focused classroom education and student interaction." },
           { title: "Science Laboratories", desc: "Practical learning spaces that complement science-based academic programmes." },
-          { title: "Library", desc: "A resource environment supporting reading, reference and academic learning." },
+          { title: "Library & Study Lawns", desc: "A resource environment supporting reading, reference and group study." },
           { title: "Learning Spaces", desc: "Spaces that support individual study, academic activities and collaborative learning." },
           { title: "Student Facilities", desc: "Facilities intended to support students throughout their academic journey." }
         ]},
@@ -235,25 +247,25 @@ const sriGitamContent = {
     },
     'student-life': {
       sections: [
-        { id: "sl-hero", type: "about-hero", title: "Life Beyond the Classroom", subtitle: "Academic growth is strengthened by participation, interaction, creativity and personal development." },
+        { id: "sl-hero", type: "about-hero", title: "Life Beyond the Classroom", subtitle: "Academic growth is strengthened by participation, interaction, creativity and personal development.", image: "/sri-gitam/lawn_study.png" },
         { id: "sl-activities", type: "why-us", title: "Sections", pillars: [
           { id: "sl1", title: "Academic Activities", desc: "Encourage students to actively participate in their academic journey." },
           { id: "sl2", title: "Events & Celebrations", desc: "Provide opportunities for students to participate in institutional and cultural events." },
           { id: "sl3", title: "Student Engagement", desc: "Create opportunities for students to interact, participate and build confidence." },
-          { id: "sl4", title: "Sports & Recreation", desc: "Encourage students to maintain a healthy balance between academic responsibilities and physical activity." },
-          { id: "sl5", title: "Cultural Activities", desc: "Encourage creativity, expression and participation in cultural experiences." }
+          { id: "sl4", title: "Sports & Assembly", desc: "Encourage students to maintain a healthy balance between academic responsibilities and physical activity." },
+          { id: "sl5", title: "Collaborative Study", desc: "Encourage group learning, peer discussions, and creative problem solving." }
         ]}
       ]
     },
     results: {
       sections: [
-        { id: "results-hero", type: "about-hero", title: "Student Achievements", subtitle: "Recognising the academic effort, progress and achievements of our students." },
+        { id: "results-hero", type: "about-hero", title: "Student Achievements", subtitle: "Recognising the academic effort, progress and achievements of our students.", image: "/sri-gitam/classroom_study.png" },
         { id: "results-stats", type: "results", title: "Academic Performance", stats: [{label: "Academic Results", value: "Results will be updated with verified academic data."}], topPerformers: [], achievements: ["Academic Results", "Student Achievements", "Competitive Examinations", "Higher-Education Progress"] }
       ]
     },
     admissions: {
       sections: [
-        { id: "admissions-hero", type: "about-hero", title: "Start Your Journey With Sri GITAM", subtitle: "Explore our Intermediate programmes and take the first step towards your higher-education goals." },
+        { id: "admissions-hero", type: "about-hero", title: "Start Your Journey With Sri GITAM", subtitle: "Explore our Intermediate programmes and take the first step towards your higher-education goals.", image: "/sri-gitam/classroom_focus.png" },
         { id: "admissions-process", type: "winning-process", title: "Admission Process", steps: [
           { title: "01 Enquire", desc: "Contact our admissions team to understand the available programmes and admission requirements." },
           { title: "02 Choose Your Programme", desc: "Select MPC, BiPC, MEC or CEC based on your interests and future plans." },
@@ -275,14 +287,26 @@ const sriGitamContent = {
     },
     contact: {
       sections: [
-        { id: "contact-hero", type: "about-hero", title: "Get In Touch", subtitle: "Have questions about programmes, admissions or Sri GITAM Junior College? Our team is here to help." },
+        { id: "contact-hero", type: "about-hero", title: "Get In Touch", subtitle: "Have questions about programmes, admissions or Sri GITAM Junior College? Our team is here to help.", image: "/sri-gitam/campus_quad.png" },
         { id: "contact-full", type: "contact", title: "Contact Information", showForm: true }
       ]
     }
   },
   gallery: {
-    categories: ["Campus", "Classrooms", "Laboratories", "Student Activities", "Events", "Academic Activities"],
-    images: []
+    categories: ["Campus", "Classrooms", "Laboratories", "Student Activities", "Events", "Academic Activities", "Sports & Wellness"],
+    images: [
+      { src: "/sri-gitam/gitam_college_main.png", title: "Sri GITAM Junior College Main Campus Building", category: "Campus" },
+      { src: "/sri-gitam/campus_quad.png", title: "Sri GITAM College Quad & Courtyard", category: "Campus" },
+      { src: "/sri-gitam/students_lecture.png", title: "Interactive Smart Classroom & Faculty Lecture", category: "Classrooms" },
+      { src: "/sri-gitam/classroom_focus.png", title: "Sri GITAM Students in Uniform Classroom Session", category: "Classrooms" },
+      { src: "/sri-gitam/science_lab.png", title: "Chemistry & Advanced Science Laboratory Session", category: "Laboratories" },
+      { src: "/sri-gitam/faculty_students_group.png", title: "Faculty Mentorship & Achievers Group", category: "Academic Activities" },
+      { src: "/sri-gitam/lawn_study.png", title: "Sri GITAM Outdoor Study & Student Reading Session", category: "Student Activities" },
+      { src: "/sri-gitam/meditation_wellness.png", title: "Mindfulness & Meditation Sessions", category: "Sports & Wellness" },
+      { src: "/sri-gitam/yoga_session.png", title: "Morning Yoga & Physical Wellness", category: "Sports & Wellness" },
+      { src: "/sri-gitam/sports_volleyball.png", title: "Sports & Outdoor Athletic Training", category: "Sports & Wellness" },
+      { src: "/sri-gitam/campus_flag_assembly.png", title: "Flag Assembly & Athletic Ground", category: "Events" }
+    ]
   },
   footer: {
     brand: {

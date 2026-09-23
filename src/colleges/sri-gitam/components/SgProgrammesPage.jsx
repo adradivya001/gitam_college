@@ -45,6 +45,7 @@ export function SgProgrammesPage({ onAction, data }) {
         breadcrumb={heroData.title || "Programmes"}
         title={heroData.title || "Choose the Path That Fits Your Future"}
         subtitle={heroData.subtitle || `Explore the Intermediate programmes available at ${data?.college?.name}.`}
+        image={heroData.image || data?.gallery?.images?.[2]?.src || "/sri-gitam/science_lab.png"}
       />
 
       {/* Programme Nav */}
