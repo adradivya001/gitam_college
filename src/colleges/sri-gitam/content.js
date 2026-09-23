@@ -247,13 +247,13 @@ const sriGitamContent = {
     },
     'student-life': {
       sections: [
-        { id: "sl-hero", type: "about-hero", title: "Life Beyond the Classroom", subtitle: "Academic growth is strengthened by participation, interaction, creativity and personal development.", image: "/sri-gitam/lawn_study.png" },
+        { id: "sl-hero", type: "about-hero", title: "Life Beyond the Classroom", subtitle: "Academic growth is strengthened by participation, interaction, creativity and personal development.", image: "/sri-gitam/students_lecture.png" },
         { id: "sl-activities", type: "why-us", title: "Sections", pillars: [
-          { id: "sl1", title: "Academic Activities", desc: "Encourage students to actively participate in their academic journey." },
-          { id: "sl2", title: "Events & Celebrations", desc: "Provide opportunities for students to participate in institutional and cultural events." },
-          { id: "sl3", title: "Student Engagement", desc: "Create opportunities for students to interact, participate and build confidence." },
-          { id: "sl4", title: "Sports & Assembly", desc: "Encourage students to maintain a healthy balance between academic responsibilities and physical activity." },
-          { id: "sl5", title: "Collaborative Study", desc: "Encourage group learning, peer discussions, and creative problem solving." }
+          { id: "sl1", title: "Collaborative Study & Discussion", desc: "Group learning sessions on the campus green lawn encourage peer discussions, creative problem solving, and intellectual exchange.", image: "/sri-gitam/lawn_study.png" },
+          { id: "sl2", title: "Yoga & Mindfulness Sessions", desc: "Structured morning yoga and holistic wellness routines that enhance concentration, physical health, and mental agility.", image: "/sri-gitam/yoga_session.png" },
+          { id: "sl3", title: "Sports & Physical Wellness", desc: "Encouraging a vibrant sporting culture with active outdoor games, volleyball, and physical training for team spirit and fitness.", image: "/sri-gitam/sports_volleyball.png" },
+          { id: "sl4", title: "Campus Assembly & Events", desc: "Daily morning assemblies, patriotic flag celebrations, and institutional milestones that cultivate discipline and pride.", image: "/sri-gitam/campus_flag_assembly.png" },
+          { id: "sl5", title: "Meditation & Focus Practice", desc: "Calm mindfulness training designed to help intermediate students manage exam anxiety and sustain deep academic focus.", image: "/sri-gitam/meditation_wellness.png" }
         ]}
       ]
     },

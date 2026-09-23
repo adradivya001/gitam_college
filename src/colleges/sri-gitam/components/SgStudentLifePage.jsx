@@ -48,22 +48,25 @@ export function SgStudentLifePage({ onAction, data }) {
       <section className="sg-section sg-section-cream">
         <Container maxWidth="1280px">
           <div className="sg-section-header-center">
-            <span className="sg-eyebrow">ACTIVITIES</span>
-            <h2 className="sg-section-title">Life at {data?.college?.shortName || 'Our College'}</h2>
+            <span className="sg-eyebrow">CO-CURRICULAR & CAMPUS LIFE</span>
+            <h2 className="sg-section-title">Life at {data?.college?.shortName || 'Sri GITAM'}</h2>
+            <p className="sg-section-desc sg-section-desc-center">
+              A balanced blend of rigorous academics, mindful wellness, sports, and collaborative outdoor study.
+            </p>
           </div>
           <div className="sg-activity-strip">
             {(activitiesData.pillars || []).map((act, i) => {
-              const activityImages = [
-                '/sri-gitam/yoga_session.png',
-                '/sri-gitam/meditation_wellness.png',
-                '/sri-gitam/sports_volleyball.png',
+              const defaultImages = [
                 '/sri-gitam/lawn_study.png',
-                '/sri-gitam/campus_flag_assembly.png'
+                '/sri-gitam/yoga_session.png',
+                '/sri-gitam/sports_volleyball.png',
+                '/sri-gitam/campus_flag_assembly.png',
+                '/sri-gitam/meditation_wellness.png'
               ];
-              const imgSrc = activityImages[i % activityImages.length];
+              const imgSrc = act.image || defaultImages[i % defaultImages.length];
               return (
                 <div key={i} className={`sg-activity-item ${i % 2 !== 0 ? 'reverse' : ''}`}>
-                  <div className="sg-activity-img" style={{ border: '1px solid var(--color-border, #EDE5D8)', boxShadow: '0 4px 16px rgba(24, 30, 36, 0.06)' }}>
+                  <div className="sg-activity-img">
                     <img src={imgSrc} alt={act.title} />
                   </div>
                   <div className="sg-activity-content">
