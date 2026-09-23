@@ -30,23 +30,25 @@ export function SgAboutPage({ onAction, data }) {
         <section className="sg-section sg-section-cream" style={{ borderBottom: '1px solid var(--color-border)' }}>
           <Container maxWidth="1280px">
             <div className="sg-split" style={{ alignItems: 'center' }}>
-              <div className="sg-split-left" style={{ flex: '0 0 42%', maxWidth: '42%' }}>
+              <div className="sg-split-left" style={{ flex: '0 0 45%', maxWidth: '45%' }}>
                 <div 
                   className="sg-split-img" 
                   style={{ 
-                    aspectRatio: '4/5', 
-                    maxHeight: '520px', 
                     borderRadius: '20px', 
                     border: '1px solid var(--color-border)', 
                     boxShadow: '0 12px 32px rgba(125, 3, 3, 0.08)',
                     overflow: 'hidden',
-                    background: '#f8f4ec'
+                    background: '#f8f4ec',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    maxHeight: '620px'
                   }}
                 >
                   <img 
                     src={chairmanData.image || "/sri-gitam/chairperson.jpg"} 
-                    alt={chairmanData.name || "Chairperson"} 
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
+                    alt={chairmanData.name || "Manisha Nair.K"} 
+                    style={{ width: '100%', height: 'auto', maxHeight: '620px', objectFit: 'contain', display: 'block' }}
                   />
                 </div>
               </div>
@@ -79,7 +81,7 @@ export function SgAboutPage({ onAction, data }) {
 
                 <div style={{ marginTop: '28px', paddingTop: '20px', borderTop: '1px solid var(--color-border)' }}>
                   <h4 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text-primary, #2A2A29)', margin: '0 0 4px 0' }}>
-                    {chairmanData.name || "Smt. G. Swetha"}
+                    {chairmanData.name || "Manisha Nair.K"}
                   </h4>
                   <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-primary, #7D0303)', margin: 0 }}>
                     {chairmanData.designation || "Chairperson & Managing Director"}

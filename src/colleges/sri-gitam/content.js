@@ -179,7 +179,7 @@ const sriGitamContent = {
           eyebrow: "LEADERSHIP & VISION",
           quote: "Education is not merely about examinations; it is about building character, discipline, and the intellectual foundation for a lifetime of success.",
           content: "Welcome to Sri GITAM Junior College. Our institution was founded with a profound commitment to providing intermediate students with an inspiring, supportive, and rigorous academic environment. We believe that these two crucial years shape the trajectory of a student's entire career and personal growth.\n\nAt Sri GITAM, we blend strong academic fundamentals with personalized guidance, state-of-the-art facilities, and value-driven mentorship. Every student is nurtured to realize their utmost potential, excel in competitive benchmarks, and step into higher education with clarity and unshakeable confidence.",
-          name: "Smt. G. Swetha",
+          name: "Manisha Nair.K",
           designation: "Chairperson & Managing Director",
           college: "Sri GITAM Junior College",
           image: "/sri-gitam/chairperson.jpg"
