@@ -139,17 +139,17 @@ export function SgAdmissionsPage({ onAction, data }) {
       </section>
 
       {/* Fees */}
-      <section className="sg-section-sm sg-section-white">
+      <section className="sg-section-sm sg-section-cream">
         <Container maxWidth="1280px">
-          <div style={{ background: 'var(--color-bg, #FAF7F2)', borderRadius: '20px', padding: '48px', display: 'flex', gap: '48px', alignItems: 'center' }}>
-            <div style={{ flex: '0 0 48px', height: '48px', background: 'var(--color-sg-peach, #F8E9E3)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-              <FileText size={24} color="var(--color-secondary, #B6533E)" />
+          <div style={{ background: '#FFFFFF', border: '1px solid var(--color-border, #D9A5A5)', borderRadius: '20px', padding: '40px 48px', display: 'flex', gap: '36px', alignItems: 'center', boxShadow: '0 4px 20px rgba(125, 3, 3, 0.05)' }}>
+            <div style={{ flex: '0 0 56px', height: '56px', background: 'var(--color-sg-peach, #F8E8E8)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: 'var(--color-brand-crimson, #7D0303)' }}>
+              <FileText size={26} />
             </div>
-            <div>
-              <h3 style={{ fontSize: '20px', fontWeight: '700', color: 'var(--color-primary, #172A43)', marginBottom: '8px' }}>Fee Information</h3>
-              <p style={{ fontSize: '15px', color: 'var(--color-muted, #657080)', margin: 0 }}>Contact the admissions office for the latest fee structure, payment schedule and admission-related information.</p>
+            <div style={{ flex: 1 }}>
+              <h3 style={{ fontSize: '22px', fontWeight: '800', color: 'var(--text-primary, #2A2A29)', marginBottom: '8px', fontFamily: 'var(--font-heading)' }}>Fee Information</h3>
+              <p style={{ fontSize: '15.5px', color: 'var(--text-secondary, #66615F)', margin: 0, lineHeight: '1.6' }}>Contact the admissions office for the latest fee structure, payment schedule and admission-related information.</p>
             </div>
-            <button className="sg-btn-outline-navy" onClick={() => onAction('navigate_to', 'contact')} style={{ flexShrink: 0 }}>Contact Us</button>
+            <button className="sg-btn-primary" onClick={() => onAction('navigate_to', 'contact')} style={{ flexShrink: 0 }}>Contact Us</button>
           </div>
         </Container>
       </section>
